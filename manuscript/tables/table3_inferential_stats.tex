@@ -1,15 +1,15 @@
 \begin{table}[ht]
 \centering
-\caption{Inferential Hypothesis Testing on Composite Item Quality Score}
+\caption{Statistical Pipeline Verification on Baseline Fixtures ($N=60$; Live Model Runs Pending)}
 \label{tab:inferential_stats}
 \begin{tabular}{lccc}
 \hline
-\textbf{Test} & \textbf{Statistic} & \textbf{$p$-value} & \textbf{Significance ($p < 0.05$)} \\
+\textbf{Test} & \textbf{Statistic} & \textbf{$p$-value} & \textbf{Analysis Status} \\
 \hline
-One-Way ANOVA & $F = 222.60$ & $< 10^-20$ & Highly Significant \\
-Welch's $t$ (Cond C vs Cond A) & $t = 16.152$ & $< 10^{-4}$ & Significant \\
-Welch's $t$ (Cond C vs Cond B) & $t = 7.503$ & $< 10^{-4}$ & Significant \\
-Welch's $t$ (Cond B vs Cond A) & $t = 14.371$ & $< 10^{-4}$ & Significant \\
+One-Way ANOVA & $F = 222.60$ & $< 10^-20$ & Heuristic Pipeline Sensitivity Check \\
+Welch's $t$ (Cond C vs Cond A) & $t = 16.152$ & $< 10^{-4}$ & Pipeline Verification \\
+Welch's $t$ (Cond C vs Cond B) & $t = 7.503$ & $< 10^{-4}$ & Pipeline Verification \\
+Welch's $t$ (Cond B vs Cond A) & $t = 14.371$ & $< 10^{-4}$ & Pipeline Verification \\
 \hline
 \end{tabular}
 \end{table}

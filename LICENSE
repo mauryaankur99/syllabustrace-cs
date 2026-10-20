@@ -19,3 +19,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+### Third-Party Intellectual Property & Fair Use Notice
+
+1. **Software Scope:** The MIT License above applies exclusively to the original software source code, evaluation heuristics, benchmark scripts, and architecture in this repository.
+2. **Third-Party Academic Citations:** Brief verbatim excerpts from textbooks (such as Cormen et al., Silberschatz et al., Kurose & Ross, and Sipser) are included solely for research verification, academic commentary, and question grounding under statutory Fair Use / Fair Dealing (17 U.S. Code § 107 and Section 52(1)(a) of the Indian Copyright Act, 1957).
+3. **No Unrestricted Redistribution of Third-Party Books:** This repository does not redistribute full textbook texts or copyrighted test banks. All trademarks, textbook titles, and excerpts remain the property of their respective copyright holders (MIT Press, Wiley, Pearson, McGraw-Hill, Cengage).

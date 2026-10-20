@@ -70,10 +70,14 @@ class SourceCitation(BaseModel):
 
 
 class ModelMetadata(BaseModel):
-    provider: str = "mock"
-    model: str = "deterministic-baseline"
+    provider: str = "offline_fixture"
+    model: str = "curated_prototype_v1"
     temperature: float = 0.2
     prompt_version: str = "v1"
+    is_simulated: bool = True
+    raw_prompt: Optional[str] = None
+    raw_response: Optional[str] = None
+    execution_timestamp: Optional[str] = None
 
 
 class EvaluationScores(BaseModel):
@@ -94,6 +98,7 @@ class MCQRecord(BaseModel):
     subject: str
     syllabus_node_id: Optional[str] = None
     cognitive_level: str = "Comprehension"  # 'Recall', 'Comprehension', 'Application', 'Analysis'
+    data_tier: str = "illustrative_fixture"  # 'illustrative_fixture', 'experimental_trial', 'human_verified_benchmark'
     source_citation: Optional[Dict[str, Any]] = None
     model_metadata: Optional[Dict[str, Any]] = None
     review_status: str = "pending"  # 'pending', 'approved', 'rejected', 'flagged'
@@ -114,6 +119,7 @@ class EvaluationResult(BaseModel):
 
 class ExperimentMetrics(BaseModel):
     condition: str
+    data_tier: str = "illustrative_fixture"
     sample_size: int
     factual_correctness_mean: float
     factual_correctness_std: float

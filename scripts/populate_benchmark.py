@@ -1416,10 +1416,37 @@ QUESTIONS = [
 ]
 
 def main():
+    fixtures_dir = DATA_DIR / "fixtures"
+    fixtures_dir.mkdir(parents=True, exist_ok=True)
+
+    formatted_questions = []
+    for q in QUESTIONS:
+        item = dict(q)
+        item["data_tier"] = "illustrative_fixture"
+        item["review_status"] = "pending"
+        item["model_metadata"] = {
+            "provider": "offline_curated_fixture",
+            "model": "curated_prototype_v1",
+            "temperature": 0.2,
+            "prompt_version": f"prototype-{item.get('condition', 'fixture')}-v1",
+            "is_simulated": True,
+        }
+        note = item.get("reviewer_notes", "")
+        if "Pending recorded human expert review" not in note:
+            item["reviewer_notes"] = f"{note} [Fixture item for pipeline verification. Pending recorded human expert review.]".strip()
+        formatted_questions.append(item)
+
+    # Write primary benchmark dataset
     target_path = DATASETS_DIR / "benchmark_questions.json"
     with open(target_path, "w", encoding="utf-8") as f:
-        json.dump(QUESTIONS, f, indent=2)
-    print(f"Successfully wrote {len(QUESTIONS)} benchmark questions to {target_path}")
+        json.dump(formatted_questions, f, indent=2)
+    print(f"Successfully wrote {len(formatted_questions)} fixture questions to {target_path}")
+
+    # Also preserve separate fixtures archive
+    fixture_archive = fixtures_dir / "demo_curated_benchmark_60.json"
+    with open(fixture_archive, "w", encoding="utf-8") as f:
+        json.dump(formatted_questions, f, indent=2)
+    print(f"Preserved illustrative fixtures copy at {fixture_archive}")
 
 if __name__ == "__main__":
     main()

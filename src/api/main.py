@@ -13,7 +13,7 @@ from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse
 
 from ..core.models import MCQRecord, EvaluationResult
 from ..core.evaluator import Evaluator
-from ..core.generator import MCQGenerator
+from ..core.generator import MCQGenerator, ProviderMissingCredentialsError, ProviderAPIError
 from ..services.syllabus_service import SyllabusService
 from ..services.source_service import SourceService
 from ..services.question_service import QuestionService
@@ -76,6 +76,10 @@ def get_overview():
         "counts_by_condition": by_condition,
         "counts_by_subject": by_subject,
         "counts_by_status": by_status,
+        "data_status": "illustrative_fixtures_baseline",
+        "active_provider": generator.provider,
+        "is_live_provider_active": not (generator.provider in {"offline_fixture", "mock"}),
+        "status_description": "Current 60 items represent illustrative test fixtures for pipeline verification. Live experimental model trials remain pending valid provider credentials.",
         "latest_experiment": latest_exp.get("metrics"),
         "active_exam_tracks": ["GATE_CS", "UGC_NET_CS", "GPSC_CS"],
         "pariksha_bridge_active": True,
@@ -207,18 +211,28 @@ def generate_question(payload: Dict[str, Any]):
                 "verified_excerpt": src["verified_passages"][0]["text"] if src.get("verified_passages") else "Canonical text definition.",
             }
 
-    generated_record = generator.generate(
-        condition=condition,
-        subject=subject,
-        topic=topic,
-        subtopic=subtopic,
-        cognitive_level=cognitive_level,
-        source_data=source_data,
-    )
-
-    # Save to questions dataset
-    question_service.create(generated_record)
-    return generated_record.model_dump()
+    try:
+        generated_record = generator.generate(
+            condition=condition,
+            subject=subject,
+            topic=topic,
+            subtopic=subtopic,
+            cognitive_level=cognitive_level,
+            source_data=source_data,
+        )
+        # Save to questions dataset
+        question_service.create(generated_record)
+        return generated_record.model_dump()
+    except ProviderMissingCredentialsError as e:
+        raise HTTPException(
+            status_code=422,
+            detail={"error": "missing_credentials", "message": str(e)}
+        )
+    except ProviderAPIError as e:
+        raise HTTPException(
+            status_code=502,
+            detail={"error": "provider_api_error", "message": str(e)}
+        )
 
 
 @app.post("/api/evaluate")

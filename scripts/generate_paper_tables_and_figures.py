@@ -64,7 +64,7 @@ def generate_figures(metrics, questions):
                     color='#0284c7', capsize=5, edgecolor='black', alpha=0.9)
 
     ax.set_ylabel('Score (%)', fontsize=11, fontweight='bold')
-    ax.set_title('Figure 1: Quality & Evidence Traceability Across Experimental Conditions', fontsize=12, fontweight='bold', pad=12)
+    ax.set_title('Figure 1: Quality & Evidence Traceability Across Conditions (Prototype Fixtures)', fontsize=11, fontweight='bold', pad=12)
     ax.set_xticks(x)
     ax.set_xticklabels(labels, fontsize=10, fontweight='bold')
     ax.set_ylim(0, 115)
@@ -121,7 +121,7 @@ def generate_figures(metrics, questions):
     ax.bar(x + w, src_counts, w, label='Source-Grounded (C) [N=20]', color='#10b981', edgecolor='black', alpha=0.9)
 
     ax.set_ylabel('Number of Flawed Items', fontsize=11, fontweight='bold')
-    ax.set_title('Figure 2: Distribution of Item-Writing Flaws Across Conditions', fontsize=12, fontweight='bold', pad=12)
+    ax.set_title('Figure 2: Distribution of Item-Writing Flaws Across Conditions (Prototype Fixtures)', fontsize=11, fontweight='bold', pad=12)
     ax.set_xticks(x)
     ax.set_xticklabels(flaw_labels, fontsize=9)
     ax.set_ylim(0, 22)
@@ -163,7 +163,7 @@ def generate_figures(metrics, questions):
     ax.bar(x + w, subj_scores["source_grounded"], w, label='Condition C (Source-Grounded)', color='#7c3aed', edgecolor='black', alpha=0.85)
 
     ax.set_ylabel('Mean Composite Score (%)', fontsize=11, fontweight='bold')
-    ax.set_title('Figure 3: Benchmark Performance Stratified Across 5 Core CS Disciplines', fontsize=12, fontweight='bold', pad=12)
+    ax.set_title('Figure 3: Benchmark Performance Stratified Across 5 Core CS Disciplines (Prototype Fixtures)', fontsize=11, fontweight='bold', pad=12)
     ax.set_xticks(x)
     ax.set_xticklabels(sub_short, fontsize=10, fontweight='bold')
     ax.set_ylim(0, 115)
@@ -189,7 +189,7 @@ def generate_tables(metrics, stat_tests):
 
     table1_latex = f"""\\begin{{table*}}[t]
 \\centering
-\\caption{{Empirical Benchmark Metrics across Experimental Conditions ($N=60$)}}
+\\caption{{Prototype Baseline Evaluation Metrics across Experimental Conditions ($N=60$ Curated Baseline Fixtures; Live Model Evaluation Pending)}}
 \\label{{tab:summary_metrics}}
 \\begin{{tabular}}{{lcccccc}}
 \\hline
@@ -212,17 +212,17 @@ Condition C (Source-Grounded) & {src.sample_size} & $\\mathbf{{{src.composite_qu
     # -----------------------------------------------------------------
     table2_latex = f"""\\begin{{table}}[ht]
 \\centering
-\\caption{{Prevalence of Item-Writing Flaws (IWFs) Across Conditions ($N=20$ per condition)}}
+\\caption{{Item-Writing Flaws (IWFs) Identified in Prototype Fixture Baseline ($N=20$ per Condition)}}
 \\label{{tab:flaw_breakdown}}
 \\begin{{tabular}}{{lccc}}
 \\hline
 \\textbf{{Item-Writing Flaw Type}} & \\textbf{{Generic (A)}} & \\textbf{{Syllabus (B)}} & \\textbf{{Source-Grounded (C)}} \\\\
 \\hline
-Uncited Evidence (\\texttt{{FLAW\\_NO\\_CITATION}}) & {gen.flaw_counts.get("FLAW_NO_CITATION", 0)} & 0 & 0 \\\\
-All/None of Above (\\texttt{{FLAW\\_ALL\\_NONE\\_ABOVE}}) & {gen.flaw_counts.get("FLAW_ALL_NONE_ABOVE", 0)} & 0 & 0 \\\\
-Length Outlier (\\texttt{{FLAW\\_LENGTH\\_OUTLIER}}) & {gen.flaw_counts.get("FLAW_LENGTH_OUTLIER", 0)} & 0 & 0 \\\\
-Answer Leakage (\\texttt{{FLAW\\_ANSWER\\_LEAKAGE}}) & {gen.flaw_counts.get("FLAW_ANSWER_LEAKAGE", 0)} & 0 & 0 \\\\
-Stem Underspecified (\\texttt{{FLAW\\_STEM\\_TOO\\_SHORT}}) & {gen.flaw_counts.get("FLAW_STEM_TOO_SHORT", 0)} & 0 & 0 \\\\
+Uncited Evidence (\\texttt{{FLAW\\_NO\\_CITATION}}) & {gen.flaw_counts.get("FLAW_NO_CITATION", 0)} & {syl.flaw_counts.get("FLAW_NO_CITATION", 0)} & {src.flaw_counts.get("FLAW_NO_CITATION", 0)} \\\\
+All/None of Above (\\texttt{{FLAW\\_ALL\\_NONE\\_ABOVE}}) & {gen.flaw_counts.get("FLAW_ALL_NONE_ABOVE", 0)} & {syl.flaw_counts.get("FLAW_ALL_NONE_ABOVE", 0)} & {src.flaw_counts.get("FLAW_ALL_NONE_ABOVE", 0)} \\\\
+Length Outlier (\\texttt{{FLAW\\_LENGTH\\_OUTLIER}}) & {gen.flaw_counts.get("FLAW_LENGTH_OUTLIER", 0)} & {syl.flaw_counts.get("FLAW_LENGTH_OUTLIER", 0)} & {src.flaw_counts.get("FLAW_LENGTH_OUTLIER", 0)} \\\\
+Answer Leakage (\\texttt{{FLAW\\_ANSWER\\_LEAKAGE}}) & {gen.flaw_counts.get("FLAW_ANSWER_LEAKAGE", 0)} & {syl.flaw_counts.get("FLAW_ANSWER_LEAKAGE", 0)} & {src.flaw_counts.get("FLAW_ANSWER_LEAKAGE", 0)} \\\\
+Stem Underspecified (\\texttt{{FLAW\\_STEM\\_TOO\\_SHORT}}) & {gen.flaw_counts.get("FLAW_STEM_TOO_SHORT", 0)} & {syl.flaw_counts.get("FLAW_STEM_TOO_SHORT", 0)} & {src.flaw_counts.get("FLAW_STEM_TOO_SHORT", 0)} \\\\
 \\hline
 \\textbf{{Total Flawed Items (\\%)}} & \\textbf{{{gen.flaw_rate}\\%}} & \\textbf{{{syl.flaw_rate}\\%}} & \\textbf{{{src.flaw_rate}\\%}} \\\\
 \\hline
@@ -252,16 +252,16 @@ Stem Underspecified (\\texttt{{FLAW\\_STEM\\_TOO\\_SHORT}}) & {gen.flaw_counts.g
 
     table3_latex = f"""\\begin{{table}}[ht]
 \\centering
-\\caption{{Inferential Hypothesis Testing on Composite Item Quality Score}}
+\\caption{{Statistical Pipeline Verification on Baseline Fixtures ($N=60$; Live Model Runs Pending)}}
 \\label{{tab:inferential_stats}}
 \\begin{{tabular}}{{lccc}}
 \\hline
-\\textbf{{Test}} & \\textbf{{Statistic}} & \\textbf{{$p$-value}} & \\textbf{{Significance ($p < 0.05$)}} \\\\
+\\textbf{{Test}} & \\textbf{{Statistic}} & \\textbf{{$p$-value}} & \\textbf{{Analysis Status}} \\\\
 \\hline
-One-Way ANOVA & $F = {stat_tests.get('f_statistic', 0.0):.2f}$ & $< 10^{-20}$ & Highly Significant \\\\
-Welch's $t$ (Cond C vs Cond A) & $t = {t_cg}$ & {p_cg_str} & Significant \\\\
-Welch's $t$ (Cond C vs Cond B) & $t = {t_cs}$ & {p_cs_str} & Significant \\\\
-Welch's $t$ (Cond B vs Cond A) & $t = {t_sg}$ & {p_sg_str} & Significant \\\\
+One-Way ANOVA & $F = {stat_tests.get('f_statistic', 0.0):.2f}$ & $< 10^{-20}$ & Heuristic Pipeline Sensitivity Check \\\\
+Welch's $t$ (Cond C vs Cond A) & $t = {t_cg}$ & {p_cg_str} & Pipeline Verification \\\\
+Welch's $t$ (Cond C vs Cond B) & $t = {t_cs}$ & {p_cs_str} & Pipeline Verification \\\\
+Welch's $t$ (Cond B vs Cond A) & $t = {t_sg}$ & {p_sg_str} & Pipeline Verification \\\\
 \\hline
 \\end{{tabular}}
 \\end{{table}}

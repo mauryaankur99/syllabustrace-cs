@@ -16,13 +16,15 @@
     "cognitive_level": "Recall",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Generic stem. Distractor B is visibly longer than others (length disparity flaw)."
+    "reviewer_notes": "Generic stem. Distractor B is visibly longer than others (length disparity flaw). [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-os-002",
@@ -41,13 +43,15 @@
     "cognitive_level": "Recall",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Contains answer leakage: stem mentions deadlock, options repeat deadlock in every choice."
+    "reviewer_notes": "Contains answer leakage: stem mentions deadlock, options repeat deadlock in every choice. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-os-003",
@@ -66,13 +70,15 @@
     "cognitive_level": "Comprehension",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Contains 'All of the above' option anti-pattern."
+    "reviewer_notes": "Contains 'All of the above' option anti-pattern. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-os-004",
@@ -91,13 +97,15 @@
     "cognitive_level": "Recall",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Option A contains parenthetical giveaway."
+    "reviewer_notes": "Option A contains parenthetical giveaway. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-dbms-001",
@@ -116,13 +124,15 @@
     "cognitive_level": "Recall",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Severe answer leakage: option B defines the answer directly."
+    "reviewer_notes": "Severe answer leakage: option B defines the answer directly. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-dbms-002",
@@ -141,13 +151,15 @@
     "cognitive_level": "Comprehension",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Contains 'None of the above' distractor."
+    "reviewer_notes": "Contains 'None of the above' distractor. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-dbms-003",
@@ -166,13 +178,15 @@
     "cognitive_level": "Comprehension",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Lacks canonical citation."
+    "reviewer_notes": "Lacks canonical citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-dbms-004",
@@ -191,13 +205,15 @@
     "cognitive_level": "Comprehension",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Contains 'All of the above' flaw."
+    "reviewer_notes": "Contains 'All of the above' flaw. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-cn-001",
@@ -216,13 +232,15 @@
     "cognitive_level": "Recall",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Length disparity and explanation inside option B."
+    "reviewer_notes": "Length disparity and explanation inside option B. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-cn-002",
@@ -241,13 +259,15 @@
     "cognitive_level": "Application",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Calculation correct, but no reference textbook cited."
+    "reviewer_notes": "Calculation correct, but no reference textbook cited. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-cn-003",
@@ -266,13 +286,15 @@
     "cognitive_level": "Recall",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Parenthetical expansion in option A."
+    "reviewer_notes": "Parenthetical expansion in option A. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-cn-004",
@@ -291,13 +313,15 @@
     "cognitive_level": "Application",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Lacks citation."
+    "reviewer_notes": "Lacks citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-dsa-001",
@@ -316,13 +340,15 @@
     "cognitive_level": "Comprehension",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Severe length outlier in option B with embedded explanation."
+    "reviewer_notes": "Severe length outlier in option B with embedded explanation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-dsa-002",
@@ -341,13 +367,15 @@
     "cognitive_level": "Comprehension",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Includes 'None of the above' flaw."
+    "reviewer_notes": "Includes 'None of the above' flaw. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-dsa-003",
@@ -366,13 +394,15 @@
     "cognitive_level": "Recall",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Lacks canonical citation."
+    "reviewer_notes": "Lacks canonical citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-dsa-004",
@@ -391,13 +421,15 @@
     "cognitive_level": "Application",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Valid application item, no textbook provenance."
+    "reviewer_notes": "Valid application item, no textbook provenance. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-toc-001",
@@ -416,13 +448,15 @@
     "cognitive_level": "Comprehension",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Negative stem phrasing ('NOT regular')."
+    "reviewer_notes": "Negative stem phrasing ('NOT regular'). [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-toc-002",
@@ -441,13 +475,15 @@
     "cognitive_level": "Comprehension",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Contains 'All of the above' flaw."
+    "reviewer_notes": "Contains 'All of the above' flaw. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-toc-003",
@@ -466,13 +502,15 @@
     "cognitive_level": "Recall",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Contains 'None of the above' option."
+    "reviewer_notes": "Contains 'None of the above' option. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-gen-toc-004",
@@ -491,13 +529,15 @@
     "cognitive_level": "Recall",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
-    "reviewer_notes": "Clean recall question, missing citation."
+    "reviewer_notes": "Clean recall question, missing citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-os-001",
@@ -520,13 +560,15 @@
       "chapter": "Concurrency & Deadlocks"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Well-structured computational problem, options balanced in length, no answer leakage."
+    "review_status": "pending",
+    "reviewer_notes": "Well-structured computational problem, options balanced in length, no answer leakage. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-os-002",
@@ -549,13 +591,15 @@
       "chapter": "Virtual Memory"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Standard GATE numerical MCQ. Distractors plausible from common student calculation errors."
+    "review_status": "pending",
+    "reviewer_notes": "Standard GATE numerical MCQ. Distractors plausible from common student calculation errors. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-os-003",
@@ -578,13 +622,15 @@
       "chapter": "Page Replacement"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Clean distractors, syllabus aligned."
+    "review_status": "pending",
+    "reviewer_notes": "Clean distractors, syllabus aligned. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-os-004",
@@ -607,13 +653,15 @@
       "chapter": "Disk Scheduling"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Balanced options, clear theoretical distinction."
+    "review_status": "pending",
+    "reviewer_notes": "Balanced options, clear theoretical distinction. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-dbms-001",
@@ -636,13 +684,15 @@
       "chapter": "Relational Normalization"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Classic GATE question. Concise options."
+    "review_status": "pending",
+    "reviewer_notes": "Classic GATE question. Concise options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-dbms-002",
@@ -665,13 +715,15 @@
       "chapter": "Concurrency Control"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Clean distractors addressing locking variants."
+    "review_status": "pending",
+    "reviewer_notes": "Clean distractors addressing locking variants. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-dbms-003",
@@ -694,13 +746,15 @@
       "chapter": "Relational Algebra"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Well-calibrated distractor choices."
+    "review_status": "pending",
+    "reviewer_notes": "Well-calibrated distractor choices. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-dbms-004",
@@ -723,13 +777,15 @@
       "chapter": "B+ Trees"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Standard definition test."
+    "review_status": "pending",
+    "reviewer_notes": "Standard definition test. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-cn-001",
@@ -752,13 +808,15 @@
       "chapter": "Sliding Window"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Clean mathematical formula options."
+    "review_status": "pending",
+    "reviewer_notes": "Clean mathematical formula options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-cn-002",
@@ -781,13 +839,15 @@
       "chapter": "Congestion Control"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Precise state transition question."
+    "review_status": "pending",
+    "reviewer_notes": "Precise state transition question. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-cn-003",
@@ -810,13 +870,15 @@
       "chapter": "Routing Protocols"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Balanced conceptual options."
+    "review_status": "pending",
+    "reviewer_notes": "Balanced conceptual options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-cn-004",
@@ -839,13 +901,15 @@
       "chapter": "IPv4 Subnetting"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Standard CIDR network design item."
+    "review_status": "pending",
+    "reviewer_notes": "Standard CIDR network design item. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-dsa-001",
@@ -868,13 +932,15 @@
       "chapter": "Recurrence Relations"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Tests Case 3 regularity condition."
+    "review_status": "pending",
+    "reviewer_notes": "Tests Case 3 regularity condition. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-dsa-002",
@@ -897,13 +963,15 @@
       "chapter": "Minimum Spanning Trees"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Rigorous discrete math / algorithms theorem check."
+    "review_status": "pending",
+    "reviewer_notes": "Rigorous discrete math / algorithms theorem check. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-dsa-003",
@@ -926,13 +994,15 @@
       "chapter": "Balanced Search Trees"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Clean item."
+    "review_status": "pending",
+    "reviewer_notes": "Clean item. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-dsa-004",
@@ -955,13 +1025,15 @@
       "chapter": "Dynamic Programming"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Direct algorithmic definition check."
+    "review_status": "pending",
+    "reviewer_notes": "Direct algorithmic definition check. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-toc-001",
@@ -984,13 +1056,15 @@
       "chapter": "Closure Properties"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Frequent GATE question on closure properties."
+    "review_status": "pending",
+    "reviewer_notes": "Frequent GATE question on closure properties. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-toc-002",
@@ -1013,13 +1087,15 @@
       "chapter": "DFA Minimization"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Exact state count calculation."
+    "review_status": "pending",
+    "reviewer_notes": "Exact state count calculation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-toc-003",
@@ -1042,13 +1118,15 @@
       "chapter": "Decidability Table"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Crucial decidability boundary distinction."
+    "review_status": "pending",
+    "reviewer_notes": "Crucial decidability boundary distinction. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-syl-toc-004",
@@ -1071,13 +1149,15 @@
       "chapter": "Pumping Lemma"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Rigorous definition verification."
+    "review_status": "pending",
+    "reviewer_notes": "Rigorous definition verification. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-os-001",
@@ -1104,13 +1184,15 @@
       "verified_excerpt": "A state is safe if the system can allocate resources to each process (up to its maximum) in some order and still avoid a deadlock. More formally, a system state is safe only if there exists a safe sequence <P1, P2, ..., Pn> of processes."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Exemplary source-grounded item. Full citation, exact excerpt corroboration, zero item-writing flaws."
+    "review_status": "pending",
+    "reviewer_notes": "Exemplary source-grounded item. Full citation, exact excerpt corroboration, zero item-writing flaws. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-os-002",
@@ -1137,13 +1219,15 @@
       "verified_excerpt": "The hardware support for paging involves the Translation Lookaside Buffer (TLB), an associative, high-speed cache."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Verified against textbook. Options distinct and targeted."
+    "review_status": "pending",
+    "reviewer_notes": "Verified against textbook. Options distinct and targeted. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-os-003",
@@ -1170,13 +1254,15 @@
       "verified_excerpt": "Under nonpreemptive scheduling, once the CPU has been allocated to a process, the process keeps the CPU until it releases it, either by terminating or by switching to the waiting state."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Clean item, flawless grounding."
+    "review_status": "pending",
+    "reviewer_notes": "Clean item, flawless grounding. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-os-004",
@@ -1203,13 +1289,15 @@
       "verified_excerpt": "The i-node lists the attributes and disk addresses of the file's blocks."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Concise, verified against standard OS architecture text."
+    "review_status": "pending",
+    "reviewer_notes": "Concise, verified against standard OS architecture text. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-dbms-001",
@@ -1236,13 +1324,15 @@
       "verified_excerpt": "Two instructions l_i and l_j of transactions T_i and T_j conflict if they operate on the same data item Q and at least one of them is a write."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Exact canonical wording. Clean distractors."
+    "review_status": "pending",
+    "reviewer_notes": "Exact canonical wording. Clean distractors. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-dbms-002",
@@ -1269,13 +1359,15 @@
       "verified_excerpt": "A relation schema R is in BCNF with respect to a set F of functional dependencies if, for all functional dependencies in F+ of the form alpha -> beta, where alpha subset R and beta subset R, at least one of the following holds: alpha -> beta is trivial (beta subset alpha), or alpha is a superkey for R."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Distractor B targets the exact misconception distinguishing 3NF from BCNF."
+    "review_status": "pending",
+    "reviewer_notes": "Distractor B targets the exact misconception distinguishing 3NF from BCNF. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-dbms-003",
@@ -1302,13 +1394,15 @@
       "verified_excerpt": "A B+ tree index is a balanced tree where every leaf node is at the same depth. In a B+ tree of order n, non-leaf nodes have between ceil(n/2) and n children. Leaf nodes store data pointers or record keys and are linked sequentially."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Thoroughly grounded question on B vs B+ tree architecture."
+    "review_status": "pending",
+    "reviewer_notes": "Thoroughly grounded question on B vs B+ tree architecture. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-dbms-004",
@@ -1335,13 +1429,15 @@
       "verified_excerpt": "The division operator is suited to queries that include the phrase 'for all'."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Rigorous definition of relational division."
+    "review_status": "pending",
+    "reviewer_notes": "Rigorous definition of relational division. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-cn-001",
@@ -1368,13 +1464,15 @@
       "verified_excerpt": "In slow start, the value of cwnd begins at 1 MSS and increases by 1 MSS every time a transmitted segment is acknowledged, effectively doubling cwnd every round-trip time."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Flawless citation and option contrast."
+    "review_status": "pending",
+    "reviewer_notes": "Flawless citation and option contrast. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-cn-002",
@@ -1401,13 +1499,15 @@
       "verified_excerpt": "An r-bit CRC code appended to a d-bit data frame can detect all burst errors of length less than r + 1 bits, and any odd number of bit errors provided the generator contains factor (x + 1)."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Precise mathematical bounds."
+    "review_status": "pending",
+    "reviewer_notes": "Precise mathematical bounds. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-cn-003",
@@ -1434,13 +1534,15 @@
       "verified_excerpt": "Link-state algorithms require global knowledge of the network topology. Distance-vector algorithms are iterative, asynchronous, and distributed."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Well-balanced theoretical comparison."
+    "review_status": "pending",
+    "reviewer_notes": "Well-balanced theoretical comparison. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-cn-004",
@@ -1467,13 +1569,15 @@
       "verified_excerpt": "TCP fast retransmit: If the TCP sender receives three duplicate ACKs for the same data, it takes this as an indication that the segment following the segment that has been ACKed three times has been lost."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Standard textbook fast retransmit item."
+    "review_status": "pending",
+    "reviewer_notes": "Standard textbook fast retransmit item. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-dsa-001",
@@ -1500,13 +1604,15 @@
       "verified_excerpt": "Dijkstra's algorithm solves the single-source shortest-paths problem on a weighted, directed graph G = (V, E) for the case in which all edge weights are nonnegative. With a binary min-heap implementation, the running time is O((V + E) log V). If negative weight edges exist, Dijkstra's algorithm can produce incorrect shortest path distances."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Deep conceptual reasoning question grounded in CLRS proof structure."
+    "review_status": "pending",
+    "reviewer_notes": "Deep conceptual reasoning question grounded in CLRS proof structure. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-dsa-002",
@@ -1533,13 +1639,15 @@
       "verified_excerpt": "The master method provides a 'cookbook' method for solving recurrences of the form T(n) = aT(n/b) + f(n), where a >= 1 and b > 1 are constants and f(n) is an asymptotically positive function. Three cases compare f(n) with n^(log_b(a))."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Classic textbook Master Theorem calculation."
+    "review_status": "pending",
+    "reviewer_notes": "Classic textbook Master Theorem calculation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-dsa-003",
@@ -1566,13 +1674,15 @@
       "verified_excerpt": "The operations INSERT and DELETE take O(h) time on a binary search tree of height h."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Clarifies distinction between O(h) and worst-case O(n)."
+    "review_status": "pending",
+    "reviewer_notes": "Clarifies distinction between O(h) and worst-case O(n). [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-dsa-004",
@@ -1599,13 +1709,15 @@
       "verified_excerpt": "A sequence of m operations on n elements takes O(m alpha(n)) time."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Exact theoretical bound."
+    "review_status": "pending",
+    "reviewer_notes": "Exact theoretical bound. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-toc-001",
@@ -1632,13 +1744,15 @@
       "verified_excerpt": "The Pumping Lemma states that if A is a regular language, then there is a number p (the pumping length) where, if s is any string in A of length at least p, then s may be divided into three pieces, s = xyz, satisfying: (1) for each i >= 0, xy^i z in A, (2) |y| > 0, and (3) |xy| <= p."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Grounded in Sipser's canonical 3 conditions."
+    "review_status": "pending",
+    "reviewer_notes": "Grounded in Sipser's canonical 3 conditions. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-toc-002",
@@ -1665,13 +1779,15 @@
       "verified_excerpt": "The Acceptance Problem for Turing Machines, A_TM = {<M, w> | M is a TM and M accepts w}, is undecidable. Rice's Theorem states that any non-trivial semantic property of the language recognized by a Turing machine is undecidable."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Deep theoretical foundation item with authentic options."
+    "review_status": "pending",
+    "reviewer_notes": "Deep theoretical foundation item with authentic options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-toc-003",
@@ -1698,13 +1814,15 @@
       "verified_excerpt": "Deterministic Pushdown Automata (DPDA) recognize a strict subset of CFLs, unlike finite automata where DFA and NFA have equivalent recognition power."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Grounded in standard textbook distinction between DCFLs and general CFLs."
+    "review_status": "pending",
+    "reviewer_notes": "Grounded in standard textbook distinction between DCFLs and general CFLs. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   },
   {
     "id": "mcq-src-toc-004",
@@ -1731,12 +1849,14 @@
       "verified_excerpt": "The Myhill-Nerode Theorem states that a language is regular if and only if it has a finite number of equivalence classes."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
-    "reviewer_notes": "Rigorous Myhill-Nerode theorem question."
+    "review_status": "pending",
+    "reviewer_notes": "Rigorous Myhill-Nerode theorem question. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "data_tier": "illustrative_fixture"
   }
 ]

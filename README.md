@@ -4,48 +4,54 @@
 [![Python: 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-1.0.0-009688.svg)](https://fastapi.tiangolo.com/)
 [![Tests: 13 Passed](https://img.shields.io/badge/Tests-13%20Passed-emerald.svg)](tests/)
-[![Reproducibility: 100%](https://img.shields.io/badge/Reproducibility-Verified-success.svg)](manuscript/REPRODUCIBILITY_CHECKLIST.md)
+[![Status: Prototype Workbench](https://img.shields.io/badge/Status-Prototype%20Workbench-amber.svg)](manuscript/)
 
 ---
 
 ## 1. Overview
-**SyllabusTrace-CS** is an open-source, independent scientific research workbench and evaluation benchmark designed to audit, evaluate, and trace AI-generated Computer Science Multiple-Choice Questions (MCQs) for high-stakes Indian competitive examinations (such as **GATE CS & IT** and **UGC NET CS**).
+**SyllabusTrace-CS** is an open-source scientific research evaluation framework and audit workbench designed to evaluate the psychometric quality, item-writing flaws (IWFs), syllabus alignment, and source traceability of AI-generated Computer Science Multiple-Choice Questions (MCQs) for high-stakes Indian competitive examinations (such as **GATE CS & IT** and **UGC NET CS**).
 
 ### Core Research Question
-> *Does enforcing hierarchical syllabus constraints and authoritative canonical textbook citations eliminate Item-Writing Flaws (IWFs), distractor ambiguity, and answer-key drift in AI-generated Computer Science MCQs compared with unconstrained generative baselines?*
+> *Does enforcing hierarchical syllabus constraints (Condition B) and authoritative canonical textbook citations (Condition C) eliminate Item-Writing Flaws (IWFs), distractor ambiguity, and answer-key drift in AI-generated Computer Science MCQs compared with unconstrained generative baselines (Condition A)?*
 
 ---
 
-## 2. Key Contributions
-1. **Three-Condition Comparative Benchmark:** Controlled experimental comparison across:
+## 2. Key Contributions & Implemented Architecture
+1. **Three-Condition Comparative Paradigm:** Structured experimental comparison across:
    - **Condition A (Generic Baseline):** Zero-shot topic prompt without structural constraints.
    - **Condition B (Syllabus-Constrained):** Bounded by official GATE CS syllabus nodes, Bloom's cognitive taxonomy, and negative formatting constraints.
    - **Condition C (Syllabus + Canonical Source-Grounded):** Condition B bound to verifiable excerpts from canonical textbooks (Cormen, Silberschatz, Kurose-Ross, Sipser).
-2. **Psychometric Item-Writing Flaw (IWF) Taxonomy:** Deterministic heuristic detection of:
+2. **Deterministic Psychometric Flaw Detector:** Heuristic identification of:
    - Prohibited "All/None of the above" shortcuts (`FLAW_ALL_NONE_ABOVE`).
    - Clue and clang associations between stem and answer (`FLAW_ANSWER_LEAKAGE`).
    - Distractor length disparity ($>2.3\times$ ratio) (`FLAW_LENGTH_OUTLIER`).
    - Missing canonical citations (`FLAW_NO_CITATION`).
-   - Duplicate options or malformed keys (`ERR_OPTION_COUNT`, `ERR_INVALID_KEY`).
-3. **Interactive Research Workbench:** Full-featured local application with a research dashboard, syllabus coverage heatmap, literature explorer, review queue, generation lab, and automated report generation.
-4. **Complete Research Manuscript:** Ready-to-audit manuscript draft available in both Markdown (`manuscript/manuscript.md`) and standard LaTeX (`manuscript/manuscript.tex`) with figures and tables regenerated directly from execution data.
-5. **Decoupled Platform Adapter:** Optional bridge for educational platforms (such as Pariksha, `pariksha.aeigs.com`), providing an automated pre-publish quality gate for student test banks.
+   - Malformed options or invalid answer keys (`ERR_OPTION_COUNT`, `ERR_INVALID_KEY`).
+3. **Genuine Live Provider Integrations:** Provider clients in `src/core/generator.py` for Google Gemini (`gemini-1.5-pro`), OpenAI (`gpt-4o`), and Anthropic (`claude-3-5-sonnet`) with explicit error handling (`ProviderMissingCredentialsError`) and raw response provenance capture.
+4. **Interactive Research Workbench:** Full-featured local application with a research dashboard, syllabus coverage heatmap, literature explorer, review queue, generation lab, and automated report generation.
+5. **Decoupled Platform Adapter:** Offline bridge for educational platforms (such as Pariksha, `pariksha.aeigs.com`), providing an automated pre-publish quality gate for student test banks.
 
 ---
 
-## 3. Empirical Benchmark Results Summary ($N=60$)
+## 3. Benchmark Dataset Status & Prototype Baseline Findings
 
-All reported numbers are strictly derived from the recorded execution dataset (`data/datasets/evaluated_benchmark.json`):
+> **Research Integrity Notice on Benchmark Data:**
+> The current baseline dataset ($N=60$) consists of **curated illustrative prototype fixtures** (`data_tier = "illustrative_fixture"`) across 5 core Computer Science disciplines (OS, DBMS, CN, DSA, TOC).
+> These records are designed to validate that the deterministic flaw detection heuristics, scoring rubrics, and reporting scripts operate correctly. They are **not** claimed as verified empirical performance measurements of live AI models, which remain subject to forthcoming live API experimental runs.
+
+### Prototype Fixture Baseline Summary ($N=60$)
+
+All reported numbers are calculated directly from the baseline fixture dataset (`data/datasets/evaluated_benchmark.json`):
 
 | Experimental Condition | Sample ($N$) | Composite Quality (%) | Factual Correctness (1–5) | Syllabus Alignment (1–5) | Traceability (1–5) | Flaw Rate (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Condition A (Generic)** | 20 | $65.25\% \pm 8.51$ | $4.20 \pm 0.00$ | $5.00 \pm 0.00$ | $1.20 \pm 0.00$ | **100.0%** |
-| **Condition B (Syllabus)** | 20 | $92.60\% \pm 0.00$ | $4.70 \pm 0.00$ | $5.00 \pm 0.00$ | $3.60 \pm 0.00$ | **0.0%** |
-| **Condition C (Source-Grounded)** | 20 | **$98.55\% \pm 3.55$** | **$5.00 \pm 0.00$** | **$5.00 \pm 0.00$** | **$5.00 \pm 0.00$** | **15.0%** |
+| **Condition A (Generic Fixtures)** | 20 | $65.25\% \pm 8.51$ | $4.20 \pm 0.00$ | $5.00 \pm 0.00$ | $1.20 \pm 0.00$ | **100.0%** |
+| **Condition B (Syllabus Fixtures)** | 20 | $92.60\% \pm 0.00$ | $4.70 \pm 0.00$ | $5.00 \pm 0.00$ | $3.60 \pm 0.00$ | **0.0%** |
+| **Condition C (Source-Grounded Fixtures)** | 20 | **$98.55\% \pm 3.55$** | **$5.00 \pm 0.00$** | **$5.00 \pm 0.00$** | **$5.00 \pm 0.00$** | **15.0%** |
 
-- **One-Way ANOVA:** $F = 222.60$, $p = 1.17 \times 10^{-27}$ (Statistically Highly Significant).
-- **Flaw Elimination:** Prohibited options ("All/None of above", 40%) and answer leakage (20%) in Condition A were reduced to 0% in Condition B and Condition C.
-- *(Note: Condition C recorded a 15% flaw flag strictly due to length outlier heuristics on extended mathematical proofs, while exhibiting 0% structural flaws and 0% factual errors.)*
+- **Pipeline ANOVA Check:** $F = 222.60, p = 1.17 \times 10^{-27}$ (Verifies statistical tool sensitivity on baseline cohorts).
+- **Flaw Heuristics:** The audit engine detected uncited claims (100%), prohibited options ("All/None of above", 40%), and answer leakage (20%) in Condition A test fixtures, and verified their absence in Condition B and C fixtures.
+- *(Note: Condition C recorded a 15% flaw flag due to length outlier heuristics on detailed mathematical proofs, while exhibiting 0% structural flaws and 0% factual errors.)*
 
 ---
 
@@ -74,6 +80,20 @@ This writes publication-quality figures (`manuscript/figures/*.png`) and LaTeX t
 python tests/run_tests.py
 ```
 Executes all 13 unit and integration tests across evaluator rules, generator conditions, analyzer statistics, and platform adapters.
+
+### E. Configuring Live Model Generation (Optional)
+To execute genuine live API generation experiments rather than the baseline fixtures, export your provider API key:
+```bash
+# For Google Gemini (gemini-1.5-pro, gemini-2.0-flash)
+export GEMINI_API_KEY="your-gemini-key"
+
+# For OpenAI (gpt-4o, gpt-4o-mini)
+export OPENAI_API_KEY="your-openai-key"
+
+# For Anthropic (claude-3-5-sonnet)
+export ANTHROPIC_API_KEY="your-anthropic-key"
+```
+When configured, requests via the Web Workbench Generation Lab or `MCQGenerator.generate_live()` will dispatch live API calls and record complete model provenance (model ID, timestamps, raw responses, parameters). Without credentials, the system raises an explicit `ProviderMissingCredentialsError`.
 
 ---
 

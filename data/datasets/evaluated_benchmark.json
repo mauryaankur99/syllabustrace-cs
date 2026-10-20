@@ -14,12 +14,14 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-cpu-scheduling",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -32,9 +34,9 @@
       "traceability": 1.2,
       "composite_quality": 74.5
     },
-    "reviewer_notes": "Generic stem. Distractor B is visibly longer than others (length disparity flaw).",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Generic stem. Distractor B is visibly longer than others (length disparity flaw). [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-os-002",
@@ -51,12 +53,14 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-concurrency",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -71,9 +75,9 @@
       "traceability": 1.2,
       "composite_quality": 55.5
     },
-    "reviewer_notes": "Contains answer leakage: stem mentions deadlock, options repeat deadlock in every choice.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Contains answer leakage: stem mentions deadlock, options repeat deadlock in every choice. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-os-003",
@@ -90,12 +94,14 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-memory-management",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -110,9 +116,9 @@
       "traceability": 1.2,
       "composite_quality": 55.0
     },
-    "reviewer_notes": "Contains 'All of the above' option anti-pattern.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Contains 'All of the above' option anti-pattern. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-os-004",
@@ -129,12 +135,14 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-file-storage",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -149,9 +157,9 @@
       "traceability": 1.2,
       "composite_quality": 55.5
     },
-    "reviewer_notes": "Option A contains parenthetical giveaway.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Option A contains parenthetical giveaway. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-dbms-001",
@@ -168,12 +176,14 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-normalization",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -188,9 +198,9 @@
       "traceability": 1.2,
       "composite_quality": 55.5
     },
-    "reviewer_notes": "Severe answer leakage: option B defines the answer directly.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Severe answer leakage: option B defines the answer directly. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-dbms-002",
@@ -207,12 +217,14 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-transactions",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -226,9 +238,9 @@
       "traceability": 1.2,
       "composite_quality": 64.0
     },
-    "reviewer_notes": "Contains 'None of the above' distractor.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Contains 'None of the above' distractor. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-dbms-003",
@@ -245,12 +257,14 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-relational-model",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -263,9 +277,9 @@
       "traceability": 1.2,
       "composite_quality": 74.5
     },
-    "reviewer_notes": "Lacks canonical citation.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Lacks canonical citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-dbms-004",
@@ -282,12 +296,14 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-indexing",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -302,9 +318,9 @@
       "traceability": 1.2,
       "composite_quality": 55.0
     },
-    "reviewer_notes": "Contains 'All of the above' flaw.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Contains 'All of the above' flaw. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-cn-001",
@@ -321,12 +337,14 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-transport-app",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -341,9 +359,9 @@
       "traceability": 1.2,
       "composite_quality": 55.5
     },
-    "reviewer_notes": "Length disparity and explanation inside option B.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Length disparity and explanation inside option B. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-cn-002",
@@ -360,12 +378,14 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-data-link",
     "cognitive_level": "Application",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -378,9 +398,9 @@
       "traceability": 1.2,
       "composite_quality": 74.5
     },
-    "reviewer_notes": "Calculation correct, but no reference textbook cited.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Calculation correct, but no reference textbook cited. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-cn-003",
@@ -397,12 +417,14 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-network-layer",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -417,9 +439,9 @@
       "traceability": 1.2,
       "composite_quality": 55.5
     },
-    "reviewer_notes": "Parenthetical expansion in option A.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Parenthetical expansion in option A. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-cn-004",
@@ -436,12 +458,14 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-network-layer",
     "cognitive_level": "Application",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -454,9 +478,9 @@
       "traceability": 1.2,
       "composite_quality": 74.5
     },
-    "reviewer_notes": "Lacks citation.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Lacks citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-dsa-001",
@@ -473,12 +497,14 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-complexity",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -492,9 +518,9 @@
       "traceability": 1.2,
       "composite_quality": 65.5
     },
-    "reviewer_notes": "Severe length outlier in option B with embedded explanation.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Severe length outlier in option B with embedded explanation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-dsa-002",
@@ -511,12 +537,14 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-graphs",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -530,9 +558,9 @@
       "traceability": 1.2,
       "composite_quality": 64.0
     },
-    "reviewer_notes": "Includes 'None of the above' flaw.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Includes 'None of the above' flaw. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-dsa-003",
@@ -549,12 +577,14 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-linear-trees",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -567,9 +597,9 @@
       "traceability": 1.2,
       "composite_quality": 74.5
     },
-    "reviewer_notes": "Lacks canonical citation.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Lacks canonical citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-dsa-004",
@@ -586,12 +616,14 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-complexity",
     "cognitive_level": "Application",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -604,9 +636,9 @@
       "traceability": 1.2,
       "composite_quality": 74.5
     },
-    "reviewer_notes": "Valid application item, no textbook provenance.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Valid application item, no textbook provenance. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-toc-001",
@@ -623,12 +655,14 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-regular-languages",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -641,9 +675,9 @@
       "traceability": 1.2,
       "composite_quality": 74.5
     },
-    "reviewer_notes": "Negative stem phrasing ('NOT regular').",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Negative stem phrasing ('NOT regular'). [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-toc-002",
@@ -660,12 +694,14 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-context-free",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -679,9 +715,9 @@
       "traceability": 1.2,
       "composite_quality": 64.0
     },
-    "reviewer_notes": "Contains 'All of the above' flaw.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Contains 'All of the above' flaw. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-toc-003",
@@ -698,12 +734,14 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-turing-decidability",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -717,9 +755,9 @@
       "traceability": 1.2,
       "composite_quality": 64.0
     },
-    "reviewer_notes": "Contains 'None of the above' option.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Contains 'None of the above' option. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-gen-toc-004",
@@ -736,12 +774,14 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-turing-decidability",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": null,
     "model_metadata": {
-      "provider": "mock",
-      "model": "generic-baseline-v1",
-      "temperature": 0.7,
-      "prompt_version": "cond-a-zero-shot"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-generic-v1",
+      "is_simulated": true
     },
     "review_status": "pending",
     "flaw_flags": [
@@ -754,9 +794,9 @@
       "traceability": 1.2,
       "composite_quality": 74.5
     },
-    "reviewer_notes": "Clean recall question, missing citation.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Clean recall question, missing citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-os-001",
@@ -773,18 +813,20 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-concurrency",
     "cognitive_level": "Analysis",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Operating Systems Standard Syllabus",
       "edition": "GATE CS 2026",
       "chapter": "Concurrency & Deadlocks"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -793,9 +835,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Well-structured computational problem, options balanced in length, no answer leakage.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Well-structured computational problem, options balanced in length, no answer leakage. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-os-002",
@@ -812,18 +854,20 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-memory-management",
     "cognitive_level": "Application",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Operating Systems Standard Syllabus",
       "edition": "GATE CS 2026",
       "chapter": "Virtual Memory"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -832,9 +876,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Standard GATE numerical MCQ. Distractors plausible from common student calculation errors.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Standard GATE numerical MCQ. Distractors plausible from common student calculation errors. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-os-003",
@@ -851,18 +895,20 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-memory-management",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Operating Systems Standard Syllabus",
       "edition": "GATE CS 2026",
       "chapter": "Page Replacement"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -871,9 +917,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Clean distractors, syllabus aligned.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Clean distractors, syllabus aligned. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-os-004",
@@ -890,18 +936,20 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-file-storage",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Operating Systems Standard Syllabus",
       "edition": "GATE CS 2026",
       "chapter": "Disk Scheduling"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -910,9 +958,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Balanced options, clear theoretical distinction.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Balanced options, clear theoretical distinction. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-dbms-001",
@@ -929,18 +977,20 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-normalization",
     "cognitive_level": "Analysis",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "DBMS Syllabus Guidelines",
       "edition": "GATE CS 2026",
       "chapter": "Relational Normalization"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -949,9 +999,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Classic GATE question. Concise options.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Classic GATE question. Concise options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-dbms-002",
@@ -968,18 +1018,20 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-transactions",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "DBMS Syllabus Guidelines",
       "edition": "GATE CS 2026",
       "chapter": "Concurrency Control"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -988,9 +1040,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Clean distractors addressing locking variants.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Clean distractors addressing locking variants. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-dbms-003",
@@ -1007,18 +1059,20 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-relational-model",
     "cognitive_level": "Application",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "DBMS Syllabus Guidelines",
       "edition": "GATE CS 2026",
       "chapter": "Relational Algebra"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1027,9 +1081,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Well-calibrated distractor choices.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Well-calibrated distractor choices. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-dbms-004",
@@ -1046,18 +1100,20 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-indexing",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "DBMS Syllabus Guidelines",
       "edition": "GATE CS 2026",
       "chapter": "B+ Trees"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1066,9 +1122,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Standard definition test.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Standard definition test. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-cn-001",
@@ -1085,18 +1141,20 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-data-link",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Computer Networks Syllabus Guide",
       "edition": "GATE CS 2026",
       "chapter": "Sliding Window"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1105,9 +1163,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Clean mathematical formula options.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Clean mathematical formula options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-cn-002",
@@ -1124,18 +1182,20 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-transport-app",
     "cognitive_level": "Application",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Computer Networks Syllabus Guide",
       "edition": "GATE CS 2026",
       "chapter": "Congestion Control"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1144,9 +1204,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Precise state transition question.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Precise state transition question. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-cn-003",
@@ -1163,18 +1223,20 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-network-layer",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Computer Networks Syllabus Guide",
       "edition": "GATE CS 2026",
       "chapter": "Routing Protocols"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1183,9 +1245,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Balanced conceptual options.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Balanced conceptual options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-cn-004",
@@ -1202,18 +1264,20 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-network-layer",
     "cognitive_level": "Application",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Computer Networks Syllabus Guide",
       "edition": "GATE CS 2026",
       "chapter": "IPv4 Subnetting"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1222,9 +1286,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Standard CIDR network design item.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Standard CIDR network design item. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-dsa-001",
@@ -1241,18 +1305,20 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-complexity",
     "cognitive_level": "Analysis",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Algorithms Syllabus Guide",
       "edition": "GATE CS 2026",
       "chapter": "Recurrence Relations"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1261,9 +1327,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Tests Case 3 regularity condition.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Tests Case 3 regularity condition. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-dsa-002",
@@ -1280,18 +1346,20 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-graphs",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Algorithms Syllabus Guide",
       "edition": "GATE CS 2026",
       "chapter": "Minimum Spanning Trees"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1300,9 +1368,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Rigorous discrete math / algorithms theorem check.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Rigorous discrete math / algorithms theorem check. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-dsa-003",
@@ -1319,18 +1387,20 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-linear-trees",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Algorithms Syllabus Guide",
       "edition": "GATE CS 2026",
       "chapter": "Balanced Search Trees"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1339,9 +1409,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Clean item.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Clean item. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-dsa-004",
@@ -1358,18 +1428,20 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-paradigms",
     "cognitive_level": "Application",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Algorithms Syllabus Guide",
       "edition": "GATE CS 2026",
       "chapter": "Dynamic Programming"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1378,9 +1450,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Direct algorithmic definition check.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Direct algorithmic definition check. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-toc-001",
@@ -1397,18 +1469,20 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-context-free",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Theory of Computation Syllabus",
       "edition": "GATE CS 2026",
       "chapter": "Closure Properties"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1417,9 +1491,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Frequent GATE question on closure properties.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Frequent GATE question on closure properties. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-toc-002",
@@ -1436,18 +1510,20 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-regular-languages",
     "cognitive_level": "Application",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Theory of Computation Syllabus",
       "edition": "GATE CS 2026",
       "chapter": "DFA Minimization"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1456,9 +1532,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Exact state count calculation.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Exact state count calculation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-toc-003",
@@ -1475,18 +1551,20 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-turing-decidability",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Theory of Computation Syllabus",
       "edition": "GATE CS 2026",
       "chapter": "Decidability Table"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1495,9 +1573,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Crucial decidability boundary distinction.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Crucial decidability boundary distinction. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.587925",
+    "updated_at": "2026-10-20T09:59:10.587925"
   },
   {
     "id": "mcq-syl-toc-004",
@@ -1514,18 +1592,20 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-regular-languages",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_name": "Theory of Computation Syllabus",
       "edition": "GATE CS 2026",
       "chapter": "Pumping Lemma"
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "syllabus-constrained-v1",
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
       "temperature": 0.2,
-      "prompt_version": "cond-b-structured"
+      "prompt_version": "prototype-syllabus_constrained-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 4.7,
@@ -1534,9 +1614,9 @@
       "traceability": 3.6,
       "composite_quality": 92.6
     },
-    "reviewer_notes": "Rigorous definition verification.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Rigorous definition verification. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-os-001",
@@ -1553,6 +1633,7 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-concurrency",
     "cognitive_level": "Analysis",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-silberschatz-os10",
       "citation_text": "Operating System Concepts, 10th Edition",
@@ -1563,12 +1644,13 @@
       "verified_excerpt": "A state is safe if the system can allocate resources to each process (up to its maximum) in some order and still avoid a deadlock. More formally, a system state is safe only if there exists a safe sequence <P1, P2, ..., Pn> of processes."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -1577,9 +1659,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Exemplary source-grounded item. Full citation, exact excerpt corroboration, zero item-writing flaws.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Exemplary source-grounded item. Full citation, exact excerpt corroboration, zero item-writing flaws. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-os-002",
@@ -1596,6 +1678,7 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-memory-management",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-silberschatz-os10",
       "citation_text": "Operating System Concepts, 10th Edition",
@@ -1606,12 +1689,13 @@
       "verified_excerpt": "The hardware support for paging involves the Translation Lookaside Buffer (TLB), an associative, high-speed cache."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -1620,9 +1704,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Verified against textbook. Options distinct and targeted.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Verified against textbook. Options distinct and targeted. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-os-003",
@@ -1639,6 +1723,7 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-cpu-scheduling",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-silberschatz-os10",
       "citation_text": "Operating System Concepts, 10th Edition",
@@ -1649,12 +1734,13 @@
       "verified_excerpt": "Under nonpreemptive scheduling, once the CPU has been allocated to a process, the process keeps the CPU until it releases it, either by terminating or by switching to the waiting state."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -1663,9 +1749,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Clean item, flawless grounding.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Clean item, flawless grounding. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-os-004",
@@ -1682,6 +1768,7 @@
     "subject": "Operating Systems",
     "syllabus_node_id": "os-file-storage",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-tanenbaum-mos4",
       "citation_text": "Modern Operating Systems, 4th Edition",
@@ -1692,12 +1779,13 @@
       "verified_excerpt": "The i-node lists the attributes and disk addresses of the file's blocks."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -1706,9 +1794,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Concise, verified against standard OS architecture text.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Concise, verified against standard OS architecture text. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-dbms-001",
@@ -1725,6 +1813,7 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-transactions",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-silberschatz-dbms7",
       "citation_text": "Database System Concepts, 7th Edition",
@@ -1735,12 +1824,13 @@
       "verified_excerpt": "Two instructions l_i and l_j of transactions T_i and T_j conflict if they operate on the same data item Q and at least one of them is a write."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -1749,9 +1839,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Exact canonical wording. Clean distractors.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Exact canonical wording. Clean distractors. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-dbms-002",
@@ -1768,6 +1858,7 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-normalization",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-silberschatz-dbms7",
       "citation_text": "Database System Concepts, 7th Edition",
@@ -1778,12 +1869,13 @@
       "verified_excerpt": "A relation schema R is in BCNF with respect to a set F of functional dependencies if, for all functional dependencies in F+ of the form alpha -> beta, where alpha subset R and beta subset R, at least one of the following holds: alpha -> beta is trivial (beta subset alpha), or alpha is a superkey for R."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -1792,9 +1884,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Distractor B targets the exact misconception distinguishing 3NF from BCNF.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Distractor B targets the exact misconception distinguishing 3NF from BCNF. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-dbms-003",
@@ -1811,6 +1903,7 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-indexing",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-silberschatz-dbms7",
       "citation_text": "Database System Concepts, 7th Edition",
@@ -1821,12 +1914,13 @@
       "verified_excerpt": "A B+ tree index is a balanced tree where every leaf node is at the same depth. In a B+ tree of order n, non-leaf nodes have between ceil(n/2) and n children. Leaf nodes store data pointers or record keys and are linked sequentially."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -1835,9 +1929,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Thoroughly grounded question on B vs B+ tree architecture.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Thoroughly grounded question on B vs B+ tree architecture. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-dbms-004",
@@ -1854,6 +1948,7 @@
     "subject": "Database Management Systems",
     "syllabus_node_id": "dbms-relational-model",
     "cognitive_level": "Analysis",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-silberschatz-dbms7",
       "citation_text": "Database System Concepts, 7th Edition",
@@ -1864,12 +1959,13 @@
       "verified_excerpt": "The division operator is suited to queries that include the phrase 'for all'."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -1878,9 +1974,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Rigorous definition of relational division.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Rigorous definition of relational division. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-cn-001",
@@ -1897,6 +1993,7 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-transport-app",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-kurose-ross-cn8",
       "citation_text": "Computer Networking: A Top-Down Approach, 8th Edition",
@@ -1907,12 +2004,13 @@
       "verified_excerpt": "In slow start, the value of cwnd begins at 1 MSS and increases by 1 MSS every time a transmitted segment is acknowledged, effectively doubling cwnd every round-trip time."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -1921,9 +2019,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Flawless citation and option contrast.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Flawless citation and option contrast. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-cn-002",
@@ -1940,6 +2038,7 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-data-link",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-kurose-ross-cn8",
       "citation_text": "Computer Networking: A Top-Down Approach, 8th Edition",
@@ -1950,12 +2049,13 @@
       "verified_excerpt": "An r-bit CRC code appended to a d-bit data frame can detect all burst errors of length less than r + 1 bits, and any odd number of bit errors provided the generator contains factor (x + 1)."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -1964,9 +2064,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Precise mathematical bounds.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Precise mathematical bounds. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-cn-003",
@@ -1983,6 +2083,7 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-network-layer",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-kurose-ross-cn8",
       "citation_text": "Computer Networking: A Top-Down Approach, 8th Edition",
@@ -1993,12 +2094,13 @@
       "verified_excerpt": "Link-state algorithms require global knowledge of the network topology. Distance-vector algorithms are iterative, asynchronous, and distributed."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [
       "FLAW_ANSWER_LEAKAGE"
     ],
@@ -2009,9 +2111,9 @@
       "traceability": 5.0,
       "composite_quality": 90.0
     },
-    "reviewer_notes": "Well-balanced theoretical comparison.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Well-balanced theoretical comparison. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-cn-004",
@@ -2028,6 +2130,7 @@
     "subject": "Computer Networks",
     "syllabus_node_id": "cn-transport-app",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-kurose-ross-cn8",
       "citation_text": "Computer Networking: A Top-Down Approach, 8th Edition",
@@ -2038,12 +2141,13 @@
       "verified_excerpt": "TCP fast retransmit: If the TCP sender receives three duplicate ACKs for the same data, it takes this as an indication that the segment following the segment that has been ACKed three times has been lost."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -2052,9 +2156,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Standard textbook fast retransmit item.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Standard textbook fast retransmit item. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-dsa-001",
@@ -2071,6 +2175,7 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-graphs",
     "cognitive_level": "Analysis",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-cormen-clrs4",
       "citation_text": "Introduction to Algorithms, 4th Edition",
@@ -2081,12 +2186,13 @@
       "verified_excerpt": "Dijkstra's algorithm solves the single-source shortest-paths problem on a weighted, directed graph G = (V, E) for the case in which all edge weights are nonnegative. With a binary min-heap implementation, the running time is O((V + E) log V). If negative weight edges exist, Dijkstra's algorithm can produce incorrect shortest path distances."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [
       "FLAW_ANSWER_LEAKAGE"
     ],
@@ -2097,9 +2203,9 @@
       "traceability": 5.0,
       "composite_quality": 90.0
     },
-    "reviewer_notes": "Deep conceptual reasoning question grounded in CLRS proof structure.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Deep conceptual reasoning question grounded in CLRS proof structure. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-dsa-002",
@@ -2116,6 +2222,7 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-complexity",
     "cognitive_level": "Application",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-cormen-clrs4",
       "citation_text": "Introduction to Algorithms, 4th Edition",
@@ -2126,12 +2233,13 @@
       "verified_excerpt": "The master method provides a 'cookbook' method for solving recurrences of the form T(n) = aT(n/b) + f(n), where a >= 1 and b > 1 are constants and f(n) is an asymptotically positive function. Three cases compare f(n) with n^(log_b(a))."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -2140,9 +2248,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Classic textbook Master Theorem calculation.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Classic textbook Master Theorem calculation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-dsa-003",
@@ -2159,6 +2267,7 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-linear-trees",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-cormen-clrs4",
       "citation_text": "Introduction to Algorithms, 4th Edition",
@@ -2169,12 +2278,13 @@
       "verified_excerpt": "The operations INSERT and DELETE take O(h) time on a binary search tree of height h."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -2183,9 +2293,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Clarifies distinction between O(h) and worst-case O(n).",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Clarifies distinction between O(h) and worst-case O(n). [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-dsa-004",
@@ -2202,6 +2312,7 @@
     "subject": "Data Structures and Algorithms",
     "syllabus_node_id": "dsa-graphs",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-cormen-clrs4",
       "citation_text": "Introduction to Algorithms, 4th Edition",
@@ -2212,12 +2323,13 @@
       "verified_excerpt": "A sequence of m operations on n elements takes O(m alpha(n)) time."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [
       "FLAW_LENGTH_OUTLIER"
     ],
@@ -2228,9 +2340,9 @@
       "traceability": 5.0,
       "composite_quality": 91.0
     },
-    "reviewer_notes": "Exact theoretical bound.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Exact theoretical bound. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-toc-001",
@@ -2247,6 +2359,7 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-regular-languages",
     "cognitive_level": "Recall",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-sipser-toc3",
       "citation_text": "Introduction to the Theory of Computation, 3rd Edition",
@@ -2257,12 +2370,13 @@
       "verified_excerpt": "The Pumping Lemma states that if A is a regular language, then there is a number p (the pumping length) where, if s is any string in A of length at least p, then s may be divided into three pieces, s = xyz, satisfying: (1) for each i >= 0, xy^i z in A, (2) |y| > 0, and (3) |xy| <= p."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -2271,9 +2385,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Grounded in Sipser's canonical 3 conditions.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Grounded in Sipser's canonical 3 conditions. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-toc-002",
@@ -2290,6 +2404,7 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-turing-decidability",
     "cognitive_level": "Analysis",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-sipser-toc3",
       "citation_text": "Introduction to the Theory of Computation, 3rd Edition",
@@ -2300,12 +2415,13 @@
       "verified_excerpt": "The Acceptance Problem for Turing Machines, A_TM = {<M, w> | M is a TM and M accepts w}, is undecidable. Rice's Theorem states that any non-trivial semantic property of the language recognized by a Turing machine is undecidable."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -2314,9 +2430,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Deep theoretical foundation item with authentic options.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Deep theoretical foundation item with authentic options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-toc-003",
@@ -2333,6 +2449,7 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-context-free",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-sipser-toc3",
       "citation_text": "Introduction to the Theory of Computation, 3rd Edition",
@@ -2343,12 +2460,13 @@
       "verified_excerpt": "Deterministic Pushdown Automata (DPDA) recognize a strict subset of CFLs, unlike finite automata where DFA and NFA have equivalent recognition power."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -2357,9 +2475,9 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Grounded in standard textbook distinction between DCFLs and general CFLs.",
-    "created_at": "2026-10-20T09:30:53.542119",
-    "updated_at": "2026-10-20T09:30:53.542119"
+    "reviewer_notes": "Grounded in standard textbook distinction between DCFLs and general CFLs. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   },
   {
     "id": "mcq-src-toc-004",
@@ -2376,6 +2494,7 @@
     "subject": "Theory of Computation",
     "syllabus_node_id": "toc-regular-languages",
     "cognitive_level": "Comprehension",
+    "data_tier": "illustrative_fixture",
     "source_citation": {
       "source_id": "src-sipser-toc3",
       "citation_text": "Introduction to the Theory of Computation, 3rd Edition",
@@ -2386,12 +2505,13 @@
       "verified_excerpt": "The Myhill-Nerode Theorem states that a language is regular if and only if it has a finite number of equivalence classes."
     },
     "model_metadata": {
-      "provider": "mock",
-      "model": "source-grounded-v1",
-      "temperature": 0.1,
-      "prompt_version": "cond-c-source-anchored"
+      "provider": "offline_curated_fixture",
+      "model": "curated_prototype_v1",
+      "temperature": 0.2,
+      "prompt_version": "prototype-source_grounded-v1",
+      "is_simulated": true
     },
-    "review_status": "approved",
+    "review_status": "pending",
     "flaw_flags": [],
     "scores": {
       "factual_correctness": 5.0,
@@ -2400,8 +2520,8 @@
       "traceability": 5.0,
       "composite_quality": 100.0
     },
-    "reviewer_notes": "Rigorous Myhill-Nerode theorem question.",
-    "created_at": "2026-10-20T09:30:53.543191",
-    "updated_at": "2026-10-20T09:30:53.543191"
+    "reviewer_notes": "Rigorous Myhill-Nerode theorem question. [Fixture item for pipeline verification. Pending recorded human expert review.]",
+    "created_at": "2026-10-20T09:59:10.588904",
+    "updated_at": "2026-10-20T09:59:10.588904"
   }
 ]

@@ -10,10 +10,10 @@ The core mission is to empirically demonstrate that **syllabus-constrained and c
 ## 2. Research Integrity & Non-Commercial Independence
 1. **Separation from Commercial Activities:** SyllabusTrace-CS is strictly separated from commercial websites and products. While the author has previous experience building educational platforms (such as Pariksha, `pariksha.aeigs.com`), Pariksha serves solely as an external motivation and adapter case study. SyllabusTrace-CS is an independent, open-source scientific benchmark.
 2. **Researcher Identity:** The project is authored by Ankur Maurya, an Independent Researcher and Computer Science & Engineering graduate from Gujarat, India. The project explicitly avoids fabricating university professorships, endorsements, or institutional appointments.
-3. **Research-Access Program Alignment:** All system goals and operational workflows are designed to satisfy the strict non-commercial research criteria of programs like the OpenAI Researcher Access Program and Anthropic Research Grants.
-4. **Data Tier Separation:** The framework maintains an explicit distinction between:
-   - **Genuine Research Data:** $N=60$ audited items across 5 core Computer Science disciplines, with full provenance and verified experimental evaluations.
-   - **Demonstration / Scratch Data:** Mock samples in `data/datasets/demo_samples.json` clearly tagged for UI testing and excluded from statistical reporting.
+3. **Research-Access Program Context:** The workbench is built with open, non-commercial research principles. However, project design and repository structure do not substitute for individual institutional eligibility requirements (e.g., active university appointments or doctoral affiliations). No guarantee of grant eligibility or university endorsement is claimed.
+4. **Data Tier Separation:** The framework maintains an explicit, machine-readable distinction between:
+   - **Prototype Baseline Fixtures (`data_tier: illustrative_fixture`):** The $N=60$ curated pedagogical baseline items (`data/fixtures/demo_curated_benchmark_60.json` and `data/datasets/benchmark_questions.json`) used to validate deterministic IWF detection, scoring rubrics, and reporting pipelines.
+   - **Genuine Experimental Runs (`data_tier: experimental_run`):** Dedicated data tier for live model API executions (Gemini, Claude, GPT-4o) capturing model ID, timestamps, raw prompts, verbatim responses, provider parameters, and reviewer audit decisions. Mock/baseline fixtures are excluded from empirical model superiority claims.
 
 ---
 
