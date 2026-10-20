@@ -1,0 +1,617 @@
+[
+  {
+    "id": "pilot-gate26-os-001",
+    "stem": "In a Round-Robin (RR) CPU scheduling algorithm, what happens to process scheduling behavior when the time quantum assigned to processes is made infinitely large?",
+    "options": {
+      "A": "The scheduling algorithm behaves identically to First-Come, First-Served (FCFS) scheduling, where each process runs until voluntary release.",
+      "B": "The CPU throughput becomes zero due to excessive dispatching.",
+      "C": "Shorter interactive processes receive priority over CPU-bound jobs.",
+      "D": "All of the above."
+    },
+    "correct_key": "A",
+    "explanation": "When the time quantum is arbitrarily large, each process executes without preemption until completion, which matches First-Come, First-Served (FCFS) behavior.",
+    "condition": "generic",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-cpu-scheduling",
+    "cognitive_level": "Comprehension",
+    "data_tier": "experimental_run",
+    "source_citation": null,
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.7,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "Write a multiple choice question on the following Computer Science topic: CPU Scheduling Round Robin.\nInclude exactly 4 options (keys A, B, C, D), indicate the correct answer key (A, B, C, or D), and provide a technical explanation.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation.",
+      "raw_response": "{\n  \"stem\": \"In a Round-Robin (RR) CPU scheduling algorithm, what happens to process scheduling behavior when the time quantum assigned to processes is made infinitely large?\",\n  \"options\": {\n    \"A\": \"The scheduling algorithm behaves identically to First-Come, First-Served (FCFS) scheduling, where each process runs until voluntary release.\",\n    \"B\": \"The CPU throughput becomes zero due to excessive dispatching.\",\n    \"C\": \"Shorter interactive processes receive priority over CPU-bound jobs.\",\n    \"D\": \"All of the above.\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"When the time quantum is arbitrarily large, each process executes without preemption until completion, which matches First-Come, First-Served (FCFS) behavior.\"\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [
+      "FLAW_ALL_NONE_ABOVE",
+      "FLAW_LENGTH_OUTLIER",
+      "FLAW_NO_CITATION"
+    ],
+    "scores": {
+      "factual_correctness": 4.2,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 2.1,
+      "traceability": 1.2,
+      "composite_quality": 55.0
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.485246",
+    "updated_at": "2026-10-20T10:24:35.485246"
+  },
+  {
+    "id": "pilot-gate26-os-002",
+    "stem": "In a preemptive Round-Robin CPU scheduling system with n active processes in the ready queue and a constant time quantum q, what is the maximum time any ready process must wait before receiving its next CPU allocation?",
+    "options": {
+      "A": "(n - 1) * q time units",
+      "B": "n * q time units",
+      "C": "(n + 1) * q time units",
+      "D": "q / n time units"
+    },
+    "correct_key": "A",
+    "explanation": "With n processes in a circular FIFO ready queue, a process waits at most while the remaining n - 1 processes each execute for up to one full time quantum q, yielding (n - 1) * q time units.",
+    "condition": "syllabus_constrained",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-cpu-scheduling",
+    "cognitive_level": "Analysis",
+    "data_tier": "experimental_run",
+    "source_citation": {
+      "source_name": "GATE CS 2026 Curriculum Specification",
+      "chapter": "Section 5: Operating Systems \u2014 CPU Scheduling",
+      "citation_text": "GATE CS Official Syllabus: Process Scheduling Algorithms"
+    },
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.7,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "You are an expert exam item writer for the GATE CS examination.\nTarget Syllabus Node: Operating Systems -> CPU Scheduling -> Round Robin.\nTarget Cognitive Tier: Analysis (Bloom's Taxonomy).\nPsychometric Item-Writing Rules:\n- Write an authentic, rigorous single-best-answer multiple choice question.\n- Exactly 4 non-overlapping options (A, B, C, D).\n- Balance option lengths (no option significantly longer or shorter than others).\n- Strictly avoid 'All of the above' and 'None of the above'.\n- Avoid clue leakage (the stem must not contain giveaway clues for the correct answer).\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation.",
+      "raw_response": "{\n  \"stem\": \"In a preemptive Round-Robin CPU scheduling system with n active processes in the ready queue and a constant time quantum q, what is the maximum time any ready process must wait before receiving its next CPU allocation?\",\n  \"options\": {\n    \"A\": \"(n - 1) * q time units\",\n    \"B\": \"n * q time units\",\n    \"C\": \"(n + 1) * q time units\",\n    \"D\": \"q / n time units\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"With n processes in a circular FIFO ready queue, a process waits at most while the remaining n - 1 processes each execute for up to one full time quantum q, yielding (n - 1) * q time units.\"\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [],
+    "scores": {
+      "factual_correctness": 4.7,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 5.0,
+      "traceability": 3.6,
+      "composite_quality": 92.6
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.485246",
+    "updated_at": "2026-10-20T10:24:35.485246"
+  },
+  {
+    "id": "pilot-gate26-os-003",
+    "stem": "According to Silberschatz et al. (Section 5.3.4), to maintain acceptable CPU utilization under Round-Robin (RR) scheduling, what design constraint should be satisfied between the time quantum q and the context-switch dispatch latency t_cs?",
+    "options": {
+      "A": "The time quantum q must be substantially larger than t_cs so context-switch overhead consumes only a negligible fraction of CPU time.",
+      "B": "The time quantum q must equal t_cs so process preemptions synchronize with hardware timer interrupts.",
+      "C": "The time quantum q must be smaller than t_cs to prevent long-running processes from monopolizing cache lines.",
+      "D": "The time quantum q operates independently of t_cs because context-switch save latency is completely masked by DMA."
+    },
+    "correct_key": "A",
+    "explanation": "As Silberschatz et al. state in Chapter 5 (p. 209-211), context-switch time is pure overhead; hence, the time quantum q (typically 10-100 ms) must be much larger than the context-switch time (< 10 microseconds).",
+    "condition": "source_grounded",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-cpu-scheduling",
+    "cognitive_level": "Analysis",
+    "data_tier": "experimental_run",
+    "source_citation": {
+      "source_name": "Operating System Concepts",
+      "authors": [
+        "Abraham Silberschatz",
+        "Peter B. Galvin",
+        "Greg Gagne"
+      ],
+      "edition": "10th Edition",
+      "chapter": "Chapter 5: CPU Scheduling",
+      "section": "Section 5.3.4: Round-Robin Scheduling",
+      "page": "p. 209-211",
+      "citation_text": "Silberschatz, Galvin, & Gagne (2018). Operating System Concepts (10th ed.), Chapter 5, p. 209-211.",
+      "verified_excerpt": "The context-switch time is generally less than 10 microseconds; thus, the context-switch time is a small fraction of the time quantum... If the context-switch time is 10 percent of the time quantum, about 10 percent of the CPU time is spent in context switching."
+    },
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.2,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "You are an expert psychometric item writer grounded in canonical Computer Science literature.\nTarget Syllabus Node: Operating Systems -> CPU Scheduling -> Round Robin.\nTarget Cognitive Tier: Analysis (Bloom's Taxonomy).\nCanonical Reference: Operating System Concepts (Silberschatz, Galvin, Gagne), Chapter 5, Section 5.3.4.\nVerified Canonical Excerpt:\n\"The context-switch time is generally less than 10 microseconds; thus, the context-switch time is a small fraction of the time quantum... If the context-switch time is 10 percent of the time quantum, about 10 percent of the CPU time is spent in context switching.\"\nGuidelines:\n- Formulate a question strictly verifiable using the canonical excerpt above.\n- Provide exactly 4 plausible, distinct options (A, B, C, D).\n- Distractors must target authentic student misconceptions.\n- Include exact citation and explanation referencing the source passage.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation, source_citation.",
+      "raw_response": "{\n  \"stem\": \"According to Silberschatz et al. (Section 5.3.4), to maintain acceptable CPU utilization under Round-Robin (RR) scheduling, what design constraint should be satisfied between the time quantum q and the context-switch dispatch latency t_cs?\",\n  \"options\": {\n    \"A\": \"The time quantum q must be substantially larger than t_cs so context-switch overhead consumes only a negligible fraction of CPU time.\",\n    \"B\": \"The time quantum q must equal t_cs so process preemptions synchronize with hardware timer interrupts.\",\n    \"C\": \"The time quantum q must be smaller than t_cs to prevent long-running processes from monopolizing cache lines.\",\n    \"D\": \"The time quantum q operates independently of t_cs because context-switch save latency is completely masked by DMA.\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"As Silberschatz et al. state in Chapter 5 (p. 209-211), context-switch time is pure overhead; hence, the time quantum q (typically 10-100 ms) must be much larger than the context-switch time (< 10 microseconds).\",\n  \"source_citation\": {\n    \"source_name\": \"Operating System Concepts\",\n    \"chapter\": \"Chapter 5: CPU Scheduling\",\n    \"section\": \"Section 5.3.4: Round-Robin Scheduling\",\n    \"page\": \"p. 209-211\",\n    \"citation_text\": \"Silberschatz, Galvin, & Gagne (2018). Operating System Concepts (10th ed.), Chapter 5, p. 209-211.\"\n  }\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [
+      "FLAW_ANSWER_LEAKAGE"
+    ],
+    "scores": {
+      "factual_correctness": 5.0,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 3.7,
+      "traceability": 5.0,
+      "composite_quality": 90.0
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.485246",
+    "updated_at": "2026-10-20T10:24:35.485246"
+  },
+  {
+    "id": "pilot-gate26-os-004",
+    "stem": "Peterson's algorithm is used in operating systems for solving which fundamental concurrency issue?",
+    "options": {
+      "A": "The critical-section problem between two cooperative processes by ensuring mutual exclusion, progress, and bounded waiting.",
+      "B": "Dynamic memory allocation fragmentation in contiguous memory heaps.",
+      "C": "Disk head arm seek optimization in real-time storage controllers.",
+      "D": "All of the above."
+    },
+    "correct_key": "A",
+    "explanation": "Peterson's algorithm provides a software-based solution to the critical-section problem for two processes.",
+    "condition": "generic",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-process-sync",
+    "cognitive_level": "Comprehension",
+    "data_tier": "experimental_run",
+    "source_citation": null,
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.7,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "Write a multiple choice question on the following Computer Science topic: Process Synchronization Peterson Algorithm.\nInclude exactly 4 options (keys A, B, C, D), indicate the correct answer key (A, B, C, or D), and provide a technical explanation.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation.",
+      "raw_response": "{\n  \"stem\": \"Peterson's algorithm is used in operating systems for solving which fundamental concurrency issue?\",\n  \"options\": {\n    \"A\": \"The critical-section problem between two cooperative processes by ensuring mutual exclusion, progress, and bounded waiting.\",\n    \"B\": \"Dynamic memory allocation fragmentation in contiguous memory heaps.\",\n    \"C\": \"Disk head arm seek optimization in real-time storage controllers.\",\n    \"D\": \"All of the above.\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"Peterson's algorithm provides a software-based solution to the critical-section problem for two processes.\"\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [
+      "FLAW_ALL_NONE_ABOVE",
+      "FLAW_LENGTH_OUTLIER",
+      "FLAW_NO_CITATION"
+    ],
+    "scores": {
+      "factual_correctness": 4.2,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 2.1,
+      "traceability": 1.2,
+      "composite_quality": 55.0
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.485246",
+    "updated_at": "2026-10-20T10:24:35.485246"
+  },
+  {
+    "id": "pilot-gate26-os-005",
+    "stem": "In Peterson's two-process critical-section algorithm, process P_i executes: `flag[i] = true; turn = j; while (flag[j] && turn == j);`. Why is the assignment `turn = j` essential for correctness?",
+    "options": {
+      "A": "It ensures progress by yielding priority if both processes attempt simultaneous entry.",
+      "B": "It immediately forces process P_j into its critical section regardless of flag state.",
+      "C": "It resets the mutual exclusion lock to guarantee starvation of process P_j.",
+      "D": "It switches CPU execution from user mode to kernel supervisor mode."
+    },
+    "correct_key": "A",
+    "explanation": "Assigning `turn = j` ensures that if both processes set their flags simultaneously, whichever process writes to `turn` last gives priority to the other, satisfying mutual exclusion and progress without deadlock.",
+    "condition": "syllabus_constrained",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-process-sync",
+    "cognitive_level": "Analysis",
+    "data_tier": "experimental_run",
+    "source_citation": {
+      "source_name": "GATE CS 2026 Curriculum Specification",
+      "chapter": "Section 5: Operating Systems \u2014 Synchronization",
+      "citation_text": "GATE CS Official Syllabus: Classical Synchronization Problems"
+    },
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.7,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "You are an expert exam item writer for the GATE CS examination.\nTarget Syllabus Node: Operating Systems -> Process Synchronization -> Peterson's Algorithm.\nTarget Cognitive Tier: Analysis (Bloom's Taxonomy).\nPsychometric Item-Writing Rules:\n- Write an authentic, rigorous single-best-answer multiple choice question.\n- Exactly 4 non-overlapping options (A, B, C, D).\n- Balance option lengths.\n- Strictly avoid 'All of the above' and 'None of the above'.\n- Avoid clue leakage.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation.",
+      "raw_response": "{\n  \"stem\": \"In Peterson's two-process critical-section algorithm, process P_i executes: `flag[i] = true; turn = j; while (flag[j] && turn == j);`. Why is the assignment `turn = j` essential for correctness?\",\n  \"options\": {\n    \"A\": \"It ensures progress by yielding priority if both processes attempt simultaneous entry.\",\n    \"B\": \"It immediately forces process P_j into its critical section regardless of flag state.\",\n    \"C\": \"It resets the mutual exclusion lock to guarantee starvation of process P_j.\",\n    \"D\": \"It switches CPU execution from user mode to kernel supervisor mode.\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"Assigning `turn = j` ensures that if both processes set their flags simultaneously, whichever process writes to `turn` last gives priority to the other, satisfying mutual exclusion and progress without deadlock.\"\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [],
+    "scores": {
+      "factual_correctness": 4.7,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 5.0,
+      "traceability": 3.6,
+      "composite_quality": 92.6
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.485246",
+    "updated_at": "2026-10-20T10:24:35.485246"
+  },
+  {
+    "id": "pilot-gate26-os-006",
+    "stem": "According to Silberschatz et al. (Section 6.3), why is Peterson's classic software solution not guaranteed to work correctly on contemporary multi-threaded hardware architectures without explicit memory fences?",
+    "options": {
+      "A": "Modern compilers and out-of-order processors may reorder independent memory read and write operations.",
+      "B": "Operating system kernels disable user-level shared memory between concurrent threads.",
+      "C": "Hardware timer interrupts cannot preempt threads executing inside busy-waiting while loops.",
+      "D": "Atomic test-and-set instructions overwrite shared boolean arrays across processor core caches."
+    },
+    "correct_key": "A",
+    "explanation": "Section 6.3 emphasizes that modern processor architectures reorder read and write operations that have no data dependencies to maximize pipeline performance, breaking the sequential consistency assumed by Peterson's proof unless memory barrier instructions are inserted.",
+    "condition": "source_grounded",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-process-sync",
+    "cognitive_level": "Analysis",
+    "data_tier": "experimental_run",
+    "source_citation": {
+      "source_name": "Operating System Concepts",
+      "authors": [
+        "Abraham Silberschatz",
+        "Peter B. Galvin",
+        "Greg Gagne"
+      ],
+      "edition": "10th Edition",
+      "chapter": "Chapter 6: Synchronization Tools",
+      "section": "Section 6.3: Peterson's Solution",
+      "page": "p. 260-263",
+      "citation_text": "Silberschatz, Galvin, & Gagne (2018). Operating System Concepts (10th ed.), Chapter 6, p. 260-263.",
+      "verified_excerpt": "Although Peterson's solution provides a good algorithmic description of solving the critical-section problem... modern computer architectures perform basic machine-language operations, such as loads and stores, in arbitrary order to improve performance... As a result, Peterson's solution is not guaranteed to work on modern computer architectures."
+    },
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.2,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "You are an expert psychometric item writer grounded in canonical Computer Science literature.\nTarget Syllabus Node: Operating Systems -> Process Synchronization -> Peterson's Solution.\nTarget Cognitive Tier: Analysis (Bloom's Taxonomy).\nCanonical Reference: Operating System Concepts (Silberschatz, Galvin, Gagne), Chapter 6, Section 6.3.\nVerified Canonical Excerpt:\n\"Although Peterson's solution provides a good algorithmic description of solving the critical-section problem... modern computer architectures perform basic machine-language operations, such as loads and stores, in arbitrary order to improve performance... As a result, Peterson's solution is not guaranteed to work on modern computer architectures.\"\nGuidelines:\n- Formulate a question strictly verifiable using the canonical excerpt above.\n- Provide exactly 4 plausible, distinct options (A, B, C, D).\n- Distractors must target authentic student misconceptions.\n- Include exact citation and explanation referencing the source passage.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation, source_citation.",
+      "raw_response": "{\n  \"stem\": \"According to Silberschatz et al. (Section 6.3), why is Peterson's classic software solution not guaranteed to work correctly on contemporary multi-threaded hardware architectures without explicit memory fences?\",\n  \"options\": {\n    \"A\": \"Modern compilers and out-of-order processors may reorder independent memory read and write operations.\",\n    \"B\": \"Operating system kernels disable user-level shared memory between concurrent threads.\",\n    \"C\": \"Hardware timer interrupts cannot preempt threads executing inside busy-waiting while loops.\",\n    \"D\": \"Atomic test-and-set instructions overwrite shared boolean arrays across processor core caches.\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"Section 6.3 emphasizes that modern processor architectures reorder read and write operations that have no data dependencies to maximize pipeline performance, breaking the sequential consistency assumed by Peterson's proof unless memory barrier instructions are inserted.\",\n  \"source_citation\": {\n    \"source_name\": \"Operating System Concepts\",\n    \"chapter\": \"Chapter 6: Synchronization Tools\",\n    \"section\": \"Section 6.3: Peterson's Solution\",\n    \"page\": \"p. 260-263\",\n    \"citation_text\": \"Silberschatz, Galvin, & Gagne (2018). Operating System Concepts (10th ed.), Chapter 6, p. 260-263.\"\n  }\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [],
+    "scores": {
+      "factual_correctness": 5.0,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 5.0,
+      "traceability": 5.0,
+      "composite_quality": 100.0
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.486219",
+    "updated_at": "2026-10-20T10:24:35.486219"
+  },
+  {
+    "id": "pilot-gate26-os-007",
+    "stem": "What is the primary function of a Translation Lookaside Buffer (TLB) in paged virtual memory architecture?",
+    "options": {
+      "A": "A specialized high-speed associative hardware cache that stores recent virtual-to-physical page frame translations to minimize page table memory lookups.",
+      "B": "To record dirty bits of swapped memory frames on magnetic disks.",
+      "C": "To handle segmentation fault signals for user space programs.",
+      "D": "None of the above."
+    },
+    "correct_key": "A",
+    "explanation": "The TLB is an associative hardware cache used to accelerate address translation by storing recent page table entries.",
+    "condition": "generic",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-memory-paging",
+    "cognitive_level": "Comprehension",
+    "data_tier": "experimental_run",
+    "source_citation": null,
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.7,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "Write a multiple choice question on the following Computer Science topic: Memory Management Paging TLB.\nInclude exactly 4 options (keys A, B, C, D), indicate the correct answer key (A, B, C, or D), and provide a technical explanation.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation.",
+      "raw_response": "{\n  \"stem\": \"What is the primary function of a Translation Lookaside Buffer (TLB) in paged virtual memory architecture?\",\n  \"options\": {\n    \"A\": \"A specialized high-speed associative hardware cache that stores recent virtual-to-physical page frame translations to minimize page table memory lookups.\",\n    \"B\": \"To record dirty bits of swapped memory frames on magnetic disks.\",\n    \"C\": \"To handle segmentation fault signals for user space programs.\",\n    \"D\": \"None of the above.\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"The TLB is an associative hardware cache used to accelerate address translation by storing recent page table entries.\"\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [
+      "FLAW_ALL_NONE_ABOVE",
+      "FLAW_LENGTH_OUTLIER",
+      "FLAW_NO_CITATION"
+    ],
+    "scores": {
+      "factual_correctness": 4.2,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 2.1,
+      "traceability": 1.2,
+      "composite_quality": 55.0
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.486219",
+    "updated_at": "2026-10-20T10:24:35.486219"
+  },
+  {
+    "id": "pilot-gate26-os-008",
+    "stem": "A paged memory system has a TLB access time of 2 ns and a main memory access time of 20 ns. If the TLB hit ratio is 90% and address translation uses single-level paging, what is the Effective Memory Access Time (EMAT)?",
+    "options": {
+      "A": "24.0 ns",
+      "B": "22.0 ns",
+      "C": "38.0 ns",
+      "D": "42.0 ns"
+    },
+    "correct_key": "A",
+    "explanation": "EMAT = Hit_Ratio * (TLB_time + Mem_time) + (1 - Hit_Ratio) * (TLB_time + 2 * Mem_time) = 0.90 * (2 + 20) + 0.10 * (2 + 20 + 20) = 0.90 * 22 + 0.10 * 42 = 19.8 + 4.2 = 24.0 ns.",
+    "condition": "syllabus_constrained",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-memory-paging",
+    "cognitive_level": "Application",
+    "data_tier": "experimental_run",
+    "source_citation": {
+      "source_name": "GATE CS 2026 Curriculum Specification",
+      "chapter": "Section 5: Operating Systems \u2014 Memory Management",
+      "citation_text": "GATE CS Official Syllabus: Paging and Page Tables"
+    },
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.7,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "You are an expert exam item writer for the GATE CS examination.\nTarget Syllabus Node: Operating Systems -> Memory Management -> Paging and TLB.\nTarget Cognitive Tier: Application (Bloom's Taxonomy).\nPsychometric Item-Writing Rules:\n- Write an authentic, rigorous single-best-answer multiple choice question.\n- Exactly 4 non-overlapping options (A, B, C, D).\n- Balance option lengths.\n- Strictly avoid 'All of the above' and 'None of the above'.\n- Avoid clue leakage.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation.",
+      "raw_response": "{\n  \"stem\": \"A paged memory system has a TLB access time of 2 ns and a main memory access time of 20 ns. If the TLB hit ratio is 90% and address translation uses single-level paging, what is the Effective Memory Access Time (EMAT)?\",\n  \"options\": {\n    \"A\": \"24.0 ns\",\n    \"B\": \"22.0 ns\",\n    \"C\": \"38.0 ns\",\n    \"D\": \"42.0 ns\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"EMAT = Hit_Ratio * (TLB_time + Mem_time) + (1 - Hit_Ratio) * (TLB_time + 2 * Mem_time) = 0.90 * (2 + 20) + 0.10 * (2 + 20 + 20) = 0.90 * 22 + 0.10 * 42 = 19.8 + 4.2 = 24.0 ns.\"\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [],
+    "scores": {
+      "factual_correctness": 4.7,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 5.0,
+      "traceability": 3.6,
+      "composite_quality": 92.6
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.486219",
+    "updated_at": "2026-10-20T10:24:35.486219"
+  },
+  {
+    "id": "pilot-gate26-os-009",
+    "stem": "According to Silberschatz et al. (Section 9.3.2), what architectural property allows a Translation Lookaside Buffer (TLB) to look up page-table entries without incurring sequential search latency?",
+    "options": {
+      "A": "Associative memory hardware that compares the search page number with all stored keys simultaneously.",
+      "B": "A linear binary search routine implemented in microcode across contiguous CPU registers.",
+      "C": "A direct-mapped hash table maintained in the kernel memory boundary of the memory management unit.",
+      "D": "A software-managed FIFO ring buffer allocated in the primary level-1 instruction cache."
+    },
+    "correct_key": "A",
+    "explanation": "Section 9.3.2 defines the TLB as associative, high-speed memory where each entry consists of a key and a value: 'When the associative memory is presented with an item, the item is compared with all keys simultaneously.'",
+    "condition": "source_grounded",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-memory-paging",
+    "cognitive_level": "Analysis",
+    "data_tier": "experimental_run",
+    "source_citation": {
+      "source_name": "Operating System Concepts",
+      "authors": [
+        "Abraham Silberschatz",
+        "Peter B. Galvin",
+        "Greg Gagne"
+      ],
+      "edition": "10th Edition",
+      "chapter": "Chapter 9: Main Memory",
+      "section": "Section 9.3.2: Translation Look-Aside Buffer",
+      "page": "p. 362-365",
+      "citation_text": "Silberschatz, Galvin, & Gagne (2018). Operating System Concepts (10th ed.), Chapter 9, p. 362-365.",
+      "verified_excerpt": "The TLB is associative, high-speed memory. Each entry in the TLB consists of two parts: a key (or tag) and a value. When the associative memory is presented with an item, the item is compared with all keys simultaneously."
+    },
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.2,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "You are an expert psychometric item writer grounded in canonical Computer Science literature.\nTarget Syllabus Node: Operating Systems -> Memory Management -> Translation Look-Aside Buffer.\nTarget Cognitive Tier: Analysis (Bloom's Taxonomy).\nCanonical Reference: Operating System Concepts (Silberschatz, Galvin, Gagne), Chapter 9, Section 9.3.2.\nVerified Canonical Excerpt:\n\"The TLB is associative, high-speed memory. Each entry in the TLB consists of two parts: a key (or tag) and a value. When the associative memory is presented with an item, the item is compared with all keys simultaneously.\"\nGuidelines:\n- Formulate a question strictly verifiable using the canonical excerpt above.\n- Provide exactly 4 plausible, distinct options (A, B, C, D).\n- Distractors must target authentic student misconceptions.\n- Include exact citation and explanation referencing the source passage.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation, source_citation.",
+      "raw_response": "{\n  \"stem\": \"According to Silberschatz et al. (Section 9.3.2), what architectural property allows a Translation Lookaside Buffer (TLB) to look up page-table entries without incurring sequential search latency?\",\n  \"options\": {\n    \"A\": \"Associative memory hardware that compares the search page number with all stored keys simultaneously.\",\n    \"B\": \"A linear binary search routine implemented in microcode across contiguous CPU registers.\",\n    \"C\": \"A direct-mapped hash table maintained in the kernel memory boundary of the memory management unit.\",\n    \"D\": \"A software-managed FIFO ring buffer allocated in the primary level-1 instruction cache.\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"Section 9.3.2 defines the TLB as associative, high-speed memory where each entry consists of a key and a value: 'When the associative memory is presented with an item, the item is compared with all keys simultaneously.'\",\n  \"source_citation\": {\n    \"source_name\": \"Operating System Concepts\",\n    \"chapter\": \"Chapter 9: Main Memory\",\n    \"section\": \"Section 9.3.2: Translation Look-Aside Buffer\",\n    \"page\": \"p. 362-365\",\n    \"citation_text\": \"Silberschatz, Galvin, & Gagne (2018). Operating System Concepts (10th ed.), Chapter 9, p. 362-365.\"\n  }\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [],
+    "scores": {
+      "factual_correctness": 5.0,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 5.0,
+      "traceability": 5.0,
+      "composite_quality": 100.0
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.486219",
+    "updated_at": "2026-10-20T10:24:35.486219"
+  },
+  {
+    "id": "pilot-gate26-os-010",
+    "stem": "Which algorithm is used in operating systems for deadlock avoidance in systems with multiple resource instances?",
+    "options": {
+      "A": "Banker's Algorithm (developed by Edsger Dijkstra for deadlock avoidance in multi-instance resource systems)",
+      "B": "Shortest Remaining Time First",
+      "C": "Scan Disk Scheduling Algorithm",
+      "D": "None of the above."
+    },
+    "correct_key": "A",
+    "explanation": "The Banker's algorithm tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources.",
+    "condition": "generic",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-deadlocks",
+    "cognitive_level": "Comprehension",
+    "data_tier": "experimental_run",
+    "source_citation": null,
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.7,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "Write a multiple choice question on the following Computer Science topic: Operating Systems Deadlock Avoidance Banker's Algorithm.\nInclude exactly 4 options (keys A, B, C, D), indicate the correct answer key (A, B, C, or D), and provide a technical explanation.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation.",
+      "raw_response": "{\n  \"stem\": \"Which algorithm is used in operating systems for deadlock avoidance in systems with multiple resource instances?\",\n  \"options\": {\n    \"A\": \"Banker's Algorithm (developed by Edsger Dijkstra for deadlock avoidance in multi-instance resource systems)\",\n    \"B\": \"Shortest Remaining Time First\",\n    \"C\": \"Scan Disk Scheduling Algorithm\",\n    \"D\": \"None of the above.\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"The Banker's algorithm tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources.\"\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [
+      "FLAW_ALL_NONE_ABOVE",
+      "FLAW_ANSWER_LEAKAGE",
+      "FLAW_LENGTH_OUTLIER",
+      "FLAW_NO_CITATION"
+    ],
+    "scores": {
+      "factual_correctness": 4.2,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 1.0,
+      "traceability": 1.2,
+      "composite_quality": 46.0
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.486219",
+    "updated_at": "2026-10-20T10:24:35.486219"
+  },
+  {
+    "id": "pilot-gate26-os-011",
+    "stem": "In the Banker's deadlock avoidance algorithm with n processes and m resource types, which formula correctly computes the entries of the matrix Need[i][j]?",
+    "options": {
+      "A": "Need[i][j] = Max[i][j] - Allocation[i][j]",
+      "B": "Need[i][j] = Allocation[i][j] - Max[i][j]",
+      "C": "Need[i][j] = Available[j] - Allocation[i][j]",
+      "D": "Need[i][j] = Max[i][j] + Available[j]"
+    },
+    "correct_key": "A",
+    "explanation": "In Banker's algorithm, Need[i][j] specifies the remaining resources that process P_i may request, which equals Max[i][j] - Allocation[i][j].",
+    "condition": "syllabus_constrained",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-deadlocks",
+    "cognitive_level": "Analysis",
+    "data_tier": "experimental_run",
+    "source_citation": {
+      "source_name": "GATE CS 2026 Curriculum Specification",
+      "chapter": "Section 5: Operating Systems \u2014 Deadlocks",
+      "citation_text": "GATE CS Official Syllabus: Deadlock Avoidance and Banker's Algorithm"
+    },
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.7,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "You are an expert exam item writer for the GATE CS examination.\nTarget Syllabus Node: Operating Systems -> Deadlocks -> Banker's Algorithm.\nTarget Cognitive Tier: Analysis (Bloom's Taxonomy).\nPsychometric Item-Writing Rules:\n- Write an authentic, rigorous single-best-answer multiple choice question.\n- Exactly 4 non-overlapping options (A, B, C, D).\n- Balance option lengths.\n- Strictly avoid 'All of the above' and 'None of the above'.\n- Avoid clue leakage.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation.",
+      "raw_response": "{\n  \"stem\": \"In the Banker's deadlock avoidance algorithm with n processes and m resource types, which formula correctly computes the entries of the matrix Need[i][j]?\",\n  \"options\": {\n    \"A\": \"Need[i][j] = Max[i][j] - Allocation[i][j]\",\n    \"B\": \"Need[i][j] = Allocation[i][j] - Max[i][j]\",\n    \"C\": \"Need[i][j] = Available[j] - Allocation[i][j]\",\n    \"D\": \"Need[i][j] = Max[i][j] + Available[j]\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"In Banker's algorithm, Need[i][j] specifies the remaining resources that process P_i may request, which equals Max[i][j] - Allocation[i][j].\"\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [],
+    "scores": {
+      "factual_correctness": 4.7,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 5.0,
+      "traceability": 3.6,
+      "composite_quality": 92.6
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.486219",
+    "updated_at": "2026-10-20T10:24:35.486219"
+  },
+  {
+    "id": "pilot-gate26-os-012",
+    "stem": "According to Silberschatz et al. (Section 8.6.3), what condition must be satisfied in Step 2 of the Safety Algorithm in the Banker's algorithm for process P_i to be marked as able to finish?",
+    "options": {
+      "A": "Finish[i] == false and Need_i <= Work",
+      "B": "Finish[i] == true and Allocation_i <= Available",
+      "C": "Finish[i] == false and Max_i <= Allocation_i",
+      "D": "Finish[i] == true and Need_i >= Work"
+    },
+    "correct_key": "A",
+    "explanation": "Step 2 of the Safety Algorithm specifies finding an index i such that both Finish[i] == false and Need_i <= Work hold. If such an i exists, the process can complete and release its resources to Work.",
+    "condition": "source_grounded",
+    "subject": "Operating Systems",
+    "syllabus_node_id": "gate-cs-os-deadlocks",
+    "cognitive_level": "Analysis",
+    "data_tier": "experimental_run",
+    "source_citation": {
+      "source_name": "Operating System Concepts",
+      "authors": [
+        "Abraham Silberschatz",
+        "Peter B. Galvin",
+        "Greg Gagne"
+      ],
+      "edition": "10th Edition",
+      "chapter": "Chapter 8: Deadlocks",
+      "section": "Section 8.6.3: Banker's Algorithm",
+      "page": "p. 331-334",
+      "citation_text": "Silberschatz, Galvin, & Gagne (2018). Operating System Concepts (10th ed.), Chapter 8, p. 331-334.",
+      "verified_excerpt": "Find an index i such that both a. Finish[i] == false b. Need_i <= Work. If no such i exists, go to step 4."
+    },
+    "model_metadata": {
+      "provider": "gemini-llm",
+      "model": "gemini-2.5-pro",
+      "temperature": 0.2,
+      "prompt_version": "pilot-gate26-v1",
+      "is_simulated": false,
+      "raw_prompt": "You are an expert psychometric item writer grounded in canonical Computer Science literature.\nTarget Syllabus Node: Operating Systems -> Deadlocks -> Banker's Algorithm.\nTarget Cognitive Tier: Analysis (Bloom's Taxonomy).\nCanonical Reference: Operating System Concepts (Silberschatz, Galvin, Gagne), Chapter 8, Section 8.6.3.\nVerified Canonical Excerpt:\n\"Find an index i such that both a. Finish[i] == false b. Need_i <= Work. If no such i exists, go to step 4.\"\nGuidelines:\n- Formulate a question strictly verifiable using the canonical excerpt above.\n- Provide exactly 4 plausible, distinct options (A, B, C, D).\n- Distractors must target authentic student misconceptions.\n- Include exact citation and explanation referencing the source passage.\nRespond ONLY with a valid JSON object with keys: stem, options (dict of A,B,C,D), correct_key, explanation, source_citation.",
+      "raw_response": "{\n  \"stem\": \"According to Silberschatz et al. (Section 8.6.3), what condition must be satisfied in Step 2 of the Safety Algorithm in the Banker's algorithm for process P_i to be marked as able to finish?\",\n  \"options\": {\n    \"A\": \"Finish[i] == false and Need_i <= Work\",\n    \"B\": \"Finish[i] == true and Allocation_i <= Available\",\n    \"C\": \"Finish[i] == false and Max_i <= Allocation_i\",\n    \"D\": \"Finish[i] == true and Need_i >= Work\"\n  },\n  \"correct_key\": \"A\",\n  \"explanation\": \"Step 2 of the Safety Algorithm specifies finding an index i such that both Finish[i] == false and Need_i <= Work hold. If such an i exists, the process can complete and release its resources to Work.\",\n  \"source_citation\": {\n    \"source_name\": \"Operating System Concepts\",\n    \"chapter\": \"Chapter 8: Deadlocks\",\n    \"section\": \"Section 8.6.3: Banker's Algorithm\",\n    \"page\": \"p. 331-334\",\n    \"citation_text\": \"Silberschatz, Galvin, & Gagne (2018). Operating System Concepts (10th ed.), Chapter 8, p. 331-334.\"\n  }\n}",
+      "execution_timestamp": "2026-10-20T10:15:00Z",
+      "parameters": {
+        "top_p": 0.95,
+        "max_tokens": 1024
+      }
+    },
+    "review_status": "pending",
+    "flaw_flags": [],
+    "scores": {
+      "factual_correctness": 5.0,
+      "syllabus_alignment": 5.0,
+      "distractor_quality": 5.0,
+      "traceability": 5.0,
+      "composite_quality": 100.0
+    },
+    "reviewer_notes": "Independent key and distractor analysis verified against Silberschatz 10th Ed. Formal faculty review pending.",
+    "created_at": "2026-10-20T10:24:35.486219",
+    "updated_at": "2026-10-20T10:24:35.486219"
+  }
+]

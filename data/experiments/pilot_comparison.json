@@ -2,7 +2,7 @@
   "experiment_id": "exp-pilot-gate-2026-v1",
   "name": "SyllabusTrace-CS Pilot Benchmark Comparison",
   "total_questions": 60,
-  "timestamp": "2026-10-20T09:59:10.594871",
+  "timestamp": "2026-10-20T10:24:36.845530",
   "metrics": {
     "generic": {
       "condition": "generic",

@@ -2,7 +2,7 @@
 
 **Project Title:** SyllabusTrace-CS: A Source-Traceable Quality Benchmark for AI-Generated Computer Science Multiple-Choice Questions in Indian Competitive Examinations  
 **Author:** Ankur Maurya  
-**Date Generated:** 2026-10-20 09:59:10 UTC  
+**Date Generated:** 2026-10-20 10:24:36 UTC  
 **Dataset Size:** 60 items across 5 core Computer Science domains  
 **Evaluation Tier:** Prototype Baseline Fixtures (`data_tier: illustrative_fixture`; Live API Runs Pending)  
 

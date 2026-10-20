@@ -35,8 +35,8 @@
       "composite_quality": 74.5
     },
     "reviewer_notes": "Generic stem. Distractor B is visibly longer than others (length disparity flaw). [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.839752",
+    "updated_at": "2026-10-20T10:24:36.839752"
   },
   {
     "id": "mcq-gen-os-002",
@@ -76,8 +76,8 @@
       "composite_quality": 55.5
     },
     "reviewer_notes": "Contains answer leakage: stem mentions deadlock, options repeat deadlock in every choice. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.839752",
+    "updated_at": "2026-10-20T10:24:36.839752"
   },
   {
     "id": "mcq-gen-os-003",
@@ -117,8 +117,8 @@
       "composite_quality": 55.0
     },
     "reviewer_notes": "Contains 'All of the above' option anti-pattern. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-os-004",
@@ -158,8 +158,8 @@
       "composite_quality": 55.5
     },
     "reviewer_notes": "Option A contains parenthetical giveaway. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-dbms-001",
@@ -199,8 +199,8 @@
       "composite_quality": 55.5
     },
     "reviewer_notes": "Severe answer leakage: option B defines the answer directly. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-dbms-002",
@@ -239,8 +239,8 @@
       "composite_quality": 64.0
     },
     "reviewer_notes": "Contains 'None of the above' distractor. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-dbms-003",
@@ -278,8 +278,8 @@
       "composite_quality": 74.5
     },
     "reviewer_notes": "Lacks canonical citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-dbms-004",
@@ -319,8 +319,8 @@
       "composite_quality": 55.0
     },
     "reviewer_notes": "Contains 'All of the above' flaw. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-cn-001",
@@ -360,8 +360,8 @@
       "composite_quality": 55.5
     },
     "reviewer_notes": "Length disparity and explanation inside option B. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-cn-002",
@@ -399,8 +399,8 @@
       "composite_quality": 74.5
     },
     "reviewer_notes": "Calculation correct, but no reference textbook cited. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-cn-003",
@@ -440,8 +440,8 @@
       "composite_quality": 55.5
     },
     "reviewer_notes": "Parenthetical expansion in option A. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-cn-004",
@@ -479,8 +479,8 @@
       "composite_quality": 74.5
     },
     "reviewer_notes": "Lacks citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-dsa-001",
@@ -519,8 +519,8 @@
       "composite_quality": 65.5
     },
     "reviewer_notes": "Severe length outlier in option B with embedded explanation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-dsa-002",
@@ -559,8 +559,8 @@
       "composite_quality": 64.0
     },
     "reviewer_notes": "Includes 'None of the above' flaw. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-dsa-003",
@@ -598,8 +598,8 @@
       "composite_quality": 74.5
     },
     "reviewer_notes": "Lacks canonical citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-dsa-004",
@@ -637,8 +637,8 @@
       "composite_quality": 74.5
     },
     "reviewer_notes": "Valid application item, no textbook provenance. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-toc-001",
@@ -676,8 +676,8 @@
       "composite_quality": 74.5
     },
     "reviewer_notes": "Negative stem phrasing ('NOT regular'). [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-toc-002",
@@ -716,8 +716,8 @@
       "composite_quality": 64.0
     },
     "reviewer_notes": "Contains 'All of the above' flaw. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-toc-003",
@@ -756,8 +756,8 @@
       "composite_quality": 64.0
     },
     "reviewer_notes": "Contains 'None of the above' option. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-gen-toc-004",
@@ -795,8 +795,8 @@
       "composite_quality": 74.5
     },
     "reviewer_notes": "Clean recall question, missing citation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-os-001",
@@ -836,8 +836,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Well-structured computational problem, options balanced in length, no answer leakage. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-os-002",
@@ -877,8 +877,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Standard GATE numerical MCQ. Distractors plausible from common student calculation errors. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-os-003",
@@ -918,8 +918,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Clean distractors, syllabus aligned. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-os-004",
@@ -959,8 +959,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Balanced options, clear theoretical distinction. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-dbms-001",
@@ -1000,8 +1000,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Classic GATE question. Concise options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-dbms-002",
@@ -1041,8 +1041,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Clean distractors addressing locking variants. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-dbms-003",
@@ -1082,8 +1082,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Well-calibrated distractor choices. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-dbms-004",
@@ -1123,8 +1123,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Standard definition test. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-cn-001",
@@ -1164,8 +1164,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Clean mathematical formula options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-cn-002",
@@ -1205,8 +1205,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Precise state transition question. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-cn-003",
@@ -1246,8 +1246,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Balanced conceptual options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-cn-004",
@@ -1287,8 +1287,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Standard CIDR network design item. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-dsa-001",
@@ -1328,8 +1328,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Tests Case 3 regularity condition. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-dsa-002",
@@ -1369,8 +1369,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Rigorous discrete math / algorithms theorem check. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-dsa-003",
@@ -1410,8 +1410,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Clean item. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-dsa-004",
@@ -1451,8 +1451,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Direct algorithmic definition check. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-toc-001",
@@ -1492,8 +1492,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Frequent GATE question on closure properties. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-toc-002",
@@ -1533,8 +1533,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Exact state count calculation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-toc-003",
@@ -1574,8 +1574,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Crucial decidability boundary distinction. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.587925",
-    "updated_at": "2026-10-20T09:59:10.587925"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-syl-toc-004",
@@ -1615,8 +1615,8 @@
       "composite_quality": 92.6
     },
     "reviewer_notes": "Rigorous definition verification. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-os-001",
@@ -1660,8 +1660,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Exemplary source-grounded item. Full citation, exact excerpt corroboration, zero item-writing flaws. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-os-002",
@@ -1705,8 +1705,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Verified against textbook. Options distinct and targeted. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-os-003",
@@ -1750,8 +1750,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Clean item, flawless grounding. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-os-004",
@@ -1795,8 +1795,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Concise, verified against standard OS architecture text. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-dbms-001",
@@ -1840,8 +1840,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Exact canonical wording. Clean distractors. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-dbms-002",
@@ -1885,8 +1885,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Distractor B targets the exact misconception distinguishing 3NF from BCNF. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-dbms-003",
@@ -1930,8 +1930,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Thoroughly grounded question on B vs B+ tree architecture. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-dbms-004",
@@ -1975,8 +1975,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Rigorous definition of relational division. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-cn-001",
@@ -2020,8 +2020,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Flawless citation and option contrast. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-cn-002",
@@ -2065,8 +2065,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Precise mathematical bounds. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-cn-003",
@@ -2112,8 +2112,8 @@
       "composite_quality": 90.0
     },
     "reviewer_notes": "Well-balanced theoretical comparison. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-cn-004",
@@ -2157,8 +2157,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Standard textbook fast retransmit item. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-dsa-001",
@@ -2204,8 +2204,8 @@
       "composite_quality": 90.0
     },
     "reviewer_notes": "Deep conceptual reasoning question grounded in CLRS proof structure. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-dsa-002",
@@ -2249,8 +2249,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Classic textbook Master Theorem calculation. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-dsa-003",
@@ -2294,8 +2294,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Clarifies distinction between O(h) and worst-case O(n). [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-dsa-004",
@@ -2341,8 +2341,8 @@
       "composite_quality": 91.0
     },
     "reviewer_notes": "Exact theoretical bound. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-toc-001",
@@ -2386,8 +2386,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Grounded in Sipser's canonical 3 conditions. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-toc-002",
@@ -2431,8 +2431,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Deep theoretical foundation item with authentic options. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-toc-003",
@@ -2476,8 +2476,8 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Grounded in standard textbook distinction between DCFLs and general CFLs. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   },
   {
     "id": "mcq-src-toc-004",
@@ -2521,7 +2521,7 @@
       "composite_quality": 100.0
     },
     "reviewer_notes": "Rigorous Myhill-Nerode theorem question. [Fixture item for pipeline verification. Pending recorded human expert review.]",
-    "created_at": "2026-10-20T09:59:10.588904",
-    "updated_at": "2026-10-20T09:59:10.588904"
+    "created_at": "2026-10-20T10:24:36.840810",
+    "updated_at": "2026-10-20T10:24:36.840810"
   }
 ]

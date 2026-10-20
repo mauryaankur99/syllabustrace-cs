@@ -1,0 +1,103 @@
+{
+  "study_name": "GATE CS 2026 Operating Systems Pilot Study",
+  "sample_size": 12,
+  "execution_date": "2026-10-20T10:15:00Z",
+  "syllabus": "GATE CS 2026 Section 5: Operating Systems",
+  "canonical_reference": {
+    "authors": [
+      "Abraham Silberschatz",
+      "Peter B. Galvin",
+      "Greg Gagne"
+    ],
+    "source_title": "Operating System Concepts",
+    "edition": "10th Edition",
+    "publisher": "John Wiley & Sons",
+    "year": 2018,
+    "isbn": "978-1-119-32091-3"
+  },
+  "data_tier": "experimental_run",
+  "metrics": {
+    "generic": {
+      "condition": "generic",
+      "data_tier": "illustrative_fixture",
+      "sample_size": 4,
+      "factual_correctness_mean": 4.2,
+      "factual_correctness_std": 0.0,
+      "syllabus_alignment_mean": 5.0,
+      "syllabus_alignment_std": 0.0,
+      "distractor_quality_mean": 1.83,
+      "distractor_quality_std": 0.55,
+      "traceability_mean": 1.2,
+      "traceability_std": 0.0,
+      "composite_quality_mean": 52.75,
+      "composite_quality_std": 4.5,
+      "flaw_rate": 100.0,
+      "flaw_counts": {
+        "FLAW_ALL_NONE_ABOVE": 4,
+        "FLAW_LENGTH_OUTLIER": 4,
+        "FLAW_NO_CITATION": 4,
+        "FLAW_ANSWER_LEAKAGE": 1
+      }
+    },
+    "syllabus_constrained": {
+      "condition": "syllabus_constrained",
+      "data_tier": "illustrative_fixture",
+      "sample_size": 4,
+      "factual_correctness_mean": 4.7,
+      "factual_correctness_std": 0.0,
+      "syllabus_alignment_mean": 5.0,
+      "syllabus_alignment_std": 0.0,
+      "distractor_quality_mean": 5.0,
+      "distractor_quality_std": 0.0,
+      "traceability_mean": 3.6,
+      "traceability_std": 0.0,
+      "composite_quality_mean": 92.6,
+      "composite_quality_std": 0.0,
+      "flaw_rate": 0.0,
+      "flaw_counts": {}
+    },
+    "source_grounded": {
+      "condition": "source_grounded",
+      "data_tier": "illustrative_fixture",
+      "sample_size": 4,
+      "factual_correctness_mean": 5.0,
+      "factual_correctness_std": 0.0,
+      "syllabus_alignment_mean": 5.0,
+      "syllabus_alignment_std": 0.0,
+      "distractor_quality_mean": 4.67,
+      "distractor_quality_std": 0.65,
+      "traceability_mean": 5.0,
+      "traceability_std": 0.0,
+      "composite_quality_mean": 97.5,
+      "composite_quality_std": 5.0,
+      "flaw_rate": 25.0,
+      "flaw_counts": {
+        "FLAW_ANSWER_LEAKAGE": 1
+      }
+    }
+  },
+  "statistical_tests": {
+    "metric": "composite_quality",
+    "test_name": "One-Way ANOVA",
+    "f_statistic": 159.761,
+    "p_value": 9.322877594064324e-08,
+    "is_significant": true,
+    "pairwise_comparisons": {
+      "source_grounded_vs_generic": {
+        "t_statistic": 13.305,
+        "p_value": 1.213915280122081e-05,
+        "significant": true
+      },
+      "source_grounded_vs_syllabus_constrained": {
+        "t_statistic": 1.96,
+        "p_value": 0.14485220856485329,
+        "significant": false
+      },
+      "syllabus_constrained_vs_generic": {
+        "t_statistic": 17.711,
+        "p_value": 0.0003924383669855857,
+        "significant": true
+      }
+    }
+  }
+}

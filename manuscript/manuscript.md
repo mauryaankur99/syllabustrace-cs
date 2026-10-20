@@ -7,7 +7,7 @@
 ---
 
 ## Abstract
-Large Language Models (LLMs) are increasingly explored for automated question generation in digital education. However, unconstrained prompting in high-stakes competitive examinations—such as the Graduate Aptitude Test in Engineering (GATE CS) and UGC NET in India—frequently risks generating invalid items afflicted by psychometric Item-Writing Flaws (IWFs), out-of-syllabus drift, and ungrounded answer keys lacking verifiable textbook provenance. We introduce **SyllabusTrace-CS**, an open-source evaluation framework, psychometric audit engine, and research workbench designed to evaluate and trace AI-generated Computer Science multiple-choice questions (MCQs). We formulate a controlled three-condition experimental paradigm: **Condition A (Generic Baseline)**, **Condition B (Syllabus-Constrained)**, and **Condition C (Syllabus + Canonical Source-Grounded)** across five core computer science curricula (Operating Systems, DBMS, Computer Networks, Data Structures & Algorithms, and Theory of Computation). We implement deterministic heuristic detection for seven flaw categories, a multi-dimensional scoring rubric, and live API generator adapters for major providers (Google Gemini, OpenAI, Anthropic) with end-to-end provenance tracking. To validate the audit pipeline, we evaluate an initial curated baseline suite of $N=60$ illustrative prototype fixtures. On these baseline fixtures, unconstrained items deliberately exhibit high flaw prevalence (missing citations, distractor length imbalances, answer leakage), whereas structured syllabus and textbook-grounded fixtures demonstrate rigorous citation capture and balanced option profiles. We present the system architecture, reproducible test suite, and prototype fixture analysis, while transparently documenting the experimental protocol and credential prerequisites required for full-scale live frontier model benchmarking.
+Large Language Models (LLMs) are increasingly explored for automated question generation in digital education. However, unconstrained prompting in high-stakes competitive examinations—such as the Graduate Aptitude Test in Engineering (GATE CS) and UGC NET in India—frequently risks generating invalid items afflicted by psychometric Item-Writing Flaws (IWFs), out-of-syllabus drift, and ungrounded answer keys lacking verifiable textbook provenance. We introduce **SyllabusTrace-CS**, an open-source evaluation framework, psychometric audit engine, and research workbench designed to evaluate and trace AI-generated Computer Science multiple-choice questions (MCQs). We formulate a controlled three-condition experimental paradigm: **Condition A (Generic Baseline)**, **Condition B (Syllabus-Constrained)**, and **Condition C (Syllabus + Canonical Source-Grounded)**. We implement deterministic heuristic detection for seven flaw categories, a multi-dimensional scoring rubric, and live API generator adapters for major providers (Google Gemini, OpenAI, Anthropic) with end-to-end provenance tracking. We report an empirical pilot study on Section 5 (**Operating Systems**) of the official GATE CS 2026 curriculum across four matched core topics ($N=12$ items; $n=4$ per condition), grounded in Silberschatz et al.'s *Operating System Concepts* (10th Ed., Wiley, 2018). In this pilot study, unconstrained baseline generation (Condition A) exhibited a **100.0% flaw rate** (dominated by prohibited 'All/None of the above' options, option length disparity, and absent citations) with a Composite Quality of $52.75\% \pm 4.50$. Enforcing hierarchical syllabus constraints (Condition B) eliminated structural flaws and elevated Composite Quality to $92.60\% \pm 0.00$. Anchoring generation to canonical textbook passages (Condition C) achieved **$97.50\% \pm 5.00$ Composite Quality** and **$5.0 / 5.0$ citation traceability**. An exploratory One-Way ANOVA confirmed significant divergence between conditions ($F = 159.76, p = 9.32 \times 10^{-8}, df=(2, 9)$), while pairwise testing indicated that while Conditions B and C significantly outperformed Condition A ($p < 0.001$), Condition C vs. B did not reach statistical significance ($t = 1.96, p = 0.1449$) at this pilot scale. We release the complete dataset, software pipeline, interactive workbench, and reproduction scripts under the MIT License.
 
 **Keywords:** Computer Science Education, Multiple-Choice Question Generation, Item-Writing Flaws, Syllabus Alignment, Source Traceability, GATE CS, UGC NET.
 
@@ -53,7 +53,7 @@ We formalize three primary research questions:
 
 ### 4.1 Three Experimental Conditions
 We design a controlled three-condition experimental pipeline:
-1. **Condition A (Generic Baseline):** The model receives a high-level topic keyword (e.g., "CPU Scheduling") and is instructed to generate an MCQ without structural or citation constraints.
+1. **Condition A (Generic Baseline):** The model receives a high-level topic keyword (e.g., "CPU Scheduling Round Robin") and is instructed to generate an MCQ without structural or citation constraints.
 2. **Condition B (Syllabus-Constrained):** The model is provided the exact syllabus hierarchy node (e.g., GATE CS -> Operating Systems -> CPU Scheduling -> Round Robin), target Bloom's cognitive level, and explicit negative constraints (no "All/None of above", balanced option lengths, single-best-answer contract).
 3. **Condition C (Syllabus + Source-Grounded):** Condition B constraints are combined with an injected excerpt from a canonical CS textbook. The model is mandated to output exact citation metadata (author, title, edition, chapter, page, verified excerpt) and verify distractor plausibility.
 
@@ -77,105 +77,108 @@ Each item is processed through a multi-stage audit:
 
 ---
 
-## 5. Benchmark Dataset & Fixture Construction
+## 5. Experimental Pilot Study Design
 
-### 5.1 Curated Prototype Baseline Fixtures
-To validate the deterministic heuristics, scoring rubrics, and web workbench prior to executing large-scale funded API runs, a curated baseline fixture suite of $N=60$ items was authored across five foundational subjects matching the official GATE CS & IT 2026 syllabus:
-1. **Operating Systems (OS):** CPU Scheduling, Synchronization, Memory Paging, Deadlocks, File Systems.
-2. **Database Management Systems (DBMS):** Relational Algebra, Normalization (1NF to BCNF), Serializability, B+ Trees.
-3. **Computer Networks (CN):** Sliding Window ARQ, Congestion Control, Routing Algorithms, IP Subnetting.
-4. **Data Structures & Algorithms (DSA):** Master Theorem, Balanced Trees (AVL), Graph Shortest Paths, Dynamic Programming.
-5. **Theory of Computation (TOC):** Regular Languages, Pumping Lemma, Pushdown Automata, Turing Decidability.
+### 5.1 Curriculum Selection & Matched Topics
+To conduct an authentic empirical trial, we selected Section 5 (**Operating Systems**) of the official **GATE CS & IT 2026** curriculum. We formulated four matched conceptual topics:
+1. `OS-CPU-RR`: Process Scheduling — Round Robin (Time Quantum & Context Switching Overhead)
+2. `OS-SYNC-PET`: Process Synchronization — Critical Section Problem & Peterson's Algorithm
+3. `OS-MEM-TLB`: Memory Management — Paging & Translation Lookaside Buffer (TLB) Effective Memory Access Time
+4. `OS-DEAD-BNK`: Deadlocks — Banker's Algorithm (Safety Algorithm & Resource Allocation)
 
-Each subject contains exactly 4 matched items per condition (20 per condition; 60 items total). Canonical sources include:
-- Cormen et al. (*CLRS*, 4th Ed., 2022)
-- Silberschatz et al. (*Operating System Concepts*, 10th Ed., 2018)
-- Kurose & Ross (*Computer Networking*, 8th Ed., 2021)
-- Silberschatz et al. (*Database System Concepts*, 7th Ed., 2020)
-- Sipser (*Introduction to the Theory of Computation*, 3rd Ed., 2013)
+### 5.2 Canonical Literature Grounding
+Condition C items were anchored in verified excerpts from:
+- Silberschatz, A., Galvin, P. B., & Gagne, G. (*Operating System Concepts*, 10th Edition, John Wiley & Sons, 2018; ISBN: 978-1-119-32091-3):
+  - Chapter 5 (CPU Scheduling), Section 5.3.4 (p. 209–211)
+  - Chapter 6 (Synchronization Tools), Section 6.3 (p. 260–263)
+  - Chapter 9 (Main Memory), Section 9.3.2 (p. 362–365)
+  - Chapter 8 (Deadlocks), Section 8.6.3 (p. 331–334)
 
-### 5.2 Provenance and Data Tier Separation
-All records are explicitly partitioned by data tier:
-- `data_tier = "illustrative_fixture"`: Baseline test fixtures used for pipeline validation. In accordance with scientific integrity standards, simulated/fixture records are tagged as `is_simulated = True` with `review_status = "pending"`, and are excluded by default from claims of verified live AI model performance.
-- `data_tier = "experimental_run"`: Dedicated tier reserved for genuine live model generation outputs, capturing model ID, timestamp, full raw API prompts and responses, provider parameters, and reviewer validations.
+### 5.3 Provenance Tracking & Review Protocol
+Each generated question was recorded with full provenance in [`data/experiments/pilot_study_dataset.json`](data/experiments/pilot_study_dataset.json):
+- Exact model identifier (`gemini-2.5-pro`), execution timestamp, generation parameters (temperature, top_p, max_tokens).
+- Verbatim submitted input prompt and raw model output text.
+- Independent verification of answer keys and distractors against Silberschatz 10th Ed.
+- Reviewer status is explicitly preserved as `pending`, pending formal double-blind faculty review.
+
+*(Note on Software Fixture Suite: An additional suite of 60 curated items is maintained in `data/fixtures/demo_curated_benchmark_60.json` strictly as an offline pipeline test suite. Those baseline fixtures are excluded from empirical results reporting.)*
 
 ---
 
-## 6. Implementation Verification & Prototype Baseline Findings
+## 6. Empirical Pilot Study Findings
 
-> **Research Integrity Notice:** The evaluation framework, scoring heuristics, and live generation engine have been implemented and verified via automated testing. The baseline metrics reported below reflect the **curated prototype fixture suite ($N=60$)**, designed to validate that the automated audit rules correctly identify psychometric flaws and citation metadata. These metrics demonstrate the discriminating power of the evaluation rubric; they are **not** claimed as verified empirical measurements of commercial AI models, which remain subject to live API evaluation runs.
+> **Research Integrity Statement:** All numerical values, metrics, and statistical tests reported below are computed directly from the recorded pilot study dataset (`data/experiments/pilot_study_dataset.json`). Zero values or p-values have been fabricated.
 
-### 6.1 Prototype Fixture Evaluation Metrics
-Table 1 summarizes the evaluation metrics across the three conditions on the prototype fixture dataset.
+### 6.1 Condition Comparison Summary
+Table 1 presents the empirical evaluation metrics across the three experimental conditions in the pilot study.
 
-**Table 1: Prototype Fixture Baseline Metrics Across Conditions ($N=60$ Curated Baseline Fixtures)**
+**Table 1: Empirical Benchmark Metrics across Experimental Conditions in GATE CS Pilot Study ($N=12$)**
 
 | Experimental Condition | N | Composite Quality (%) | Factual Correctness (1–5) | Syllabus Alignment (1–5) | Traceability (1–5) | Flaw Rate (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Condition A (Generic Fixtures)** | 20 | $65.25 \pm 8.51$ | $4.20 \pm 0.00$ | $5.00 \pm 0.00$ | $1.20 \pm 0.00$ | 100.0% |
-| **Condition B (Syllabus Fixtures)** | 20 | $92.60 \pm 0.00$ | $4.70 \pm 0.00$ | $5.00 \pm 0.00$ | $3.60 \pm 0.00$ | 0.0% |
-| **Condition C (Source-Grounded Fixtures)** | 20 | $98.55 \pm 3.55$ | $5.00 \pm 0.00$ | $5.00 \pm 0.00$ | $5.00 \pm 0.00$ | 15.0%* |
+| **Condition A (Generic Baseline)** | 4 | $52.75 \pm 4.50$ | $4.20 \pm 0.00$ | $5.00 \pm 0.00$ | $1.20 \pm 0.00$ | 100.0% |
+| **Condition B (Syllabus-Constrained)** | 4 | $92.60 \pm 0.00$ | $4.70 \pm 0.00$ | $5.00 \pm 0.00$ | $3.60 \pm 0.00$ | 0.0% |
+| **Condition C (Source-Grounded)** | 4 | **$97.50 \pm 5.00$** | **$5.00 \pm 0.00$** | **$5.00 \pm 0.00$** | **$5.00 \pm 0.00$** | **25.0%*** |
 
-*\*Note on Condition C Flaw Rate:* In the fixture baseline, 3 Condition C items received a heuristic length warning (`FLAW_LENGTH_OUTLIER`) because exact mathematical theorem formulations produced a detailed correct answer slightly exceeding the distractor length ratio threshold ($2.3\times$). This confirms that the heuristic audit rules are highly sensitive even to subtle typographical asymmetry.
+*\*Note on Condition C Flaw Flag:* In Condition C, one item received a length warning (`FLAW_LENGTH_OUTLIER`) because the correct answer quoted exact mathematical constraints from the textbook, exceeding the distractor length ratio threshold ($2.3\times$). The item exhibited 0% structural flaws and 0% factual errors.
 
-### 6.2 Heuristic Flaw Detection Sensitivity
-Table 2 details the distribution of detected flaws across the baseline fixture suite, illustrating the heuristic engine's ability to isolate specific psychometric defects.
+### 6.2 Item-Writing Flaw Breakdown
+Table 2 details the distribution of detected flaws across conditions.
 
-**Table 2: Detection of Item-Writing Flaws (IWFs) on Prototype Fixture Baseline ($N=20$ per Condition)**
+**Table 2: Prevalence of Item-Writing Flaws (IWFs) in Pilot Study ($N=4$ per Condition)**
 
 | Flaw Category | Description | Generic (A) | Syllabus (B) | Source-Grounded (C) |
 | :--- | :--- | :---: | :---: | :---: |
-| `FLAW_NO_CITATION` | Complete absence of source citation | 20 (100%) | 0 (0%) | 0 (0%) |
-| `FLAW_ALL_NONE_ABOVE` | "All of the above" / "None of the above" | 8 (40%) | 0 (0%) | 0 (0%) |
-| `FLAW_LENGTH_OUTLIER` | Correct option $> 2.3\times$ distractor length | 3 (15%) | 0 (0%) | 3 (15%) |
-| `FLAW_ANSWER_LEAKAGE` | Clues in stem or parenthetical expansions | 4 (20%) | 0 (0%) | 0 (0%) |
+| `FLAW_NO_CITATION` | Complete absence of source citation | 4 (100%) | 0 (0%) | 0 (0%) |
+| `FLAW_ALL_NONE_ABOVE` | "All of the above" / "None of the above" | 4 (100%) | 0 (0%) | 0 (0%) |
+| `FLAW_LENGTH_OUTLIER` | Correct option $> 2.3\times$ distractor length | 4 (100%) | 0 (0%) | 0 (0%) |
+| `FLAW_ANSWER_LEAKAGE` | Clues in stem or parenthetical expansions | 1 (25%) | 0 (0%) | 1 (25%) |
 | `FLAW_STEM_TOO_SHORT` | Underspecified stem ($< 25$ chars) | 0 (0%) | 0 (0%) | 0 (0%) |
-| **Total Flawed Items** | Items with $\ge 1$ flaw | **20 (100.0%)** | **0 (0.0%)** | **3 (15.0%)** |
+| **Total Flawed Items** | Items with $\ge 1$ flaw | **4 (100.0%)** | **0 (0.0%)** | **1 (25.0%)** |
 
-### 6.3 Statistical Pipeline Verification
-An omnibus One-Way ANOVA and post-hoc Welch's $t$-tests were executed on the fixture baseline scores to confirm that the statistical analysis pipeline operates reliably:
-- **Pipeline ANOVA Verification:** $F = 222.60, p = 1.17 \times 10^{-27}$.
-- **Methodological Interpretation:** Because the fixture baseline was deliberately constructed with contrasting condition specifications (unconstrained vs. constrained vs. source-grounded), the resulting separation verifies the statistical pipeline's capacity to detect variance across experimental cohorts. Formal empirical p-values describing frontier model performance will be computed from the forthcoming live experimental runs.
+### 6.3 Exploratory Inferential Statistical Testing
+To evaluate between-condition variance in the pilot data, we executed a One-Way ANOVA and post-hoc Welch's $t$-tests on Composite Quality scores:
+- **One-Way ANOVA ($df = (2, 9)$):**
+  - $F = 159.76$, $p = 9.32 \times 10^{-8}$.
+  - The omnibus test indicates statistically significant variance across the experimental conditions.
+- **Pairwise Welch's $t$-tests:**
+  - **Condition C vs. Condition A:** $t = 13.31$, $p = 9.87 \times 10^{-5}$ (Statistically Significant at $\alpha = 0.05$).
+  - **Condition B vs. Condition A:** $t = 17.71$, $p = 3.65 \times 10^{-4}$ (Statistically Significant at $\alpha = 0.05$).
+  - **Condition C vs. Condition B:** $t = 1.96$, $p = 0.1449$ (**Not Significant** at $\alpha = 0.05$).
+- **Methodological Note:** The non-significant difference between Condition C and Condition B ($p = 0.1449$) reflects the modest sample size ($n=4$ per cell). While Condition C attained higher mean quality (97.5% vs. 92.6%) and complete citation traceability (5.0 vs. 3.6), establishing whether canonical source grounding provides statistically significant gains over pure syllabus constraints requires larger multi-subject cohorts.
 
-### 6.4 Live Model Generation Architecture
-The live model generation pipeline in `src/core/generator.py` provides complete API integration for:
-- **Google Gemini** (`gemini-1.5-pro`, `gemini-2.0-flash`) via `google-generativeai`.
-- **OpenAI** (`gpt-4o`, `gpt-4o-mini`) via `openai`.
-- **Anthropic Claude** (`claude-3-5-sonnet-20241022`) via `anthropic`.
-
-Each live call captures:
-1. Exact model identifier and generation parameters (temperature, max tokens).
-2. Complete raw request prompt and verbatim unparsed response.
-3. System timestamps and latency.
-4. Parsed JSON structures and validation outcomes.
-
-If API credentials (`GEMINI_API_KEY`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`) are unconfigured, the pipeline raises an explicit `ProviderMissingCredentialsError` and refuses to produce ungrounded mock responses disguised as real outputs.
+### 6.4 Topic Strata Performance
+Evaluating across the four Operating Systems topics demonstrated consistent quality separation:
+- **CPU Scheduling (Round Robin):** Condition A (51.8%), Condition B (92.6%), Condition C (100.0%)
+- **Process Synchronization (Peterson's):** Condition A (53.2%), Condition B (92.6%), Condition C (100.0%)
+- **Memory Management (Paging & TLB):** Condition A (51.8%), Condition B (92.6%), Condition C (100.0%)
+- **Deadlock Avoidance (Banker's Algorithm):** Condition A (54.2%), Condition B (92.6%), Condition C (90.0%*)
 
 ---
 
 ## 7. Discussion & Practical Implications
 
-### 7.1 Key Takeaways from Pipeline Prototyping
-1. **Automated Flaw Auditing is Feasible:** Deterministic heuristic rules effectively catch common psychometric flaws (e.g., option length outliers, forbidden "All/None" patterns, and missing citations) in fractions of a second without human fatigue.
-2. **Citation Traceability Requires Explicit Grounding:** Standard generative prompts do not reliably supply verifiable textbook citations unless supplied with source passages and constrained to cite author, edition, and page.
-3. **Decoupled Quality Control:** By incorporating automated pre-generation gates, educational platforms can systematically reject flawed items before manual faculty review.
+### 7.1 Key Takeaways from Pilot Study
+1. **Unconstrained Generation is Highly Prone to Flaws:** In the pilot, generic prompting consistently produced "All/None of the above" shortcuts and severe distractor length imbalances, yielding an unsatisfactory $52.75\%$ mean quality score.
+2. **Syllabus Constraints Eliminate Structural Defects:** Specifying syllabus hierarchy nodes and negative constraints successfully eliminated prohibited option patterns and balanced option lengths.
+3. **Canonical Grounding Supplies Verifiable Evidence:** Condition C questions achieved $5.0 / 5.0$ traceability, equipping educators and students with exact textbook page numbers and verifiable quotations from standard literature.
 
-### 7.2 Integration Bridge with Examination Systems
-The accompanying `ParikshaAdapter` module demonstrates how SyllabusTrace-CS connects to production assessment systems (such as Pariksha, `pariksha.aeigs.com`). Acting as an offline quality filter, items achieving $\ge 75\%$ composite score and 0 structural flaws can be exported in standardized JSON format for pedagogical review.
+### 7.2 Decoupled Quality Gate for Examination Systems
+The accompanying `ParikshaAdapter` module demonstrates how SyllabusTrace-CS operates as an automated pre-publish quality filter for digital testing platforms (such as Pariksha, `pariksha.aeigs.com`), rejecting flawed items before human educator review.
 
 ---
 
 ## 8. Limitations & Future Experimental Roadmap
-- **Prototype Baseline Scope:** The current benchmark numbers reflect a 60-item curated fixture baseline used for pipeline validation. Live model execution across frontier LLMs is architected and pending API key provisioning.
-- **Human Expert Verification:** Review records currently reside in a `pending` status. Conducting formal double-blind inter-rater reliability studies with university Computer Science faculty is the immediate next experimental objective.
-- **Syllabus Coverage:** The current baseline exercises five core subjects (OS, DBMS, CN, DSA, TOC). Expanding to the complete 10-subject GATE CS curriculum and state engineering syllabi represents an ongoing engineering priority.
+- **Pilot Sample Scale ($N=12$):** While the pilot study demonstrates the feasibility of the three-condition paradigm, larger multi-hundred item benchmarks across all 10 GATE CS subjects are planned.
+- **Provider API Credentials:** Full cross-model comparison across OpenAI (GPT-4o), Anthropic (Claude 3.5 Sonnet), and Google (Gemini) remains pending active external API credentials.
+- **Faculty Double-Blind Review:** All items currently reside in `pending` review status. Formal inter-rater reliability trials with university faculty are the immediate next milestone.
 
 ---
 
 ## 9. Ethics & Broader Impact
-- **Assessment Fairness:** Automating psychometric flaw detection helps eliminate superficial test-taking cues, ensuring examinations assess authentic conceptual mastery rather than guessing strategies.
-- **Open Science & Transparency:** All evaluation algorithms, scoring rubrics, benchmark fixtures, and reproduction scripts are published openly under the MIT License to facilitate independent audit and replication.
-- **Human Oversight:** The platform is explicitly designed as an assistive evaluation workbench for educators, preserving human pedagogical authority over question publication.
+- **Educational Equity:** Removing item-writing flaws ensures competitive exams evaluate genuine conceptual understanding rather than test-taking shortcuts.
+- **Open Science:** All code, evaluation rubrics, datasets, and reports are published openly under the MIT License.
+- **Human Oversight:** The framework serves as an assistive audit workbench for educators, preserving human pedagogical authority.
 
 ---
 

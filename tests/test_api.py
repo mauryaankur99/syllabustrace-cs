@@ -84,6 +84,14 @@ class TestAPI(unittest.TestCase):
         self.assertEqual(pk_data["status"], "success")
         self.assertGreater(pk_data["exported_count"], 0)
 
+    def test_api_pilot_study_endpoint(self):
+        res = self.client.get("/api/experiments/pilot")
+        self.assertEqual(res.status_code, 200)
+        data = res.json()
+        self.assertEqual(data["sample_size"], 12)
+        self.assertIn("metrics", data)
+        self.assertIn("statistical_tests", data)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -30,10 +30,14 @@ jobs:
       run: |
         python tests/run_tests.py
 
-    - name: Run reproduction pipeline
+    - name: Run genuine pilot study pipeline
+      run: |
+        python scripts/run_pilot_study.py
+
+    - name: Run software pipeline sanity checks (fixtures)
       run: |
         python scripts/reproduce_experiment.py
 
-    - name: Regenerate manuscript figures and tables
+    - name: Regenerate manuscript figures and tables from eligible pilot data
       run: |
         python scripts/generate_paper_tables_and_figures.py

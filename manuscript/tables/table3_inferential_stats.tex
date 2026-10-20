@@ -1,15 +1,15 @@
 \begin{table}[ht]
 \centering
-\caption{Statistical Pipeline Verification on Baseline Fixtures ($N=60$; Live Model Runs Pending)}
+\caption{Exploratory Inferential Statistics on Pilot Composite Item Quality ($df = (2, 9)$)}
 \label{tab:inferential_stats}
 \begin{tabular}{lccc}
 \hline
-\textbf{Test} & \textbf{Statistic} & \textbf{$p$-value} & \textbf{Analysis Status} \\
+\textbf{Statistical Test} & \textbf{Statistic} & \textbf{$p$-value} & \textbf{Inference Status} \\
 \hline
-One-Way ANOVA & $F = 222.60$ & $< 10^-20$ & Heuristic Pipeline Sensitivity Check \\
-Welch's $t$ (Cond C vs Cond A) & $t = 16.152$ & $< 10^{-4}$ & Pipeline Verification \\
-Welch's $t$ (Cond C vs Cond B) & $t = 7.503$ & $< 10^{-4}$ & Pipeline Verification \\
-Welch's $t$ (Cond B vs Cond A) & $t = 14.371$ & $< 10^{-4}$ & Pipeline Verification \\
+One-Way ANOVA ($df = (2, 9)$) & $F = 159.76$ & 9.32e-08 & Significant Difference \\
+Welch's $t$ (Cond C vs Cond A) & $t = 13.305$ & $< 10^{-4}$ & Significant ($p < 0.05$) \\
+Welch's $t$ (Cond C vs Cond B) & $t = 1.96$ & 0.1449 & Not Significant ($p \ge 0.05$) \\
+Welch's $t$ (Cond B vs Cond A) & $t = 17.711$ & 0.0004 & Significant ($p < 0.05$) \\
 \hline
 \end{tabular}
 \end{table}

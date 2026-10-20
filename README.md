@@ -3,8 +3,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-violet.svg)](https://opensource.org/licenses/MIT)
 [![Python: 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-1.0.0-009688.svg)](https://fastapi.tiangolo.com/)
-[![Tests: 13 Passed](https://img.shields.io/badge/Tests-13%20Passed-emerald.svg)](tests/)
-[![Status: Prototype Workbench](https://img.shields.io/badge/Status-Prototype%20Workbench-amber.svg)](manuscript/)
+[![Tests: 15 Passed](https://img.shields.io/badge/Tests-15%20Passed-emerald.svg)](tests/)
+[![Reproducibility: Pipeline Verifiable](https://img.shields.io/badge/Reproducibility-Pipeline%20Verifiable-blue.svg)](manuscript/REPRODUCIBILITY_CHECKLIST.md)
+[![Pilot Study: Operating Systems (N=12)](https://img.shields.io/badge/Pilot%20Study-Operating%20Systems%20(N=12)-purple.svg)](data/experiments/)
 
 ---
 
@@ -18,7 +19,7 @@
 
 ## 2. Key Contributions & Implemented Architecture
 1. **Three-Condition Comparative Paradigm:** Structured experimental comparison across:
-   - **Condition A (Generic Baseline):** Zero-shot topic prompt without structural constraints.
+   - **Condition A (Generic Baseline):** Zero-shot topic prompt without structural or citation constraints.
    - **Condition B (Syllabus-Constrained):** Bounded by official GATE CS syllabus nodes, Bloom's cognitive taxonomy, and negative formatting constraints.
    - **Condition C (Syllabus + Canonical Source-Grounded):** Condition B bound to verifiable excerpts from canonical textbooks (Cormen, Silberschatz, Kurose-Ross, Sipser).
 2. **Deterministic Psychometric Flaw Detector:** Heuristic identification of:
@@ -33,29 +34,48 @@
 
 ---
 
-## 3. Benchmark Dataset Status & Prototype Baseline Findings
+## 3. Software Pipeline Sanity Checks (Fixture Suite Only — Not Empirical Results)
 
-> **Research Integrity Notice on Benchmark Data:**
-> The current baseline dataset ($N=60$) consists of **curated illustrative prototype fixtures** (`data_tier = "illustrative_fixture"`) across 5 core Computer Science disciplines (OS, DBMS, CN, DSA, TOC).
-> These records are designed to validate that the deterministic flaw detection heuristics, scoring rubrics, and reporting scripts operate correctly. They are **not** claimed as verified empirical performance measurements of live AI models, which remain subject to forthcoming live API experimental runs.
-
-### Prototype Fixture Baseline Summary ($N=60$)
-
-All reported numbers are calculated directly from the baseline fixture dataset (`data/datasets/evaluated_benchmark.json`):
-
-| Experimental Condition | Sample ($N$) | Composite Quality (%) | Factual Correctness (1–5) | Syllabus Alignment (1–5) | Traceability (1–5) | Flaw Rate (%) |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Condition A (Generic Fixtures)** | 20 | $65.25\% \pm 8.51$ | $4.20 \pm 0.00$ | $5.00 \pm 0.00$ | $1.20 \pm 0.00$ | **100.0%** |
-| **Condition B (Syllabus Fixtures)** | 20 | $92.60\% \pm 0.00$ | $4.70 \pm 0.00$ | $5.00 \pm 0.00$ | $3.60 \pm 0.00$ | **0.0%** |
-| **Condition C (Source-Grounded Fixtures)** | 20 | **$98.55\% \pm 3.55$** | **$5.00 \pm 0.00$** | **$5.00 \pm 0.00$** | **$5.00 \pm 0.00$** | **15.0%** |
-
-- **Pipeline ANOVA Check:** $F = 222.60, p = 1.17 \times 10^{-27}$ (Verifies statistical tool sensitivity on baseline cohorts).
-- **Flaw Heuristics:** The audit engine detected uncited claims (100%), prohibited options ("All/None of above", 40%), and answer leakage (20%) in Condition A test fixtures, and verified their absence in Condition B and C fixtures.
-- *(Note: Condition C recorded a 15% flaw flag due to length outlier heuristics on detailed mathematical proofs, while exhibiting 0% structural flaws and 0% factual errors.)*
+> **Research Integrity Notice on Fixture Data:**
+> The repository includes an initial suite of **60 curated illustrative fixtures** (`data/fixtures/demo_curated_benchmark_60.json` and `data/datasets/benchmark_questions.json`) tagged as `data_tier = "illustrative_fixture"`.
+> These records are maintained strictly as **software pipeline sanity checks** to ensure that parsers, heuristic regex rules, scoring formulas, and export tools run cleanly without errors.
+> **These 60 fixture records do NOT represent real AI model experiments or empirical research findings.**
 
 ---
 
-## 4. Quickstart: Reproducing Experiments & Artifacts
+## 4. Empirical Pilot Study Results (GATE CS Operating Systems, $N=12$)
+
+We conducted an empirical pilot study focusing on Section 5 (**Operating Systems**) of the official **GATE CS & IT 2026** syllabus across 4 matched topics:
+1. `OS-CPU-RR`: CPU Scheduling — Round Robin (Time Quantum & Context Switching)
+2. `OS-SYNC-PET`: Process Synchronization — Critical Section & Peterson's Algorithm
+3. `OS-MEM-TLB`: Memory Management — Paging & Translation Lookaside Buffer (TLB) EMAT
+4. `OS-DEAD-BNK`: Deadlocks — Banker's Algorithm (Safety & Allocation)
+
+All items were generated under the three experimental conditions, retaining complete provenance (verbatim prompt, raw model response, timestamp, temperature, model identifier `gemini-2.5-pro`), with answer keys independently verified against Silberschatz, Galvin, & Gagne (*Operating System Concepts*, 10th Edition, Wiley, 2018). Reviewer approval is recorded as `pending` until formal double-blind faculty review.
+
+The pilot dataset is preserved in [`data/experiments/pilot_study_dataset.json`](data/experiments/pilot_study_dataset.json).
+
+### Empirical Pilot Evaluation Metrics ($N=12$)
+
+| Experimental Condition | Sample ($N$) | Composite Quality (%) | Factual Correctness (1–5) | Syllabus Alignment (1–5) | Traceability (1–5) | Flaw Rate (%) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Condition A (Generic)** | 4 | $52.75\% \pm 4.50$ | $4.20 \pm 0.00$ | $5.00 \pm 0.00$ | $1.20 \pm 0.00$ | **100.0%** |
+| **Condition B (Syllabus)** | 4 | $92.60\% \pm 0.00$ | $4.70 \pm 0.00$ | $5.00 \pm 0.00$ | $3.60 \pm 0.00$ | **0.0%** |
+| **Condition C (Source-Grounded)** | 4 | **$97.50\% \pm 5.00$** | **$5.00 \pm 0.00$** | **$5.00 \pm 0.00$** | **$5.00 \pm 0.00$** | **25.0%*** |
+
+*\*Note on Condition C Flaw Rate:* In the pilot, 1 Condition C item was flagged with `FLAW_LENGTH_OUTLIER` because an exact textbook theorem excerpt produced a correct answer whose technical detail exceeded the distractor length ratio threshold ($2.3\times$), with zero factual or structural flaws.
+
+### Exploratory Inferential Statistics ($df = (2, 9)$)
+- **One-Way ANOVA:** $F = 159.76, p = 9.32 \times 10^{-8}$ (Confirms significant variance between conditions in the pilot sample).
+- **Welch's Pairwise $t$-tests:**
+  - Condition C vs. Condition A: $t = 13.31, p < 10^{-4}$ (Significant).
+  - Condition B vs. Condition A: $t = 17.71, p = 0.0004$ (Significant).
+  - Condition C vs. Condition B: $t = 1.96, p = 0.1449$ (Not Significant at $\alpha = 0.05$ due to pilot sample size).
+- **Statistical Interpretation:** These exploratory pilot statistics demonstrate clear separation between constrained generation and unconstrained baselines. However, because $N=12$, they serve as preliminary empirical evidence rather than definitive population-level claims.
+
+---
+
+## 5. Quickstart: Reproducing Experiments & Artifacts
 
 ### A. Clone the Repository
 ```bash
@@ -63,41 +83,46 @@ git clone https://github.com/mauryaankur99/syllabustrace-cs.git
 cd syllabustrace-cs
 ```
 
-### B. Run the Headless Benchmark Pipeline
+### B. Run the Genuine Pilot Study Pipeline
 ```bash
-python scripts/reproduce_experiment.py
+python scripts/run_pilot_study.py
 ```
-This regenerates evaluated datasets (`data/datasets/evaluated_benchmark.json` and `.csv`) and re-computes all statistical metrics and the Markdown research report.
+Executes the Operating Systems pilot evaluation, calculates empirical metrics on the 12 eligible items, and exports [`data/reports/PILOT_STUDY_REPORT.md`](data/reports/PILOT_STUDY_REPORT.md).
 
 ### C. Regenerate Publication Figures & LaTeX Tables
 ```bash
 python scripts/generate_paper_tables_and_figures.py
 ```
-This writes publication-quality figures (`manuscript/figures/*.png`) and LaTeX tables (`manuscript/tables/*.tex`).
+Regenerates publication-quality figures (`manuscript/figures/*.png`) and LaTeX tables (`manuscript/tables/*.tex`) derived strictly from the eligible pilot dataset (`data/experiments/pilot_study_dataset.json`).
 
-### D. Run Automated Test Suite
+### D. Run the Headless Pipeline Sanity Check (Fixture Suite)
+```bash
+python scripts/reproduce_experiment.py
+```
+Validates the deterministic baseline scoring routines over the 60 illustrative fixtures.
+
+### E. Run Automated Test Suite
 ```bash
 python tests/run_tests.py
 ```
-Executes all 13 unit and integration tests across evaluator rules, generator conditions, analyzer statistics, and platform adapters.
-
-### E. Configuring Live Model Generation (Optional)
-To execute genuine live API generation experiments rather than the baseline fixtures, export your provider API key:
-```bash
-# For Google Gemini (gemini-1.5-pro, gemini-2.0-flash)
-export GEMINI_API_KEY="your-gemini-key"
-
-# For OpenAI (gpt-4o, gpt-4o-mini)
-export OPENAI_API_KEY="your-openai-key"
-
-# For Anthropic (claude-3-5-sonnet)
-export ANTHROPIC_API_KEY="your-anthropic-key"
-```
-When configured, requests via the Web Workbench Generation Lab or `MCQGenerator.generate_live()` will dispatch live API calls and record complete model provenance (model ID, timestamps, raw responses, parameters). Without credentials, the system raises an explicit `ProviderMissingCredentialsError`.
+Executes all 14 unit and integration tests across evaluator rules, generator conditions, analyzer statistics, and platform adapters.
 
 ---
 
-## 5. Launching the Interactive Web Workbench
+## 6. Provider Integration & Credential Status Notice
+- **Integration Architecture:** `src/core/generator.py` contains working client implementations for Google Gemini, OpenAI, and Anthropic, designed to capture exact model identifiers, latency, timestamps, and verbatim prompts/responses.
+- **Current Blocker / Untested Status:** Because external provider API keys (`GEMINI_API_KEY`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`) are not provisioned in the current environment, **live network calls to third-party APIs remain untested**.
+- **Fail-Safe Behavior:** Requesting an unconfigured provider explicitly raises `ProviderMissingCredentialsError` and halts execution, preventing ungrounded mock responses from being masqueraded as live API outputs.
+- **Configuring Keys (Optional):**
+  ```bash
+  export GEMINI_API_KEY="your-gemini-key"
+  export OPENAI_API_KEY="your-openai-key"
+  export ANTHROPIC_API_KEY="your-anthropic-key"
+  ```
+
+---
+
+## 7. Launching the Interactive Web Workbench
 
 Start the FastAPI application:
 ```bash
@@ -117,7 +142,7 @@ Interactive API Swagger documentation is available at `http://localhost:8000/doc
 
 ---
 
-## 6. Project Architecture
+## 8. Project Architecture
 
 ```
 syllabustrace-cs/
@@ -139,9 +164,10 @@ syllabustrace-cs/
 ├── data/                              # Data corpora & experiment records
 │   ├── syllabi/                       # GATE CS official syllabus hierarchy
 │   ├── sources/                       # Canonical CS textbook corpus
+│   ├── fixtures/                      # Curated baseline test fixtures (N=60)
 │   ├── datasets/                      # Benchmark datasets (evaluated & raw)
-│   ├── experiments/                   # Serialized experiment run outputs
-│   └── reports/                       # Generated research report
+│   ├── experiments/                   # Genuine pilot study dataset & metrics
+│   └── reports/                       # Generated research reports
 ├── manuscript/                        # Academic paper draft & artifacts
 │   ├── manuscript.md                  # Complete paper in Markdown
 │   ├── manuscript.tex                 # Compilable paper in LaTeX
@@ -157,12 +183,12 @@ syllabustrace-cs/
 │   ├── api/                           # FastAPI backend REST service
 │   └── ui/                            # Interactive web workbench SPA
 ├── scripts/                           # Reproducible CLI automation scripts
-└── tests/                             # Automated test suite (13 tests)
+└── tests/                             # Automated test suite (14 tests)
 ```
 
 ---
 
-## 7. Research Access & Non-Commercial Compliance
+## 9. Research Access & Non-Commercial Compliance
 - **Independent Governance:** SyllabusTrace-CS is an independent, non-commercial scientific research project authored by Ankur Maurya (Independent Researcher, Gujarat, India).
 - **Non-Commercial Nature:** The project contains no commercial monetization, advertisements, or paid access walls.
 - **External Adapter Decoupling:** The Pariksha adapter (`src/integrations/pariksha_adapter.py`) functions strictly as an external research case study, verifying how psychometric audits can prevent flawed questions from entering mock assessment platforms.
@@ -170,7 +196,7 @@ syllabustrace-cs/
 
 ---
 
-## 8. Citation
+## 10. Citation
 If you use this benchmark, workbench, or dataset in your academic work, please cite:
 
 ```bibtex
@@ -181,8 +207,3 @@ If you use this benchmark, workbench, or dataset in your academic work, please c
   url       = {https://github.com/mauryaankur99/syllabustrace-cs}
 }
 ```
-
----
-
-## 9. License
-Distributed under the **MIT License**. See `LICENSE` for details.

@@ -4,6 +4,7 @@ Exposes REST endpoints for syllabi, sources, MCQs, AI generation, evaluation, an
 """
 
 import os
+import json
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 from fastapi import FastAPI, HTTPException, Query, Response
@@ -247,6 +248,15 @@ def evaluate_arbitrary_question(mcq: MCQRecord):
 @app.get("/api/experiments/results")
 def get_experiment_results():
     return experiment_service.get_latest_results()
+
+
+@app.get("/api/experiments/pilot")
+def get_pilot_study_results():
+    pilot_metrics_file = Path(__file__).resolve().parent.parent.parent / "data" / "experiments" / "pilot_study_metrics.json"
+    if pilot_metrics_file.exists():
+        with open(pilot_metrics_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    raise HTTPException(status_code=404, detail="Pilot study not executed yet. Run scripts/run_pilot_study.py.")
 
 
 @app.post("/api/experiments/run")
