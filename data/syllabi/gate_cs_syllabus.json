@@ -1,0 +1,229 @@
+{
+  "exam": "GATE_CS",
+  "title": "Graduate Aptitude Test in Engineering — Computer Science and Information Technology",
+  "version": "2026",
+  "official_source": "https://gate2026.iit.ac.in/syllabus/cs",
+  "subjects": [
+    {
+      "id": "subj-os",
+      "name": "Operating Systems",
+      "code": "OS",
+      "topics": [
+        {
+          "id": "os-cpu-scheduling",
+          "name": "CPU Scheduling",
+          "subtopics": [
+            "Preemptive and Non-Preemptive Scheduling",
+            "Round Robin and FCFS Algorithms",
+            "Multi-level Feedback Queues",
+            "Turnaround and Waiting Time Calculations"
+          ]
+        },
+        {
+          "id": "os-concurrency",
+          "name": "Concurrency and Synchronization",
+          "subtopics": [
+            "Critical Section Problem",
+            "Semaphores and Mutexes",
+            "Classical Synchronization Problems (Dining Philosophers, Readers-Writers)",
+            "Deadlock Characterization, Prevention, and Banker's Algorithm"
+          ]
+        },
+        {
+          "id": "os-memory-management",
+          "name": "Memory Management and Virtual Memory",
+          "subtopics": [
+            "Paging and Segmentation",
+            "Page Replacement Algorithms (FIFO, LRU, Optimal)",
+            "Thrashing and Working Set Model",
+            "Translation Lookaside Buffer (TLB) and Effective Memory Access Time"
+          ]
+        },
+        {
+          "id": "os-file-storage",
+          "name": "File Systems and Disk Scheduling",
+          "subtopics": [
+            "File Allocation Methods (Contiguous, Linked, Indexed)",
+            "Disk Scheduling (SSTF, SCAN, C-SCAN)",
+            "I-node Structure and File Directories"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj-dbms",
+      "name": "Database Management Systems",
+      "code": "DBMS",
+      "topics": [
+        {
+          "id": "dbms-relational-model",
+          "name": "Relational Model and Algebra",
+          "subtopics": [
+            "Relational Operators (Selection, Projection, Join, Division)",
+            "Tuple and Domain Relational Calculus",
+            "Integrity Constraints and Foreign Keys",
+            "SQL Queries, Aggregations, and Nested Subqueries"
+          ]
+        },
+        {
+          "id": "dbms-normalization",
+          "name": "Database Design and Normalization",
+          "subtopics": [
+            "Functional Dependencies and Attribute Closure",
+            "First, Second, and Third Normal Forms (1NF, 2NF, 3NF)",
+            "Boyce-Codd Normal Form (BCNF)",
+            "Lossless Decomposition and Dependency Preservation"
+          ]
+        },
+        {
+          "id": "dbms-transactions",
+          "name": "Transactions and Concurrency Control",
+          "subtopics": [
+            "ACID Properties",
+            "Conflict and View Serializability",
+            "Precedence Graphs and Cycle Detection",
+            "Two-Phase Locking (Strict and Rigorous 2PL)",
+            "Timestamp Ordering and Deadlock Handling"
+          ]
+        },
+        {
+          "id": "dbms-indexing",
+          "name": "Indexing and Storage",
+          "subtopics": [
+            "Dense and Sparse Indexes",
+            "B-Trees and B+ Trees Search, Insertion, and Deletion",
+            "Hashing and Hash Collisions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj-cn",
+      "name": "Computer Networks",
+      "code": "CN",
+      "topics": [
+        {
+          "id": "cn-architecture",
+          "name": "Layered Architecture and Physical Layer",
+          "subtopics": [
+            "OSI and TCP/IP Reference Models",
+            "Data Transmission and Bandwidth-Delay Product",
+            "Manchester Encoding and Modulation"
+          ]
+        },
+        {
+          "id": "cn-data-link",
+          "name": "Data Link Layer and MAC",
+          "subtopics": [
+            "Framing and CRC Error Detection",
+            "Flow Control: Stop-and-Wait, Go-Back-N, Selective Repeat",
+            "MAC Protocols: CSMA/CD and CSMA/CA",
+            "Ethernet Standards and Collision Detection"
+          ]
+        },
+        {
+          "id": "cn-network-layer",
+          "name": "Network Layer and Routing",
+          "subtopics": [
+            "IPv4 and IPv6 Addressing and Subnetting (CIDR)",
+            "Routing Algorithms: Distance Vector and Link State",
+            "Routing Protocols (RIP, OSPF, BGP)",
+            "ARP, ICMP, and NAT"
+          ]
+        },
+        {
+          "id": "cn-transport-app",
+          "name": "Transport and Application Layers",
+          "subtopics": [
+            "TCP vs UDP Sockets and Header Formats",
+            "TCP Congestion Control (Slow Start, Congestion Avoidance, Fast Retransmit)",
+            "Application Protocols: DNS, HTTP/HTTPS, SMTP",
+            "Network Security Basics (RSA, Symmetric Keys, TLS)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj-dsa",
+      "name": "Data Structures and Algorithms",
+      "code": "DSA",
+      "topics": [
+        {
+          "id": "dsa-complexity",
+          "name": "Asymptotic Analysis and Recurrences",
+          "subtopics": [
+            "Big-O, Omega, and Theta Notations",
+            "Master Theorem and Divide-and-Conquer Recurrences",
+            "Space and Time Complexity Bounds"
+          ]
+        },
+        {
+          "id": "dsa-linear-trees",
+          "name": "Trees and Search Structures",
+          "subtopics": [
+            "Binary Search Trees (BST) Insertion, Search, Deletion",
+            "AVL Trees and Rotations",
+            "Heaps, Heapify, and Priority Queues",
+            "Disjoint Set Union (DSU) and Path Compression"
+          ]
+        },
+        {
+          "id": "dsa-graphs",
+          "name": "Graph Algorithms",
+          "subtopics": [
+            "Breadth-First Search (BFS) and Depth-First Search (DFS)",
+            "Shortest Path Algorithms: Dijkstra and Bellman-Ford",
+            "Minimum Spanning Trees: Kruskal and Prim",
+            "Topological Sorting and DAG Analysis"
+          ]
+        },
+        {
+          "id": "dsa-paradigms",
+          "name": "Algorithm Design Paradigms",
+          "subtopics": [
+            "Greedy Algorithms (Activity Selection, Huffman)",
+            "Dynamic Programming (0/1 Knapsack, LCS, Matrix Chain)",
+            "NP-Completeness and Reduction Basics"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj-toc",
+      "name": "Theory of Computation",
+      "code": "TOC",
+      "topics": [
+        {
+          "id": "toc-regular-languages",
+          "name": "Regular Languages and Finite Automata",
+          "subtopics": [
+            "Deterministic and Non-deterministic Finite Automata (DFA, NFA)",
+            "Regular Expressions and Myhill-Nerode Equivalence",
+            "Pumping Lemma for Regular Languages",
+            "Closure Properties of Regular Languages"
+          ]
+        },
+        {
+          "id": "toc-context-free",
+          "name": "Context-Free Languages and Pushdown Automata",
+          "subtopics": [
+            "Context-Free Grammars (CFG) and Parse Trees",
+            "Pushdown Automata (DPDA vs NPDA)",
+            "Ambiguity in CFGs",
+            "Closure Properties of CFLs"
+          ]
+        },
+        {
+          "id": "toc-turing-decidability",
+          "name": "Turing Machines and Decidability",
+          "subtopics": [
+            "Turing Machine Variants and Computability",
+            "Decidable vs Undecidable Problems",
+            "Halting Problem and Rice's Theorem",
+            "Chomsky Hierarchy of Formal Languages"
+          ]
+        }
+      ]
+    }
+  ]
+}

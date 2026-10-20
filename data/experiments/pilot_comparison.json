@@ -1,0 +1,88 @@
+{
+  "experiment_id": "exp-pilot-gate-2026-v1",
+  "name": "SyllabusTrace-CS Pilot Benchmark Comparison",
+  "total_questions": 60,
+  "timestamp": "2026-10-20T09:30:53.547864",
+  "metrics": {
+    "generic": {
+      "condition": "generic",
+      "sample_size": 20,
+      "factual_correctness_mean": 4.2,
+      "factual_correctness_std": 0.0,
+      "syllabus_alignment_mean": 5.0,
+      "syllabus_alignment_std": 0.0,
+      "distractor_quality_mean": 3.42,
+      "distractor_quality_std": 1.08,
+      "traceability_mean": 1.2,
+      "traceability_std": 0.0,
+      "composite_quality_mean": 65.25,
+      "composite_quality_std": 8.51,
+      "flaw_rate": 100.0,
+      "flaw_counts": {
+        "FLAW_NO_CITATION": 20,
+        "FLAW_ANSWER_LEAKAGE": 5,
+        "FLAW_LENGTH_OUTLIER": 8,
+        "FLAW_ALL_NONE_ABOVE": 6
+      }
+    },
+    "syllabus_constrained": {
+      "condition": "syllabus_constrained",
+      "sample_size": 20,
+      "factual_correctness_mean": 4.7,
+      "factual_correctness_std": 0.0,
+      "syllabus_alignment_mean": 5.0,
+      "syllabus_alignment_std": 0.0,
+      "distractor_quality_mean": 5.0,
+      "distractor_quality_std": 0.0,
+      "traceability_mean": 3.6,
+      "traceability_std": 0.0,
+      "composite_quality_mean": 92.6,
+      "composite_quality_std": 0.0,
+      "flaw_rate": 0.0,
+      "flaw_counts": {}
+    },
+    "source_grounded": {
+      "condition": "source_grounded",
+      "sample_size": 20,
+      "factual_correctness_mean": 5.0,
+      "factual_correctness_std": 0.0,
+      "syllabus_alignment_mean": 5.0,
+      "syllabus_alignment_std": 0.0,
+      "distractor_quality_mean": 4.82,
+      "distractor_quality_std": 0.45,
+      "traceability_mean": 5.0,
+      "traceability_std": 0.0,
+      "composite_quality_mean": 98.55,
+      "composite_quality_std": 3.55,
+      "flaw_rate": 15.0,
+      "flaw_counts": {
+        "FLAW_ANSWER_LEAKAGE": 2,
+        "FLAW_LENGTH_OUTLIER": 1
+      }
+    }
+  },
+  "statistical_significance": {
+    "metric": "composite_quality",
+    "test_name": "One-Way ANOVA",
+    "f_statistic": 222.598,
+    "p_value": 1.168312973986794e-27,
+    "is_significant": true,
+    "pairwise_comparisons": {
+      "source_grounded_vs_generic": {
+        "t_statistic": 16.152,
+        "p_value": 7.119025231076088e-15,
+        "significant": true
+      },
+      "source_grounded_vs_syllabus_constrained": {
+        "t_statistic": 7.503,
+        "p_value": 4.2839397208042604e-07,
+        "significant": true
+      },
+      "syllabus_constrained_vs_generic": {
+        "t_statistic": 14.371,
+        "p_value": 1.165844629279159e-11,
+        "significant": true
+      }
+    }
+  }
+}

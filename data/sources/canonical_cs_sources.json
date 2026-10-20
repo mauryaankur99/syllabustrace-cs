@@ -1,0 +1,172 @@
+[
+  {
+    "id": "src-silberschatz-os10",
+    "title": "Operating System Concepts",
+    "authors": ["Abraham Silberschatz", "Peter Baer Galvin", "Greg Gagne"],
+    "edition": "10th Edition",
+    "year": 2018,
+    "publisher": "Wiley",
+    "isbn": "978-1119320913",
+    "domain": "Operating Systems",
+    "canonical_status": "gold_standard",
+    "verified_passages": [
+      {
+        "subtopic": "Deadlock Characterization, Prevention, and Banker's Algorithm",
+        "chapter": "Chapter 8: Deadlocks",
+        "section": "8.5.3 Banker's Algorithm",
+        "page": "332-336",
+        "text": "The Banker's algorithm is a deadlock-avoidance algorithm applicable to a system with multiple instances of each resource type. A state is safe if the system can allocate resources to each process (up to its maximum) in some order and still avoid a deadlock. More formally, a system state is safe only if there exists a safe sequence <P1, P2, ..., Pn> of processes."
+      },
+      {
+        "subtopic": "Paging and Segmentation",
+        "chapter": "Chapter 9: Main Memory",
+        "section": "9.3 Paging",
+        "page": "360-364",
+        "text": "Paging is a memory-management scheme that permits the physical address space of a process to be noncontiguous. Physical memory is broken into fixed-sized blocks called frames, and logical memory is broken into blocks of the same size called pages. The hardware support for paging involves the Translation Lookaside Buffer (TLB), an associative, high-speed cache."
+      },
+      {
+        "subtopic": "Preemptive and Non-Preemptive Scheduling",
+        "chapter": "Chapter 5: CPU Scheduling",
+        "section": "5.3 Scheduling Algorithms",
+        "page": "205-212",
+        "text": "Under nonpreemptive scheduling, once the CPU has been allocated to a process, the process keeps the CPU until it releases it, either by terminating or by switching to the waiting state. Preemptive scheduling incurs a cost associated with access to shared data and context switching."
+      }
+    ]
+  },
+  {
+    "id": "src-cormen-clrs4",
+    "title": "Introduction to Algorithms",
+    "authors": ["Thomas H. Cormen", "Charles E. Leiserson", "Ronald L. Rivest", "Clifford Stein"],
+    "edition": "4th Edition",
+    "year": 2022,
+    "publisher": "MIT Press",
+    "isbn": "978-0262046305",
+    "domain": "Data Structures and Algorithms",
+    "canonical_status": "gold_standard",
+    "verified_passages": [
+      {
+        "subtopic": "Shortest Path Algorithms: Dijkstra and Bellman-Ford",
+        "chapter": "Chapter 22: Single-Source Shortest Paths",
+        "section": "22.3 Dijkstra's Algorithm",
+        "page": "595-601",
+        "text": "Dijkstra's algorithm solves the single-source shortest-paths problem on a weighted, directed graph G = (V, E) for the case in which all edge weights are nonnegative. With a binary min-heap implementation, the running time is O((V + E) log V). If negative weight edges exist, Dijkstra's algorithm can produce incorrect shortest path distances."
+      },
+      {
+        "subtopic": "Master Theorem and Divide-and-Conquer Recurrences",
+        "chapter": "Chapter 4: Divide-and-Conquer",
+        "section": "4.5 The Master Method for Solving Recurrences",
+        "page": "101-106",
+        "text": "The master method provides a 'cookbook' method for solving recurrences of the form T(n) = aT(n/b) + f(n), where a >= 1 and b > 1 are constants and f(n) is an asymptotically positive function. Three cases compare f(n) with n^(log_b(a))."
+      },
+      {
+        "subtopic": "Binary Search Trees (BST) Insertion, Search, Deletion",
+        "chapter": "Chapter 12: Binary Search Trees",
+        "section": "12.3 Insertion and Deletion",
+        "page": "312-317",
+        "text": "The binary-search-tree property states that if y is a node in the left subtree of x, then y.key <= x.key, and if y is in the right subtree of x, then y.key >= x.key. Inorder tree walk on a BST with n nodes takes Theta(n) time."
+      }
+    ]
+  },
+  {
+    "id": "src-kurose-ross-cn8",
+    "title": "Computer Networking: A Top-Down Approach",
+    "authors": ["James F. Kurose", "Keith W. Ross"],
+    "edition": "8th Edition",
+    "year": 2021,
+    "publisher": "Pearson",
+    "isbn": "978-0136681557",
+    "domain": "Computer Networks",
+    "canonical_status": "gold_standard",
+    "verified_passages": [
+      {
+        "subtopic": "TCP Congestion Control (Slow Start, Congestion Avoidance, Fast Retransmit)",
+        "chapter": "Chapter 3: Transport Layer",
+        "section": "3.7 TCP Congestion Control",
+        "page": "260-275",
+        "text": "TCP congestion control operates with three major phases: slow start, congestion avoidance, and fast recovery. In slow start, the value of cwnd begins at 1 MSS and increases by 1 MSS every time a transmitted segment is acknowledged, effectively doubling cwnd every round-trip time."
+      },
+      {
+        "subtopic": "Framing and CRC Error Detection",
+        "chapter": "Chapter 6: The Link Layer and LANs",
+        "section": "6.2 Error-Detection and -Correction Techniques",
+        "page": "472-478",
+        "text": "Cyclic Redundancy Check (CRC) codes operate on data bits using generator polynomials. An r-bit CRC code appended to a d-bit data frame can detect all burst errors of length less than r + 1 bits, and any odd number of bit errors provided the generator contains factor (x + 1)."
+      },
+      {
+        "subtopic": "Routing Algorithms: Distance Vector and Link State",
+        "chapter": "Chapter 5: The Network Layer: Control Plane",
+        "section": "5.2 Routing Algorithms",
+        "page": "392-404",
+        "text": "Link-state algorithms (such as OSPF, using Dijkstra's algorithm) require global knowledge of the network topology. Distance-vector algorithms (such as RIP, based on Bellman-Ford) are iterative, asynchronous, and distributed, suffering from the count-to-infinity problem unless mitigated by split horizon."
+      }
+    ]
+  },
+  {
+    "id": "src-silberschatz-dbms7",
+    "title": "Database System Concepts",
+    "authors": ["Abraham Silberschatz", "Henry F. Korth", "S. Sudarshan"],
+    "edition": "7th Edition",
+    "year": 2020,
+    "publisher": "McGraw-Hill",
+    "isbn": "978-0078022159",
+    "domain": "Database Management Systems",
+    "canonical_status": "gold_standard",
+    "verified_passages": [
+      {
+        "subtopic": "Conflict and View Serializability",
+        "chapter": "Chapter 17: Transactions",
+        "section": "17.5 Serializability",
+        "page": "780-792",
+        "text": "Two instructions l_i and l_j of transactions T_i and T_j conflict if they operate on the same data item Q and at least one of them is a write. A schedule S is conflict serializable if it is conflict equivalent to a serial schedule. A schedule is conflict serializable if and only if its precedence graph has no cycles."
+      },
+      {
+        "subtopic": "Boyce-Codd Normal Form (BCNF)",
+        "chapter": "Chapter 7: Relational Database Design",
+        "section": "7.3 Normal Forms",
+        "page": "290-305",
+        "text": "A relation schema R is in BCNF with respect to a set F of functional dependencies if, for all functional dependencies in F+ of the form alpha -> beta, where alpha subset R and beta subset R, at least one of the following holds: alpha -> beta is trivial (beta subset alpha), or alpha is a superkey for R."
+      },
+      {
+        "subtopic": "B-Trees and B+ Trees Search, Insertion, and Deletion",
+        "chapter": "Chapter 14: Indexing and Hashing",
+        "section": "14.3 B+ Tree Index Files",
+        "page": "635-650",
+        "text": "A B+ tree index is a balanced tree where every leaf node is at the same depth. In a B+ tree of order n, non-leaf nodes have between ceil(n/2) and n children. Leaf nodes store data pointers or record keys and are linked sequentially to support efficient range queries."
+      }
+    ]
+  },
+  {
+    "id": "src-sipser-toc3",
+    "title": "Introduction to the Theory of Computation",
+    "authors": ["Michael Sipser"],
+    "edition": "3rd Edition",
+    "year": 2013,
+    "publisher": "Cengage Learning",
+    "isbn": "978-1133187790",
+    "domain": "Theory of Computation",
+    "canonical_status": "gold_standard",
+    "verified_passages": [
+      {
+        "subtopic": "Pumping Lemma for Regular Languages",
+        "chapter": "Chapter 1: Regular Languages",
+        "section": "1.4 Nonregular Languages",
+        "page": "77-82",
+        "text": "The Pumping Lemma states that if A is a regular language, then there is a number p (the pumping length) where, if s is any string in A of length at least p, then s may be divided into three pieces, s = xyz, satisfying: (1) for each i >= 0, xy^i z in A, (2) |y| > 0, and (3) |xy| <= p."
+      },
+      {
+        "subtopic": "Decidable vs Undecidable Problems",
+        "chapter": "Chapter 4: Decidability",
+        "section": "4.2 Undecidability",
+        "page": "201-210",
+        "text": "The Acceptance Problem for Turing Machines, A_TM = {<M, w> | M is a TM and M accepts w}, is undecidable. Rice's Theorem states that any non-trivial semantic property of the language recognized by a Turing machine is undecidable."
+      },
+      {
+        "subtopic": "Context-Free Grammars (CFG) and Parse Trees",
+        "chapter": "Chapter 2: Context-Free Languages",
+        "section": "2.1 Context-Free Grammars",
+        "page": "101-112",
+        "text": "A context-free grammar is a 4-tuple (V, Sigma, R, S). A language is context-free if some CFG recognizes it. Deterministic Pushdown Automata (DPDA) recognize a strict subset of CFLs, unlike finite automata where DFA and NFA have equivalent recognition power."
+      }
+    ]
+  }
+]

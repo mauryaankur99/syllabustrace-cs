@@ -1,0 +1,50 @@
+[
+  {
+    "id": "demo-sample-001",
+    "data_tier": "demonstration_sample",
+    "stem": "Which layer of the OSI model is responsible for end-to-end packet routing across networks?",
+    "options": {
+      "A": "Physical Layer",
+      "B": "Data Link Layer",
+      "C": "Network Layer",
+      "D": "Transport Layer"
+    },
+    "correct_key": "C",
+    "explanation": "The Network Layer (Layer 3) handles logical addressing and packet routing across intermediate hops.",
+    "condition": "demonstration",
+    "subject": "Computer Networks",
+    "syllabus_node_id": "cn-architecture",
+    "cognitive_level": "Recall",
+    "source_citation": {
+      "source_name": "Demo Reference Guide",
+      "chapter": "Chapter 1",
+      "page": "15"
+    },
+    "review_status": "demonstration_only",
+    "reviewer_notes": "Sample question for UI demonstration and user interaction testing. Excluded from empirical research statistics."
+  },
+  {
+    "id": "demo-sample-002",
+    "data_tier": "demonstration_sample",
+    "stem": "In SQL, which clause is used to filter groups created by the GROUP BY statement?",
+    "options": {
+      "A": "WHERE",
+      "B": "HAVING",
+      "C": "ORDER BY",
+      "D": "FILTER BY"
+    },
+    "correct_key": "B",
+    "explanation": "The HAVING clause filters aggregated groups, whereas the WHERE clause filters individual rows prior to grouping.",
+    "condition": "demonstration",
+    "subject": "Database Management Systems",
+    "syllabus_node_id": "dbms-relational-model",
+    "cognitive_level": "Recall",
+    "source_citation": {
+      "source_name": "Demo Reference Guide",
+      "chapter": "Chapter 3",
+      "page": "45"
+    },
+    "review_status": "demonstration_only",
+    "reviewer_notes": "Sample question for UI demonstration and user interaction testing. Excluded from empirical research statistics."
+  }
+]

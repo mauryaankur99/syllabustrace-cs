@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, software, or evaluation protocol in your research, please cite it as below."
+authors:
+  - family-names: "Maurya"
+    given-names: "Ankur"
+    orcid: "https://orcid.org/0009-0000-0000-0000"
+title: "SyllabusTrace-CS: A Source-Traceable Quality Benchmark for AI-Generated Computer Science MCQs in Indian Competitive Examinations"
+version: 1.0.0
+date-released: 2026-10-20
+url: "https://github.com/mauryaankur99/syllabustrace-cs"
+repository-code: "https://github.com/mauryaankur99/syllabustrace-cs"
+keywords:
+  - "computer-science-education"
+  - "multiple-choice-question-generation"
+  - "syllabus-alignment"
+  - "source-traceability"
+  - "item-writing-flaws"
+  - "gate-cs"
+  - "ugc-net"
+  - "llm-evaluation"
+  - "benchmark"
+license: MIT

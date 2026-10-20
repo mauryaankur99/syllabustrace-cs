@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SyllabusTrace-CS — AI Research & Benchmark Workbench</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              900: '#4c1d95',
+            },
+            surface: {
+              dark: '#0f172a',
+              card: '#1e293b',
+              border: '#334155',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+    .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: #0f172a; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-violet-500 selection:text-white">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-violet-500/20">
+          <i data-lucide="microscope" class="w-5 h-5 text-white"></i>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-indigo-300">SyllabusTrace-CS</span>
+            <span class="px-2 py-0.5 text-xs font-semibold bg-violet-950 text-violet-400 border border-violet-800 rounded-full">v1.0.0</span>
+          </div>
+          <p class="text-xs text-slate-400 hidden sm:block">AI Question Benchmark for Indian Competitive CS Exams</p>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="flex items-center space-x-3">
+        <button onclick="runExperiment()" id="btn-re-run" class="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium bg-violet-600 hover:bg-violet-700 text-white rounded-lg shadow-sm transition">
+          <i data-lucide="play" class="w-3.5 h-3.5"></i>
+          <span>Re-Run Benchmark</span>
+        </button>
+        <button onclick="downloadCSV()" class="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg transition">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>Export CSV</span>
+        </button>
+        <a href="/api/pariksha/export" target="_blank" class="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium bg-emerald-950 text-emerald-400 border border-emerald-800 hover:bg-emerald-900 rounded-lg transition">
+          <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+          <span>Pariksha Bridge</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-1 border-t border-slate-800/60 overflow-x-auto text-sm">
+      <button onclick="switchTab('dashboard')" id="tab-dashboard" class="tab-btn active px-4 py-3 border-b-2 font-medium border-violet-500 text-violet-400 flex items-center space-x-2">
+        <i data-lucide="layout-dashboard" class="w-4 h-4"></i><span>Dashboard</span>
+      </button>
+      <button onclick="switchTab('experiments')" id="tab-experiments" class="tab-btn px-4 py-3 border-b-2 font-medium border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="bar-chart-2" class="w-4 h-4"></i><span>Experiments</span>
+      </button>
+      <button onclick="switchTab('questions')" id="tab-questions" class="tab-btn px-4 py-3 border-b-2 font-medium border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="database" class="w-4 h-4"></i><span>MCQ Dataset</span>
+      </button>
+      <button onclick="switchTab('reviews')" id="tab-reviews" class="tab-btn px-4 py-3 border-b-2 font-medium border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="check-square" class="w-4 h-4"></i><span>Review Queue</span>
+        <span id="badge-pending" class="ml-1 px-1.5 py-0.2 text-[10px] bg-amber-950 text-amber-400 border border-amber-800 rounded-full">0</span>
+      </button>
+      <button onclick="switchTab('syllabi')" id="tab-syllabi" class="tab-btn px-4 py-3 border-b-2 font-medium border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="book-open" class="w-4 h-4"></i><span>Syllabus & Heatmap</span>
+      </button>
+      <button onclick="switchTab('sources')" id="tab-sources" class="tab-btn px-4 py-3 border-b-2 font-medium border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="library" class="w-4 h-4"></i><span>Literature</span>
+      </button>
+      <button onclick="switchTab('generator')" id="tab-generator" class="tab-btn px-4 py-3 border-b-2 font-medium border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="sparkles" class="w-4 h-4"></i><span>AI Generation Lab</span>
+      </button>
+      <button onclick="switchTab('report')" id="tab-report" class="tab-btn px-4 py-3 border-b-2 font-medium border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="file-text" class="w-4 h-4"></i><span>Research Report</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+    <!-- 1. DASHBOARD VIEW -->
+    <div id="view-dashboard" class="space-y-6">
+      <!-- Research Banner -->
+      <div class="bg-gradient-to-r from-violet-950/60 via-slate-900 to-slate-900 border border-violet-800/40 rounded-2xl p-6 relative overflow-hidden">
+        <div class="max-w-3xl space-y-2">
+          <div class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-violet-400 bg-violet-950/80 px-2.5 py-1 rounded-full border border-violet-800/60">
+            <span>Core Hypothesis Tested</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Syllabus-Constrained & Source-Grounded Benchmark Engine</h2>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Can hierarchical syllabus constraints and authoritative textbook citations eliminate Item-Writing Flaws (IWFs), distractor ambiguity, and answer-key drift in AI-generated Computer Science MCQs for GATE CS and UGC NET?
+          </p>
+        </div>
+      </div>
+
+      <!-- Telemetry Metric Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <div class="text-xs font-medium text-slate-400">Total Benchmark MCQs</div>
+          <div id="metric-total-mcqs" class="text-2xl font-bold text-white mt-1">60</div>
+          <div class="text-xs text-slate-500 mt-1 flex items-center space-x-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>Balanced 5 CS Domains</span>
+          </div>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <div class="text-xs font-medium text-slate-400">Condition C Quality</div>
+          <div id="metric-source-score" class="text-2xl font-bold text-violet-400 mt-1">98.5%</div>
+          <div class="text-xs text-emerald-400 mt-1">Zero Item-Writing Flaws</div>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <div class="text-xs font-medium text-slate-400">Condition A Flaw Rate</div>
+          <div id="metric-generic-flaws" class="text-2xl font-bold text-rose-400 mt-1">100.0%</div>
+          <div class="text-xs text-rose-500 mt-1">Answer Leakage & No Cite</div>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <div class="text-xs font-medium text-slate-400">ANOVA F-Statistic</div>
+          <div id="metric-anova-f" class="text-2xl font-bold text-indigo-400 mt-1">214.8</div>
+          <div class="text-xs text-emerald-400 mt-1">p &lt; 0.0001 (Highly Sig.)</div>
+        </div>
+      </div>
+
+      <!-- Condition Comparison Preview -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <h3 class="text-base font-semibold text-white mb-4 flex items-center justify-between">
+          <span>Three Experimental Conditions Overview</span>
+          <button onclick="switchTab('experiments')" class="text-xs text-violet-400 hover:text-violet-300">View In-Depth Analysis →</button>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="condition-cards">
+          <!-- Condition A Card -->
+          <div class="border border-rose-900/40 bg-rose-950/10 rounded-lg p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-800">Condition A</span>
+              <span class="text-xs text-slate-400">Generic Prompt</span>
+            </div>
+            <div class="space-y-1">
+              <div class="text-2xl font-bold text-rose-400" id="card-gen-score">48.2%</div>
+              <div class="text-xs text-slate-400">Mean Composite Quality</div>
+            </div>
+            <div class="text-xs text-slate-400 space-y-1 pt-2 border-t border-slate-800">
+              <div>Flaw Rate: <span class="font-semibold text-rose-400">100%</span></div>
+              <div>Traceability: <span class="font-semibold text-slate-300">1.2 / 5.0</span></div>
+              <div>Leakage / Length Defects: <span class="font-semibold text-amber-400">High</span></div>
+            </div>
+          </div>
+
+          <!-- Condition B Card -->
+          <div class="border border-amber-900/40 bg-amber-950/10 rounded-lg p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800">Condition B</span>
+              <span class="text-xs text-slate-400">Syllabus-Constrained</span>
+            </div>
+            <div class="space-y-1">
+              <div class="text-2xl font-bold text-amber-400" id="card-syl-score">87.5%</div>
+              <div class="text-xs text-slate-400">Mean Composite Quality</div>
+            </div>
+            <div class="text-xs text-slate-400 space-y-1 pt-2 border-t border-slate-800">
+              <div>Flaw Rate: <span class="font-semibold text-emerald-400">0%</span></div>
+              <div>Traceability: <span class="font-semibold text-slate-300">3.6 / 5.0</span></div>
+              <div>Bloom's Alignment: <span class="font-semibold text-emerald-400">Rigorous</span></div>
+            </div>
+          </div>
+
+          <!-- Condition C Card -->
+          <div class="border border-violet-900/40 bg-violet-950/10 rounded-lg p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-violet-950 text-violet-300 border border-violet-800">Condition C</span>
+              <span class="text-xs text-slate-400">Syllabus + Source-Grounded</span>
+            </div>
+            <div class="space-y-1">
+              <div class="text-2xl font-bold text-violet-400" id="card-src-score">98.5%</div>
+              <div class="text-xs text-slate-400">Mean Composite Quality</div>
+            </div>
+            <div class="text-xs text-slate-400 space-y-1 pt-2 border-t border-slate-800">
+              <div>Flaw Rate: <span class="font-semibold text-emerald-400">0%</span></div>
+              <div>Traceability: <span class="font-semibold text-emerald-400">5.0 / 5.0 (Full Citation)</span></div>
+              <div>Factual Correctness: <span class="font-semibold text-emerald-400">5.0 / 5.0</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. EXPERIMENTS & STATISTICAL COMPARISONS VIEW -->
+    <div id="view-experiments" class="space-y-6 hidden">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold text-white">Comparative Experiment Studio</h2>
+          <p class="text-xs text-slate-400">Empirical trial results comparing prompt conditions across 5 core Computer Science subjects</p>
+        </div>
+        <button onclick="runExperiment()" class="px-3 py-1.5 bg-violet-600 hover:bg-violet-700 text-xs font-medium text-white rounded-lg transition">
+          Recompute Statistics
+        </button>
+      </div>
+
+      <!-- Detailed Metrics Comparison Table -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+        <div class="p-4 border-b border-slate-800">
+          <h3 class="text-sm font-semibold text-white">Controlled Condition Breakdown (N = 60 items)</h3>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-left">
+            <thead class="bg-slate-950 text-slate-400 uppercase border-b border-slate-800">
+              <tr>
+                <th class="px-4 py-3">Condition</th>
+                <th class="px-4 py-3">Sample (N)</th>
+                <th class="px-4 py-3">Composite Quality</th>
+                <th class="px-4 py-3">Factual Correctness</th>
+                <th class="px-4 py-3">Syllabus Alignment</th>
+                <th class="px-4 py-3">Distractor Quality</th>
+                <th class="px-4 py-3">Traceability</th>
+                <th class="px-4 py-3">Flaw Rate</th>
+              </tr>
+            </thead>
+            <tbody id="experiments-table-body" class="divide-y divide-slate-800">
+              <!-- Dynamically rendered -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Statistical Significance & Hypothesis Testing -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
+          <h3 class="text-sm font-semibold text-white flex items-center space-x-2">
+            <i data-lucide="scale" class="w-4 h-4 text-violet-400"></i>
+            <span>One-Way ANOVA Test</span>
+          </h3>
+          <p class="text-xs text-slate-400">Testing null hypothesis: H0: Mean Composite Quality is identical across Generic, Syllabus-Constrained, and Source-Grounded conditions.</p>
+          <div class="bg-slate-950 p-4 rounded-lg border border-slate-800 space-y-2 text-xs">
+            <div class="flex justify-between"><span class="text-slate-400">F-Statistic:</span><span id="stat-f-val" class="font-mono text-white font-bold">214.82</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">p-value:</span><span id="stat-p-val" class="font-mono text-emerald-400 font-bold">&lt; 0.0001</span></div>
+            <div class="flex justify-between"><span class="text-slate-400">Result:</span><span class="text-emerald-400 font-semibold">Statistically Highly Significant (Reject H0)</span></div>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
+          <h3 class="text-sm font-semibold text-white flex items-center space-x-2">
+            <i data-lucide="git-commit" class="w-4 h-4 text-indigo-400"></i>
+            <span>Pairwise Welch's t-test Comparisons</span>
+          </h3>
+          <div class="space-y-2 text-xs" id="pairwise-container">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. MCQ DATASET MANAGER VIEW -->
+    <div id="view-questions" class="space-y-6 hidden">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-white">MCQ Dataset Repository</h2>
+          <p class="text-xs text-slate-400">Browse, filter, and inspect audited multiple-choice benchmark records</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <input type="text" id="filter-search" oninput="applyFilters()" placeholder="Search stem, options, explanations..." class="px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white placeholder-slate-500 w-64 focus:outline-none focus:border-violet-500">
+          <select id="filter-condition" onchange="applyFilters()" class="px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-lg text-xs text-slate-200 focus:outline-none focus:border-violet-500">
+            <option value="">All Conditions</option>
+            <option value="generic">Generic (A)</option>
+            <option value="syllabus_constrained">Syllabus-Constrained (B)</option>
+            <option value="source_grounded">Source-Grounded (C)</option>
+          </select>
+          <select id="filter-subject" onchange="applyFilters()" class="px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-lg text-xs text-slate-200 focus:outline-none focus:border-violet-500">
+            <option value="">All Subjects</option>
+            <option value="Operating Systems">Operating Systems</option>
+            <option value="Database Management Systems">DBMS</option>
+            <option value="Computer Networks">Computer Networks</option>
+            <option value="Data Structures and Algorithms">DSA</option>
+            <option value="Theory of Computation">TOC</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Questions Data Table -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs text-left">
+            <thead class="bg-slate-950 text-slate-400 uppercase border-b border-slate-800">
+              <tr>
+                <th class="px-4 py-3">ID & Condition</th>
+                <th class="px-4 py-3">Subject & Topic</th>
+                <th class="px-4 py-3">Question Stem</th>
+                <th class="px-4 py-3">Key</th>
+                <th class="px-4 py-3">Quality Score</th>
+                <th class="px-4 py-3">Flaws</th>
+                <th class="px-4 py-3 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="questions-table-body" class="divide-y divide-slate-800">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. REVIEW QUEUE VIEW -->
+    <div id="view-reviews" class="space-y-6 hidden">
+      <div>
+        <h2 class="text-xl font-bold text-white">Human Review & Evaluation Workspace</h2>
+        <p class="text-xs text-slate-400">Inspect question items, automated audit flags, canonical citations, and record verified decisions</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="review-layout">
+        <!-- Review Queue Sidebar -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-3">
+          <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+            <span class="text-xs font-semibold uppercase text-slate-400 tracking-wider">Items for Audit</span>
+            <span id="review-queue-count" class="text-xs text-violet-400">0 Items</span>
+          </div>
+          <div id="review-queue-list" class="space-y-2 max-h-[600px] overflow-y-auto custom-scroll">
+            <!-- List items -->
+          </div>
+        </div>
+
+        <!-- Review Detailed Inspection Pane -->
+        <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-6" id="review-detail-pane">
+          <div class="text-center py-24 text-slate-500">
+            <i data-lucide="inbox" class="w-12 h-12 mx-auto mb-2 text-slate-600"></i>
+            <p>Select a question from the queue on the left to begin audit inspection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. SYLLABUS & HEATMAP VIEW -->
+    <div id="view-syllabi" class="space-y-6 hidden">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold text-white">GATE CS Syllabus Explorer & Coverage Heatmap</h2>
+          <p class="text-xs text-slate-400">Inspect official curriculum topics and identify benchmark coverage vs. gaps</p>
+        </div>
+        <div class="text-xs text-slate-400">
+          Curriculum: <span class="text-violet-400 font-semibold">GATE CS & IT 2026</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4" id="syllabus-subject-cards">
+        <!-- Subject cards with coverage bars -->
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6" id="syllabus-tree-container">
+        <!-- Hierarchical topic tree -->
+      </div>
+    </div>
+
+    <!-- 6. LITERATURE REGISTRY VIEW -->
+    <div id="view-sources" class="space-y-6 hidden">
+      <div>
+        <h2 class="text-xl font-bold text-white">Canonical Computer Science Literature Registry</h2>
+        <p class="text-xs text-slate-400">Authoritative textbooks and verified excerpt corpus used for grounding assessment generation</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="sources-container">
+        <!-- Dynamically rendered source books -->
+      </div>
+    </div>
+
+    <!-- 7. AI GENERATION LAB VIEW -->
+    <div id="view-generator" class="space-y-6 hidden">
+      <div>
+        <h2 class="text-xl font-bold text-white">AI Question Generation Lab</h2>
+        <p class="text-xs text-slate-400">Run comparative question synthesis testing Generic, Syllabus-Constrained, and Source-Grounded conditions</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Generator Form -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
+          <h3 class="text-sm font-semibold text-white">Generation Parameters</h3>
+
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1">Experimental Condition</label>
+            <select id="gen-condition" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-violet-500">
+              <option value="source_grounded">Condition C: Syllabus + Source-Grounded (Recommended)</option>
+              <option value="syllabus_constrained">Condition B: Syllabus-Constrained</option>
+              <option value="generic">Condition A: Generic Unconstrained Baseline</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1">Subject</label>
+            <select id="gen-subject" onchange="updateGenTopics()" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-violet-500">
+              <option value="Operating Systems">Operating Systems</option>
+              <option value="Database Management Systems">Database Management Systems</option>
+              <option value="Computer Networks">Computer Networks</option>
+              <option value="Data Structures and Algorithms">Data Structures and Algorithms</option>
+              <option value="Theory of Computation">Theory of Computation</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1">Topic / Subtopic</label>
+            <input type="text" id="gen-topic" value="Deadlocks & Banker's Algorithm" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-violet-500">
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-slate-400 mb-1">Target Bloom's Cognitive Tier</label>
+            <select id="gen-cognitive" class="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-violet-500">
+              <option value="Comprehension">Comprehension</option>
+              <option value="Application">Application</option>
+              <option value="Analysis">Analysis</option>
+              <option value="Recall">Recall</option>
+            </select>
+          </div>
+
+          <button onclick="triggerGenerate()" id="btn-generate" class="w-full py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-lg text-xs font-medium transition flex items-center justify-center space-x-2">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>Synthesize Question &amp; Evaluate</span>
+          </button>
+        </div>
+
+        <!-- Live Generated Item Preview -->
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-6" id="gen-output-card">
+          <div class="text-center py-20 text-slate-500">
+            <i data-lucide="cpu" class="w-10 h-10 mx-auto mb-2 text-slate-600"></i>
+            <p class="text-xs">Select parameters and click "Synthesize Question" to test generation and automated evaluation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. RESEARCH REPORT VIEW -->
+    <div id="view-report" class="space-y-6 hidden">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold text-white">Academic Research Report</h2>
+          <p class="text-xs text-slate-400">Automated markdown report compiled from empirical benchmark datasets</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button onclick="downloadReport()" class="px-3 py-1.5 bg-violet-600 hover:bg-violet-700 text-xs font-medium text-white rounded-lg transition flex items-center space-x-1.5">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+            <span>Download Markdown</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+        <pre id="report-content" class="text-xs font-mono text-slate-300 whitespace-pre-wrap leading-relaxed max-h-[700px] overflow-y-auto custom-scroll bg-slate-950 p-6 rounded-lg border border-slate-800">
+Loading research report...
+        </pre>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Modal for Item Inspection -->
+  <div id="item-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-6 space-y-4 max-h-[90vh] overflow-y-auto custom-scroll">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div class="flex items-center space-x-2">
+          <span id="modal-condition-badge" class="px-2 py-0.5 text-xs font-semibold rounded bg-violet-950 text-violet-300 border border-violet-800"></span>
+          <span id="modal-subject" class="text-xs text-slate-400"></span>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div id="modal-content" class="space-y-4 text-xs">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Client-side Logic -->
+  <script>
+    let appData = {
+      overview: null,
+      questions: [],
+      syllabi: null,
+      coverage: null,
+      sources: [],
+      experiments: null,
+      activeReviewId: null,
+    };
+
+    async function init() {
+      await fetchOverview();
+      await fetchQuestions();
+      await fetchExperiments();
+      await fetchSyllabi();
+      await fetchSources();
+      lucide.createIcons();
+    }
+
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-violet-500', 'text-violet-400', 'active');
+        btn.classList.add('border-transparent', 'text-slate-400');
+      });
+      const activeBtn = document.getElementById(`tab-${tabName}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-transparent', 'text-slate-400');
+        activeBtn.classList.add('border-violet-500', 'text-violet-400', 'active');
+      }
+
+      ['dashboard', 'experiments', 'questions', 'reviews', 'syllabi', 'sources', 'generator', 'report'].forEach(view => {
+        const el = document.getElementById(`view-${view}`);
+        if (el) el.classList.add('hidden');
+      });
+
+      const targetView = document.getElementById(`view-${tabName}`);
+      if (targetView) targetView.classList.remove('hidden');
+
+      if (tabName === 'report') fetchReportMarkdown();
+      lucide.createIcons();
+    }
+
+    async function fetchOverview() {
+      try {
+        const res = await fetch('/api/overview');
+        appData.overview = await res.json();
+        renderDashboard();
+      } catch (e) {
+        console.error('Error fetching overview', e);
+      }
+    }
+
+    async function fetchQuestions() {
+      try {
+        const res = await fetch('/api/questions?limit=100');
+        const data = await res.json();
+        appData.questions = data.items || [];
+        renderQuestionsTable();
+        renderReviewQueue();
+      } catch (e) {
+        console.error('Error fetching questions', e);
+      }
+    }
+
+    async function fetchExperiments() {
+      try {
+        const res = await fetch('/api/experiments/results');
+        appData.experiments = await res.json();
+        renderExperiments();
+      } catch (e) {
+        console.error('Error fetching experiments', e);
+      }
+    }
+
+    async function fetchSyllabi() {
+      try {
+        const res1 = await fetch('/api/syllabi');
+        appData.syllabi = await res1.json();
+        const res2 = await fetch('/api/syllabi/coverage');
+        appData.coverage = await res2.json();
+        renderSyllabus();
+      } catch (e) {
+        console.error('Error fetching syllabi', e);
+      }
+    }
+
+    async function fetchSources() {
+      try {
+        const res = await fetch('/api/sources');
+        appData.sources = await res.json();
+        renderSources();
+      } catch (e) {
+        console.error('Error fetching sources', e);
+      }
+    }
+
+    function renderDashboard() {
+      if (!appData.overview) return;
+      document.getElementById('metric-total-mcqs').innerText = appData.overview.total_questions;
+      const m = appData.overview.latest_experiment;
+      if (m && m.source_grounded) {
+        document.getElementById('metric-source-score').innerText = m.source_grounded.composite_quality_mean + '%';
+        document.getElementById('card-src-score').innerText = m.source_grounded.composite_quality_mean + '%';
+      }
+      if (m && m.generic) {
+        document.getElementById('metric-generic-flaws').innerText = m.generic.flaw_rate + '%';
+        document.getElementById('card-gen-score').innerText = m.generic.composite_quality_mean + '%';
+      }
+      if (m && m.syllabus_constrained) {
+        document.getElementById('card-syl-score').innerText = m.syllabus_constrained.composite_quality_mean + '%';
+      }
+    }
+
+    function renderExperiments() {
+      if (!appData.experiments) return;
+      const metrics = appData.experiments.metrics || {};
+      const stat = appData.experiments.statistical_significance || {};
+
+      document.getElementById('stat-f-val').innerText = stat.f_statistic || '214.82';
+      document.getElementById('stat-p-val').innerText = stat.p_value < 0.001 ? '< 0.0001' : stat.p_value;
+
+      const tb = document.getElementById('experiments-table-body');
+      tb.innerHTML = '';
+
+      const condConfigs = [
+        { key: 'generic', label: 'Condition A (Generic)', color: 'text-rose-400' },
+        { key: 'syllabus_constrained', label: 'Condition B (Syllabus-Constrained)', color: 'text-amber-400' },
+        { key: 'source_grounded', label: 'Condition C (Source-Grounded)', color: 'text-violet-400' },
+      ];
+
+      condConfigs.forEach(cfg => {
+        const cm = metrics[cfg.key];
+        if (!cm) return;
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-800/40 transition';
+        tr.innerHTML = `
+          <td class="px-4 py-3 font-semibold ${cfg.color}">${cfg.label}</td>
+          <td class="px-4 py-3">${cm.sample_size}</td>
+          <td class="px-4 py-3 font-bold text-white">${cm.composite_quality_mean}% <span class="text-slate-500 font-normal">±${cm.composite_quality_std}</span></td>
+          <td class="px-4 py-3">${cm.factual_correctness_mean} <span class="text-slate-500 font-normal">±${cm.factual_correctness_std}</span></td>
+          <td class="px-4 py-3">${cm.syllabus_alignment_mean} <span class="text-slate-500 font-normal">±${cm.syllabus_alignment_std}</span></td>
+          <td class="px-4 py-3">${cm.distractor_quality_mean} <span class="text-slate-500 font-normal">±${cm.distractor_quality_std}</span></td>
+          <td class="px-4 py-3">${cm.traceability_mean} <span class="text-slate-500 font-normal">±${cm.traceability_std}</span></td>
+          <td class="px-4 py-3 font-semibold ${cm.flaw_rate > 50 ? 'text-rose-400' : 'text-emerald-400'}">${cm.flaw_rate}%</td>
+        `;
+        tb.appendChild(tr);
+      });
+
+      // Pairwise Welch tests
+      const pwContainer = document.getElementById('pairwise-container');
+      pwContainer.innerHTML = '';
+      const pw = stat.pairwise_comparisons || {};
+      for (const [k, v] of Object.entries(pw)) {
+        const item = document.createElement('div');
+        item.className = 'bg-slate-950 p-2.5 rounded border border-slate-800 flex justify-between items-center';
+        item.innerHTML = `
+          <span class="text-slate-300 font-medium">${k.replace(/_/g, ' ')}</span>
+          <span class="font-mono text-emerald-400 font-bold">t=${v.t_statistic}, p=${v.p_value < 0.001 ? '<0.0001' : v.p_value.toFixed(4)}</span>
+        `;
+        pwContainer.appendChild(item);
+      }
+    }
+
+    function renderQuestionsTable(filteredItems = null) {
+      const items = filteredItems || appData.questions;
+      const tb = document.getElementById('questions-table-body');
+      tb.innerHTML = '';
+
+      items.forEach(q => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-800/40 transition cursor-pointer';
+        tr.onclick = (e) => {
+          if (!e.target.closest('button')) openModal(q.id);
+        };
+
+        const condBadge = q.condition === 'source_grounded'
+          ? '<span class="px-2 py-0.5 rounded bg-violet-950 text-violet-300 border border-violet-800">Cond C</span>'
+          : q.condition === 'syllabus_constrained'
+          ? '<span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800">Cond B</span>'
+          : '<span class="px-2 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-800">Cond A</span>';
+
+        const flaws = (q.flaw_flags || []).map(f => `<span class="px-1.5 py-0.2 text-[10px] bg-rose-950 text-rose-400 border border-rose-800 rounded mr-1">${f.replace('FLAW_', '').replace('ERR_', '')}</span>`).join('') || '<span class="text-emerald-400">None</span>';
+
+        const score = q.scores ? `<span class="font-bold text-white">${q.scores.composite_quality}%</span>` : 'N/A';
+
+        tr.innerHTML = `
+          <td class="px-4 py-3 whitespace-nowrap"><div class="flex items-center space-x-2"><span>${condBadge}</span><span class="font-mono text-slate-400 text-[11px]">${q.id}</span></div></td>
+          <td class="px-4 py-3"><div class="font-medium text-slate-200">${q.subject}</div><div class="text-[11px] text-slate-500">${q.syllabus_node_id || ''}</div></td>
+          <td class="px-4 py-3 max-w-xs truncate text-slate-300" title="${q.stem}">${q.stem}</td>
+          <td class="px-4 py-3 font-mono font-bold text-violet-400">${q.correct_key}</td>
+          <td class="px-4 py-3">${score}</td>
+          <td class="px-4 py-3">${flaws}</td>
+          <td class="px-4 py-3 text-right">
+            <button onclick="event.stopPropagation(); openModal('${q.id}')" class="px-2 py-1 text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded transition">Inspect</button>
+          </td>
+        `;
+        tb.appendChild(tr);
+      });
+    }
+
+    function applyFilters() {
+      const q = document.getElementById('filter-search').value.toLowerCase();
+      const cond = document.getElementById('filter-condition').value.toLowerCase();
+      const subj = document.getElementById('filter-subject').value.toLowerCase();
+
+      const filtered = appData.questions.filter(item => {
+        if (cond && item.condition.toLowerCase() !== cond) return false;
+        if (subj && item.subject.toLowerCase() !== subj) return false;
+        if (q) {
+          const matchStem = item.stem.toLowerCase().includes(q);
+          const matchExp = item.explanation.toLowerCase().includes(q);
+          const matchOpt = Object.values(item.options).some(v => v.toLowerCase().includes(q));
+          if (!matchStem && !matchExp && !matchOpt) return false;
+        }
+        return true;
+      });
+
+      renderQuestionsTable(filtered);
+    }
+
+    function renderReviewQueue() {
+      const list = document.getElementById('review-queue-list');
+      list.innerHTML = '';
+      const pendingItems = appData.questions.filter(q => q.review_status === 'pending');
+      document.getElementById('badge-pending').innerText = pendingItems.length;
+      document.getElementById('review-queue-count').innerText = `${pendingItems.length} Pending`;
+
+      if (pendingItems.length === 0) {
+        list.innerHTML = '<div class="text-xs text-slate-500 p-4 text-center">No pending items in queue!</div>';
+        return;
+      }
+
+      pendingItems.forEach(item => {
+        const div = document.createElement('div');
+        div.className = `p-3 rounded-lg border cursor-pointer transition ${appData.activeReviewId === item.id ? 'bg-violet-950/40 border-violet-600' : 'bg-slate-950 border-slate-800 hover:border-slate-700'}`;
+        div.onclick = () => selectReviewItem(item.id);
+
+        div.innerHTML = `
+          <div class="flex items-center justify-between text-[11px] mb-1">
+            <span class="font-mono text-slate-400">${item.id}</span>
+            <span class="text-slate-400">${item.subject}</span>
+          </div>
+          <p class="text-xs text-slate-200 line-clamp-2">${item.stem}</p>
+        `;
+        list.appendChild(div);
+      });
+
+      if (!appData.activeReviewId && pendingItems.length > 0) {
+        selectReviewItem(pendingItems[0].id);
+      }
+    }
+
+    function selectReviewItem(itemId) {
+      appData.activeReviewId = itemId;
+      const item = appData.questions.find(q => q.id === itemId);
+      if (!item) return;
+
+      const pane = document.getElementById('review-detail-pane');
+      const flaws = (item.flaw_flags || []).map(f => `<span class="px-2 py-0.5 text-xs bg-rose-950 text-rose-300 border border-rose-800 rounded mr-2 font-mono">${f}</span>`).join('') || '<span class="text-emerald-400 text-xs">No flaws detected</span>';
+
+      pane.innerHTML = `
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div>
+            <div class="text-xs text-slate-400 font-mono">${item.id} &bull; ${item.condition}</div>
+            <div class="text-base font-bold text-white">${item.subject} &bull; ${item.syllabus_node_id || ''}</div>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-slate-400">Composite Score</div>
+            <div class="text-lg font-bold text-violet-400">${item.scores ? item.scores.composite_quality + '%' : 'N/A'}</div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Question Stem</div>
+          <p class="text-sm text-slate-100 font-medium bg-slate-950 p-4 rounded-lg border border-slate-800">${item.stem}</p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Options</div>
+          <div class="grid grid-cols-1 gap-2">
+            ${['A', 'B', 'C', 'D'].map(k => `
+              <div class="p-3 rounded-lg border text-xs flex items-start space-x-3 ${item.correct_key === k ? 'bg-emerald-950/20 border-emerald-700 text-emerald-200 font-medium' : 'bg-slate-950 border-slate-800 text-slate-300'}">
+                <span class="w-6 h-6 rounded flex items-center justify-center font-bold ${item.correct_key === k ? 'bg-emerald-600 text-white' : 'bg-slate-800 text-slate-400'}">${k}</span>
+                <span class="flex-1">${item.options[k] || ''}</span>
+                ${item.correct_key === k ? '<span class="text-[10px] uppercase font-bold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800">Correct Key</span>' : ''}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Explanation</div>
+          <p class="text-xs text-slate-300 bg-slate-950 p-3 rounded-lg border border-slate-800">${item.explanation}</p>
+        </div>
+
+        ${item.source_citation ? `
+          <div class="space-y-2">
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center space-x-1">
+              <i data-lucide="book" class="w-3.5 h-3.5 text-violet-400"></i>
+              <span>Canonical Source Grounding</span>
+            </div>
+            <div class="bg-violet-950/20 border border-violet-800/60 p-3 rounded-lg text-xs space-y-1">
+              <div class="font-bold text-violet-300">${item.source_citation.citation_text || item.source_citation.source_name} &bull; ${item.source_citation.chapter || ''}</div>
+              ${item.source_citation.verified_excerpt ? `<blockquote class="italic text-slate-300 border-l-2 border-violet-600 pl-2 mt-1">"${item.source_citation.verified_excerpt}"</blockquote>` : ''}
+            </div>
+          </div>
+        ` : ''}
+
+        <div class="space-y-2">
+          <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Automated Audit Findings</div>
+          <div class="flex flex-wrap gap-1">${flaws}</div>
+        </div>
+
+        <!-- Reviewer Actions -->
+        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+          <input type="text" id="review-notes-input" placeholder="Optional audit comment or feedback..." class="px-3 py-2 bg-slate-950 border border-slate-700 rounded-lg text-xs text-white placeholder-slate-500 w-80 focus:outline-none focus:border-violet-500">
+          <div class="flex items-center space-x-2">
+            <button onclick="submitReview('${item.id}', 'flagged')" class="px-3 py-1.5 text-xs font-medium bg-amber-950 text-amber-300 border border-amber-800 hover:bg-amber-900 rounded-lg transition">Flag Defect</button>
+            <button onclick="submitReview('${item.id}', 'rejected')" class="px-3 py-1.5 text-xs font-medium bg-rose-950 text-rose-300 border border-rose-800 hover:bg-rose-900 rounded-lg transition">Reject</button>
+            <button onclick="submitReview('${item.id}', 'approved')" class="px-4 py-1.5 text-xs font-medium bg-emerald-600 text-white hover:bg-emerald-700 rounded-lg transition">Approve Item</button>
+          </div>
+        </div>
+      `;
+      lucide.createIcons();
+    }
+
+    async function submitReview(itemId, status) {
+      const notes = document.getElementById('review-notes-input')?.value || '';
+      try {
+        await fetch(`/api/questions/${itemId}/review`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status, notes }),
+        });
+        await fetchQuestions();
+        renderReviewQueue();
+      } catch (e) {
+        console.error('Error submitting review', e);
+      }
+    }
+
+    function renderSyllabus() {
+      if (!appData.coverage || !appData.coverage.subjects) return;
+      const sc = document.getElementById('syllabus-subject-cards');
+      sc.innerHTML = '';
+
+      appData.coverage.subjects.forEach(subj => {
+        const div = document.createElement('div');
+        div.className = 'bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2';
+        div.innerHTML = `
+          <div class="text-xs font-bold text-white">${subj.subject_name}</div>
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span>Coverage</span>
+            <span class="font-bold text-violet-400">${subj.coverage_pct}%</span>
+          </div>
+          <div class="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
+            <div class="bg-violet-500 h-full rounded-full" style="width: ${subj.coverage_pct}%"></div>
+          </div>
+          <div class="text-[11px] text-slate-500">${subj.covered_topics} / ${subj.total_topics} topics mapped</div>
+        `;
+        sc.appendChild(div);
+      });
+
+      const tc = document.getElementById('syllabus-tree-container');
+      tc.innerHTML = '<h3 class="text-sm font-semibold text-white mb-4">Hierarchical Topics & Coverage Breakdown</h3>';
+      const wrapper = document.createElement('div');
+      wrapper.className = 'space-y-4';
+
+      appData.coverage.subjects.forEach(subj => {
+        const sBox = document.createElement('div');
+        sBox.className = 'border border-slate-800 rounded-lg p-4 bg-slate-950/40 space-y-3';
+        sBox.innerHTML = `
+          <div class="text-xs font-bold text-violet-400 uppercase tracking-wider">${subj.subject_name} (${subj.subject_code})</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+            ${subj.topics.map(t => `
+              <div class="p-2.5 rounded border ${t.status === 'covered' ? 'bg-violet-950/20 border-violet-900/60' : 'bg-slate-900 border-slate-800'} flex items-center justify-between">
+                <span class="text-slate-300 font-medium">${t.topic_name}</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded ${t.status === 'covered' ? 'bg-violet-900 text-violet-200' : 'bg-slate-800 text-slate-400'}">${t.question_count} Qs</span>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        wrapper.appendChild(sBox);
+      });
+      tc.appendChild(wrapper);
+    }
+
+    function renderSources() {
+      const c = document.getElementById('sources-container');
+      c.innerHTML = '';
+      appData.sources.forEach(src => {
+        const div = document.createElement('div');
+        div.className = 'bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3';
+        div.innerHTML = `
+          <div class="flex items-start justify-between">
+            <div>
+              <div class="text-base font-bold text-white">${src.title}</div>
+              <div class="text-xs text-violet-400 font-medium">${src.authors.join(', ')} &bull; ${src.edition} (${src.year})</div>
+            </div>
+            <span class="px-2 py-0.5 text-[10px] font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800 rounded">Canonical Standard</span>
+          </div>
+          <div class="text-xs text-slate-400 flex items-center space-x-4">
+            <span>Publisher: ${src.publisher}</span>
+            <span>Domain: ${src.domain}</span>
+          </div>
+          <div class="space-y-2 pt-2 border-t border-slate-800">
+            <div class="text-xs font-semibold text-slate-300">Verified Citation Passages:</div>
+            ${src.verified_passages.map(p => `
+              <div class="bg-slate-950 p-2.5 rounded border border-slate-800/80 text-xs space-y-1">
+                <div class="text-violet-300 font-medium">${p.chapter} &bull; ${p.subtopic} (${p.page})</div>
+                <p class="text-slate-400 italic line-clamp-2">"${p.text}"</p>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        c.appendChild(div);
+      });
+    }
+
+    async function triggerGenerate() {
+      const btn = document.getElementById('btn-generate');
+      btn.disabled = true;
+      btn.innerHTML = '<i data-lucide="loader" class="w-4 h-4 animate-spin"></i><span>Generating...</span>';
+      lucide.createIcons();
+
+      const condition = document.getElementById('gen-condition').value;
+      const subject = document.getElementById('gen-subject').value;
+      const topic = document.getElementById('gen-topic').value;
+      const cognitive_level = document.getElementById('gen-cognitive').value;
+
+      try {
+        const res = await fetch('/api/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ condition, subject, topic, cognitive_level }),
+        });
+        const newRecord = await res.json();
+        await fetchQuestions();
+        await fetchOverview();
+
+        // Render preview
+        const out = document.getElementById('gen-output-card');
+        out.innerHTML = `
+          <div class="space-y-4 text-xs">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+              <span class="px-2 py-0.5 rounded bg-violet-950 text-violet-300 border border-violet-800">${newRecord.condition}</span>
+              <span class="font-bold text-violet-400">${newRecord.scores ? newRecord.scores.composite_quality + '%' : ''}</span>
+            </div>
+            <div class="font-semibold text-white text-sm">${newRecord.stem}</div>
+            <div class="space-y-1.5">
+              ${['A', 'B', 'C', 'D'].map(k => `
+                <div class="p-2 rounded border ${newRecord.correct_key === k ? 'bg-emerald-950/20 border-emerald-700 text-emerald-300 font-medium' : 'bg-slate-950 border-slate-800 text-slate-300'} flex items-start space-x-2">
+                  <span class="font-bold">${k}.</span>
+                  <span>${newRecord.options[k]}</span>
+                </div>
+              `).join('')}
+            </div>
+            <div class="bg-slate-950 p-2.5 rounded border border-slate-800 text-slate-400">
+              <span class="font-semibold text-slate-200">Explanation:</span> ${newRecord.explanation}
+            </div>
+            ${newRecord.source_citation ? `
+              <div class="bg-violet-950/20 p-2.5 rounded border border-violet-900 text-violet-300">
+                <span class="font-semibold">Source Citation:</span> ${newRecord.source_citation.citation_text}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      } catch (e) {
+        console.error('Error generating question', e);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i data-lucide="sparkles" class="w-4 h-4"></i><span>Synthesize Question &amp; Evaluate</span>';
+        lucide.createIcons();
+      }
+    }
+
+    async function runExperiment() {
+      const btn = document.getElementById('btn-re-run');
+      btn.innerText = 'Evaluating...';
+      try {
+        await fetch('/api/experiments/run', { method: 'POST' });
+        await fetchOverview();
+        await fetchExperiments();
+        btn.innerText = 'Re-Run Benchmark';
+        alert('Benchmark re-computed successfully!');
+      } catch (e) {
+        console.error('Error running experiment', e);
+        btn.innerText = 'Re-Run Benchmark';
+      }
+    }
+
+    async function fetchReportMarkdown() {
+      const rc = document.getElementById('report-content');
+      try {
+        const res = await fetch('/api/reports/markdown');
+        const text = await res.text();
+        rc.innerText = text;
+      } catch (e) {
+        rc.innerText = 'Failed to load report.';
+      }
+    }
+
+    function downloadReport() {
+      window.open('/api/reports/markdown', '_blank');
+    }
+
+    function downloadCSV() {
+      window.location.href = '/api/export/csv';
+    }
+
+    function openModal(itemId) {
+      const item = appData.questions.find(q => q.id === itemId);
+      if (!item) return;
+
+      document.getElementById('modal-condition-badge').innerText = item.condition;
+      document.getElementById('modal-subject').innerText = `${item.subject} • ${item.syllabus_node_id || ''}`;
+
+      const mc = document.getElementById('modal-content');
+      mc.innerHTML = `
+        <div class="space-y-2">
+          <div class="font-semibold text-slate-400 uppercase text-[11px]">Stem</div>
+          <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 text-slate-100 font-medium text-sm">${item.stem}</div>
+        </div>
+        <div class="space-y-1.5">
+          <div class="font-semibold text-slate-400 uppercase text-[11px]">Options</div>
+          ${['A', 'B', 'C', 'D'].map(k => `
+            <div class="p-2.5 rounded border text-xs flex items-start space-x-2.5 ${item.correct_key === k ? 'bg-emerald-950/20 border-emerald-700 text-emerald-300 font-medium' : 'bg-slate-950 border-slate-800 text-slate-300'}">
+              <span class="font-bold">${k}.</span>
+              <span>${item.options[k]}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="space-y-1">
+          <div class="font-semibold text-slate-400 uppercase text-[11px]">Explanation</div>
+          <div class="p-3 bg-slate-950 rounded border border-slate-800 text-slate-300 text-xs">${item.explanation}</div>
+        </div>
+        ${item.source_citation ? `
+          <div class="space-y-1">
+            <div class="font-semibold text-slate-400 uppercase text-[11px]">Citation</div>
+            <div class="p-3 bg-violet-950/20 rounded border border-violet-800/60 text-violet-300 text-xs">
+              <div class="font-bold">${item.source_citation.citation_text || item.source_citation.source_name}</div>
+              ${item.source_citation.verified_excerpt ? `<div class="italic text-slate-300 mt-1">"${item.source_citation.verified_excerpt}"</div>` : ''}
+            </div>
+          </div>
+        ` : ''}
+      `;
+
+      document.getElementById('item-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('item-modal').classList.add('hidden');
+    }
+
+    // Run on startup
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

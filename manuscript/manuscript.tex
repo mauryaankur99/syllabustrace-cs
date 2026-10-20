@@ -1,0 +1,187 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{cite}
+\usepackage{geometry}
+\geometry{top=0.75in, bottom=0.75in, left=0.75in, right=0.75in}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue,
+}
+
+\title{\textbf{SyllabusTrace-CS: A Source-Traceable Quality Benchmark for AI-Generated Computer Science Multiple-Choice Questions in Indian Competitive Examinations}}
+
+\author{
+  \textbf{Ankur Maurya}\\
+  Independent Researcher \& Software Engineer\\
+  Gujarat, India\\
+  \texttt{mauryaankur99@gmail.com}
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Large Language Models (LLMs) are widely explored for automated question generation in digital education. However, unconstrained prompting in high-stakes competitive examinations---such as the Graduate Aptitude Test in Engineering (GATE CS) and UGC NET in India---frequently yields invalid items afflicted by psychometric Item-Writing Flaws (IWFs), out-of-syllabus drift, and hallucinated answer keys lacking evidence traceability. We introduce \textbf{SyllabusTrace-CS}, an open-source evaluation benchmark and research workbench designed to audit, evaluate, and trace AI-generated Computer Science multiple-choice questions (MCQs). We formulate a controlled three-condition experimental paradigm: \textbf{Condition A (Generic Baseline)}, \textbf{Condition B (Syllabus-Constrained)}, and \textbf{Condition C (Syllabus + Canonical Source-Grounded)} across five core computer science strata (Operating Systems, DBMS, Computer Networks, Data Structures \& Algorithms, and Theory of Computation). In an empirical evaluation of $N=60$ audited items, generic prompting exhibited an alarming \textbf{100.0\% flaw rate}, dominated by absent citations, distractor length outliers, and answer leakage. Enforcing syllabus constraints (Condition B) eliminated structural item-writing flaws and elevated Composite Quality from $65.25\% \pm 8.51$ to $92.60\% \pm 0.00$. Anchoring generation to canonical textbooks (Condition C) further attained \textbf{$98.55\% \pm 3.55$ Composite Quality} and flawless \textbf{$5.0 / 5.0$ citation traceability} verified against standard authorities (Cormen, Silberschatz, Kurose-Ross, Sipser). A One-Way ANOVA confirmed the quality divergence is statistically highly significant ($F = 222.60, p = 1.17 \times 10^{-27}$). We publish the full dataset, interactive workbench, and reproducible analysis pipeline to support authentic educational deployment and exam-platform integration.
+\end{abstract}
+
+\section{Introduction}
+Standardized multiple-choice examinations form the primary sorting mechanism for graduate admissions, academic appointments, and public-sector recruitment in India. Examinations such as the \textbf{Graduate Aptitude Test in Engineering (GATE CS)} and the \textbf{National Eligibility Test (UGC NET CS)} demand deep conceptual precision, mathematical rigour, and strict adherence to officially published curriculum specifications.
+
+Simultaneously, educational platforms (including platforms like Pariksha, \url{https://pariksha.aeigs.com}) increasingly leverage generative artificial intelligence to synthesize practice mock assessments. However, off-the-shelf generative models suffer from significant failure modes when authoring technical assessment items:
+\begin{enumerate}
+    \item \textbf{Psychometric Item-Writing Flaws (IWFs):} Off-the-shelf models routinely generate items containing answer leakage (clues in the stem pointing to the key), option length imbalance (correct answers systematically longer than distractors), and flawed distractors (such as ``All of the above'' or ``None of the above''), violating psychometric standards codified by Haladyna \& Downing~\cite{haladyna1989taxonomy, haladyna2002review}.
+    \item \textbf{Curricular Drift:} Models hallucinate topics outside the designated syllabus boundaries (e.g., introducing proprietary vendor-specific SQL extensions into foundational relational calculus questions).
+    \item \textbf{Absence of Provenance \& Traceable Verification:} When students or faculty challenge a provisional answer key, official examination authorities only accept challenges supported by canonical textbook citations (e.g., CLRS, Silberschatz, Kurose-Ross). Unconstrained AI questions fail to provide verifiable excerpts, leaving educators with an unsustainable manual verification burden.
+\end{enumerate}
+
+To address these challenges, this paper presents \textbf{SyllabusTrace-CS}, a comprehensive research benchmark and evaluation workbench that operationalizes source-grounded, syllabus-constrained question generation for Computer Science.
+
+\section{Related Work}
+
+\subsection{Multiple-Choice Item-Writing Guidelines \& Flaws}
+Decades of psychometric research confirm that item formatting directly impacts test validity. Haladyna \& Downing~\cite{haladyna1989taxonomy} synthesized 31 specific item-writing rules. Rodriguez~\cite{rodriguez2005three} established via meta-analysis that three well-crafted options often outperform four options burdened by implausible distractors or ``All/None of the above'' shortcuts. In medical and STEM testing, 30--50\% of unvetted questions contain IWFs that artificially shift student scores.
+
+\subsection{LLM Evaluation in Computer Science}
+Prior benchmarks---such as MMLU~\cite{hendrycks2021measuring} and CS-Bench~\cite{zeng2024csbench}---focus almost exclusively on evaluating whether an LLM can \textit{answer} multiple-choice questions. Savelka et al.~\cite{savelka2023large} evaluated LLMs on CS exams, observing that models struggle with spatial and multi-step algorithmic reasoning. However, systematic benchmarking of \textit{question generation quality} against official curricula remains under-explored in the Indian competitive exam context.
+
+\subsection{Citation Grounding \& Attributable Generation}
+Recent advances in Retrieval-Augmented Generation (RAG) and citation evaluation---such as the ALCE benchmark~\cite{gao2023enabling}---demonstrate that generative text must be tied to verifiable source passages to combat hallucination. In technical domains, citation precision (ensuring the cited passage unequivocally proves the correct answer) is paramount.
+
+\section{Research Questions \& Hypotheses}
+We formalize three primary research questions:
+\begin{itemize}
+    \item \textbf{RQ1 (Psychometric Flaw Reduction):} Does imposing hierarchical syllabus constraints and item-writing rules (Condition B) reduce the prevalence of Item-Writing Flaws (IWFs) compared to generic zero-shot prompting (Condition A)?
+    \begin{itemize}
+        \item \textit{Hypothesis 1 (H1):} Condition B will reduce the IWF rate to $< 5\%$, significantly lower than Condition A ($> 60\%$).
+    \end{itemize}
+    \item \textbf{RQ2 (Source Grounding \& Evidence Traceability):} Does explicit grounding in canonical Computer Science textbook passages (Condition C) eliminate answer ambiguity and yield superior Composite Quality scores?
+    \begin{itemize}
+        \item \textit{Hypothesis 2 (H2):} Condition C will attain near-perfect traceability ($\ge 4.8 / 5.0$) and significantly higher composite quality than Conditions A and B ($p < 0.05$).
+    \end{itemize}
+    \item \textbf{RQ3 (Domain Invariance Across CS Strata):} Do the quality improvements of source grounding hold consistently across distinct CS subfields (OS, DBMS, CN, DSA, TOC)?
+\end{itemize}
+
+\section{Methodology}
+
+\subsection{Three Experimental Conditions}
+We design a controlled three-condition experimental pipeline:
+\begin{enumerate}
+    \item \textbf{Condition A (Generic Baseline):} The model receives a high-level topic keyword (e.g., ``CPU Scheduling'') and is instructed to generate an MCQ without structural or citation constraints.
+    \item \textbf{Condition B (Syllabus-Constrained):} The model is provided the exact syllabus hierarchy node (e.g., GATE CS $\rightarrow$ Operating Systems $\rightarrow$ CPU Scheduling $\rightarrow$ Round Robin), target Bloom's cognitive level, and explicit negative constraints (no ``All/None of above'', balanced option lengths, single-best-answer contract).
+    \item \textbf{Condition C (Syllabus + Source-Grounded):} Condition B constraints are combined with an injected excerpt from a canonical CS textbook. The model is mandated to output exact citation metadata (author, title, edition, chapter, page, verified excerpt) and verify distractor plausibility.
+\end{enumerate}
+
+\subsection{Multi-Stage Evaluation Rubric \& Flaw Taxonomy}
+Each item is processed through a multi-stage audit:
+\begin{itemize}
+    \item \textbf{Deterministic Heuristic Rules:}
+    \begin{itemize}
+        \item \texttt{ERR\_OPTION\_COUNT}: Exactly 4 options (\texttt{A}, \texttt{B}, \texttt{C}, \texttt{D}) required.
+        \item \texttt{ERR\_INVALID\_KEY}: Answer key must belong to $[\texttt{'A'}, \texttt{'B'}, \texttt{'C'}, \texttt{'D'}]$.
+        \item \texttt{FLAW\_DUPLICATE\_OPT}: Duplicate option detection.
+        \item \texttt{FLAW\_ALL\_NONE\_ABOVE}: Regex detection of ``All of the above'' or ``None of the above''.
+        \item \texttt{FLAW\_LENGTH\_OUTLIER}: Flagged if key length is $> 2.3\times$ or $< 0.35\times$ distractor mean.
+        \item \texttt{FLAW\_ANSWER\_LEAKAGE}: Lexical overlap between stem and correct option definition.
+        \item \texttt{FLAW\_NO\_CITATION}: Absence of verifiable canonical citation.
+    \end{itemize}
+    \item \textbf{Scored Dimensions (1--5 Likert Scale):}
+    \begin{itemize}
+        \item \textbf{Factual Correctness (FC):} Soundness of key and explanation against technical theory.
+        \item \textbf{Syllabus Alignment (SA):} Topic fidelity relative to GATE CS syllabus specifications.
+        \item \textbf{Distractor Quality (DQ):} Plausibility, discrimination, and absence of clues.
+        \item \textbf{Traceability (TR):} Precision and completeness of textbook citation.
+    \end{itemize}
+    \item \textbf{Composite Quality Score (0--100\%):}
+    \begin{equation}
+        \text{Composite} = \frac{0.30 \text{FC} + 0.25 \text{SA} + 0.25 \text{DQ} + 0.20 \text{TR}}{5.0} \times 100 - (\text{Flaws} \times 3.5)
+    \end{equation}
+\end{itemize}
+
+\section{Benchmark Dataset Construction}
+The evaluation dataset ($N=60$) was curated across five foundational subjects matching the official GATE CS \& IT 2026 syllabus:
+\begin{enumerate}
+    \item \textbf{Operating Systems (OS):} CPU Scheduling, Synchronization, Memory Paging, Deadlocks, File Systems.
+    \item \textbf{Database Management Systems (DBMS):} Relational Algebra, Normalization (1NF to BCNF), Serializability, B+ Trees.
+    \item \textbf{Computer Networks (CN):} Sliding Window ARQ, Congestion Control, Routing Algorithms, IP Subnetting.
+    \item \textbf{Data Structures \& Algorithms (DSA):} Master Theorem, Balanced Trees (AVL), Graph Shortest Paths, Dynamic Programming.
+    \item \textbf{Theory of Computation (TOC):} Regular Languages, Pumping Lemma, Pushdown Automata, Turing Decidability.
+\end{enumerate}
+
+Each subject contains exactly 4 matched items per condition (20 per condition; 60 items total). Canonical sources include Cormen et al.~\cite{cormen2022algorithms}, Silberschatz et al.~\cite{silberschatz2018operating, silberschatz2020database}, Kurose \& Ross~\cite{kurose2021networking}, and Sipser~\cite{sipser2013theory}.
+
+\section{Empirical Results}
+
+\input{tables/table1_summary_metrics.tex}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig1_condition_comparison.png}
+    \caption{Composite Quality score and Citation Traceability across experimental conditions ($N=60$).}
+    \label{fig:condition_comparison}
+\end{figure}
+
+\subsection{Condition Comparison Summary}
+Table~\ref{tab:summary_metrics} and Figure~\ref{fig:condition_comparison} summarize empirical performance. Generic prompting yielded an alarming 100\% flaw rate and low traceability ($1.20 \pm 0.00$). Imposing syllabus constraints (Condition B) eliminated structural flaws, elevating Composite Quality to $92.60\%$. Grounding in canonical literature (Condition C) produced superior Composite Quality ($98.55\% \pm 3.55$) and perfect traceability ($5.00 \pm 0.00$).
+
+\input{tables/table2_flaw_breakdown.tex}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig2_flaw_distribution.png}
+    \caption{Distribution of detected Item-Writing Flaws (IWFs) across experimental conditions.}
+    \label{fig:flaw_distribution}
+\end{figure}
+
+\subsection{Item-Writing Flaw Distribution}
+As reported in Table~\ref{tab:flaw_breakdown} and Figure~\ref{fig:flaw_distribution}, Condition A was severely compromised by prohibited ``All/None of the above'' anti-patterns (40\%), clue leakage (20\%), and complete absence of citations (100\%). These psychometric flaws were entirely eliminated in Condition B and Condition C.
+
+\input{tables/table3_inferential_stats.tex}
+
+\subsection{Inferential Statistical Significance}
+Table~\ref{tab:inferential_stats} confirms that differences across conditions are statistically highly significant:
+\begin{itemize}
+    \item One-Way ANOVA omnibus test on Composite Quality yields $F = 222.60$, $p = 1.17 \times 10^{-27}$, decisively rejecting the null hypothesis.
+    \item Post-hoc Welch's $t$-tests confirm that Condition C significantly outperforms Condition A ($t = 16.03, p < 10^{-14}$) and Condition B ($t = 7.50, p < 10^{-6}$).
+\end{itemize}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig3_subject_breakdown.png}
+    \caption{Mean Composite Quality score across 5 core Computer Science disciplines.}
+    \label{fig:subject_breakdown}
+\end{figure}
+
+\subsection{Subject Strata Performance}
+Figure~\ref{fig:subject_breakdown} illustrates that quality gains are invariant across disciplines (RQ3). Condition C maintains $\ge 97.5\%$ average quality across Operating Systems, DBMS, Computer Networks, DSA, and Theory of Computation.
+
+\section{Discussion \& Practical Implications}
+Our findings demonstrate that off-the-shelf generative AI models cannot be safely deployed for competitive examination question authoring without structured curricular constraints and canonical source grounding. 
+
+Through the provided \texttt{ParikshaAdapter}, SyllabusTrace-CS integrates directly into production examination systems (such as Pariksha, \url{https://pariksha.aeigs.com}), serving as an automated quality-control filter before items are presented to students.
+
+\section{Limitations \& Threats to Validity}
+While the pilot benchmark establishes statistical significance ($p < 10^{-20}$), limitations include:
+\begin{itemize}
+    \item \textbf{Sample Scale:} The current evaluation encompasses $N=60$ deeply audited items. Expanding to multi-thousand question banks across all 10 GATE CS units is scheduled for future work.
+    \item \textbf{Pre-Training Memorization:} Foundation models have encountered portions of standard textbooks during training. Evaluating newly proved algorithmic theorems will further isolate pure reasoning from memorization.
+\end{itemize}
+
+\section{Ethics \& Broader Impact}
+Ensuring that multiple-choice assessments are free from item-writing flaws democratizes competitive preparation by testing genuine conceptual understanding rather than test-taking heuristics. All software, datasets, and scripts are released under the open-source MIT license.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
